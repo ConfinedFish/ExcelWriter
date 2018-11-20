@@ -39,7 +39,7 @@
     |start Project Logo
     +-->
 <div class="projectlogo">
-<a href="https://poi.apache.org"><img class="logoImage" alt="Apache POI" src="../../images/project-header.png" title="Apache POI is well-known in the Java field as a library for reading and writing Microsoft Office file formats, such as Excel, PowerPoint, Word, Visio, Publisher and Outlook. It supports both the older (OLE2) and new (OOXML - Office Open XML) formats."></a>
+<a href="https://poi.apache.org"><img class="logoImage" alt="Apache POI" src="../../images/project-header.png" title="Apache POI is well-known in the Java field as a library for reading and writing Microsoft Office file formats, such as excel, PowerPoint, Word, Visio, Publisher and Outlook. It supports both the older (OLE2) and new (OOXML - Office Open XML) formats."></a>
 </div>
 <!--+
     |end Project Logo
@@ -113,7 +113,7 @@ document.write("Last Published: " + document.lastModified);
 <div class="menuitem">
 <a href="../../apidocs/index.html">Javadocs</a>
 </div>
-<div onclick="SwitchMenu('menu_selected_1.1.3', '../../skin/')" id="menu_selected_1.1.3Title" class="menutitle" style="background-image: url('../../skin/images/chapter_open.gif');">Excel (HSSF/XSSF)</div>
+<div onclick="SwitchMenu('menu_selected_1.1.3', '../../skin/')" id="menu_selected_1.1.3Title" class="menutitle" style="background-image: url('../../skin/images/chapter_open.gif');">excel (HSSF/XSSF)</div>
 <div id="menu_selected_1.1.3" class="selectedmenuitemgroup" style="display: block;">
 <div class="menuitem">
 <a href="../../components/spreadsheet/index.html">Overview</a>
@@ -506,7 +506,7 @@ document.write("Last Published: " + document.lastModified);
     Sheet sheet1 = wb.createSheet("new sheet");
     Sheet sheet2 = wb.createSheet("second sheet");
 
-    // Note that sheet name is Excel must not exceed 31 characters
+    // Note that sheet name is excel must not exceed 31 characters
     // and must not contain any of the any of the following characters:
     // 0x0000
     // 0x0003
@@ -750,7 +750,7 @@ document.write("Last Published: " + document.lastModified);
             missing or blank rows and cells are treated, and you need to ensure 
             you visit every cell and not just those defined in the file. (The
             CellIterator will only return the cells defined in the file, which
-            is largely those with values or stylings, but it depends on Excel).</p>
+            is largely those with values or stylings, but it depends on excel).</p>
 <p>In cases such as these, you should fetch the first and last column
             information for a row, then call <em>getCell(int, MissingCellPolicy)</em>
             to fetch the cell. Use a 
@@ -1491,7 +1491,7 @@ Examples:
     textbox.setString(string );
                     </pre>
 <p>
-                        Just as can be done manually using Excel, it is possible
+                        Just as can be done manually using excel, it is possible
                         to group shapes together.  This is done by calling
                         <span class="codefrag">createGroup()</span> and then creating the shapes
                         using those groups.
@@ -1610,11 +1610,11 @@ Examples:
 <p>
                         The vertical points per pixel deserves some more explanation.
                         One of the difficulties in converting Graphics calls
-                        into escher drawing calls is that Excel does not have
+                        into escher drawing calls is that excel does not have
                         the concept of absolute pixel positions.  It measures
                         it's cell widths in 'characters' and the cell heights in points.
                         Unfortunately it's not defined exactly what type of character it's
-                        measuring.  Presumably this is due to the fact that the Excel will be
+                        measuring.  Presumably this is due to the fact that the excel will be
                         using different fonts on different platforms or even within the same
                         platform.
                     </p>
@@ -1787,7 +1787,7 @@ Examples:
             </p>
 <p>
                 Note: Using relative values like 'A1:B1' can lead to unexpected moving of
-                the cell that the name points to when working with the workbook in Microsoft Excel,
+                the cell that the name points to when working with the workbook in Microsoft excel,
                 usually using absolute references like '$A$1:$B$1' avoids this, see also
                 <a href="https://superuser.com/a/1031047/126954">this discussion</a>.
             </p>
@@ -1877,7 +1877,7 @@ Examples:
     }
             </pre>
 <p>
-            Note, when a cell is deleted, Excel does not delete the 
+            Note, when a cell is deleted, excel does not delete the
             attached named range. As result, workbook can contain 
             named ranges that point to cells that no longer exist.
             You should check the validity of a reference before 
@@ -2254,7 +2254,7 @@ noted with comments in the code.
   validation.setSuppressDropDownArrow(false);
 
   // Note this extra method call. If this method call is omitted, or if the
-  // boolean value false is passed, then Excel will not validate the value the
+  // boolean value false is passed, then excel will not validate the value the
   // user enters into the cell.
   validation.setShowErrorBox(true);
   sheet.addValidationData(validation);
@@ -2354,7 +2354,7 @@ The usefulness of this technique can be extended if you use named ranges like th
 </pre>
 <p>
 OpenOffice Calc has slightly different rules with regard to the scope of names. 
-Excel supports both Workbook and Sheet scope for a name but Calc does not, it seems only to support Sheet scope for a name. 
+excel supports both Workbook and Sheet scope for a name but Calc does not, it seems only to support Sheet scope for a name.
 Thus it is often best to fully qualify the name for the region or area something like this;
 </p>
 <pre class="code">
@@ -2480,7 +2480,7 @@ Next, create a data validation that will look to this named area for its data, s
 <p>
 Note that the name of the area - in the example above it is 'CHOICES' -
 is simply passed to the createFormulaListConstraint() method. This is sufficient 
-to cause Excel to populate the drop down list with data from that named region.
+to cause excel to populate the drop down list with data from that named region.
 </p>
 <p>
 Next, for each of the options the user could select in the first drop down list,
@@ -2500,8 +2500,8 @@ Now, very similar code can be used to create a second, linked, drop down list;
   sheet.addValidationData(validation);
 </pre>
 <p>
-The key here is in the following Excel function - INDIRECT(UPPER($A$1)) - which is used to populate the second,
-linked, drop down list. Working from the inner-most pair of brackets, it instructs Excel to look 
+The key here is in the following excel function - INDIRECT(UPPER($A$1)) - which is used to populate the second,
+linked, drop down list. Working from the inner-most pair of brackets, it instructs excel to look
 at the contents of cell A1, to convert what it reads there into upper case &ndash; as upper case letters are used 
 in the names of each region - and then convert this name into the addresses of those cells that contain
 the data to populate another drop down list.
@@ -2512,7 +2512,7 @@ the data to populate another drop down list.
      <a name="Embedded+Objects"></a>
 <h2 class="boxed">Embedded Objects</h2>
 <div class="section">
-<p>It is possible to perform more detailed processing of an embedded Excel, Word or PowerPoint document, 
+<p>It is possible to perform more detailed processing of an embedded excel, Word or PowerPoint document,
          or to work with any other type of embedded object.</p>
 <p>
 <strong>HSSF:</strong>
@@ -2557,11 +2557,11 @@ the data to populate another drop down list.
   XSSFWorkbook workbook = new XSSFWorkbook("excel_with_embeded.xlsx");
   for (PackagePart pPart : workbook.getAllEmbeddedParts()) {
       String contentType = pPart.getContentType();
-      // Excel Workbook - either binary or OpenXML
+      // excel Workbook - either binary or OpenXML
       if (contentType.equals("application/vnd.ms-excel")) {
           HSSFWorkbook embeddedWorkbook = new HSSFWorkbook(pPart.getInputStream());
       }
-      // Excel Workbook - OpenXML file format
+      // excel Workbook - OpenXML file format
       else if (contentType.equals("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")) {
           OPCPackage docPackage = OPCPackage.open(pPart.getInputStream());
           XSSFWorkbook embeddedWorkbook = new XSSFWorkbook(docPackage);
@@ -2643,7 +2643,7 @@ the data to populate another drop down list.
 
     sheetCF.addConditionalFormatting(regions, cfRules);
        </pre>
-<p> See more examples on Excel conditional formatting in
+<p> See more examples on excel conditional formatting in
      <a href="http://svn.apache.org/repos/asf/poi/trunk/src/examples/src/org/apache/poi/ss/examples/ConditionalFormats.java">ConditionalFormats.java</a>     
       
 </p>
@@ -2654,7 +2654,7 @@ the data to populate another drop down list.
 <h2 class="boxed">Hiding and Un-Hiding Rows</h2>
 <div class="section">
 <p>
-     Using Excel, it is possible to hide a row on a worksheet by selecting that row (or rows), 
+     Using excel, it is possible to hide a row on a worksheet by selecting that row (or rows),
      right clicking once on the right hand mouse button and selecting 'Hide' from the pop-up menu that appears.
      </p>
 <p>
@@ -2671,7 +2671,7 @@ the data to populate another drop down list.
        If the file were saved away to disc now, then the first row on the first sheet would not be visible.
        </p>
 <p>
-      Using Excel, it is possible to unhide previously hidden rows by selecting the row above and the row below
+      Using excel, it is possible to unhide previously hidden rows by selecting the row above and the row below
       the one that is hidden and then pressing and holding down the Ctrl key, the Shift and the pressing 
       the number 9 before releasing them all.
       </p>
@@ -2754,7 +2754,7 @@ the data to populate another drop down list.
 <h2 class="boxed">Drawing Borders</h2>
 <div class="section">
 <p>
-      In Excel, you can apply a set of borders on an entire workbook region at the press of a button. The PropertyTemplate
+      In excel, you can apply a set of borders on an entire workbook region at the press of a button. The PropertyTemplate
       object simulates this with methods and constants defined to allow drawing top, bottom, left, right, horizontal,
       vertical, inside, outside, or all borders around a range of cells. Additional methods allow for applying colors
       to the borders. 

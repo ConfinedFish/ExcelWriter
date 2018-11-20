@@ -380,7 +380,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html" ti
 <tr id="i20" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/poi/hssf/usermodel/HSSFWorkbook.html#getBackupFlag--">getBackupFlag</a></span>()</code>
-<div class="block">determine whether the Excel GUI will backup the workbook when saving.</div>
+<div class="block">determine whether the excel GUI will backup the workbook when saving.</div>
 </td>
 </tr>
 <tr id="i21" class="rowColor">
@@ -431,7 +431,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html" ti
 <tr id="i29" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/poi/hssf/usermodel/HSSFWorkbook.html#getForceFormulaRecalculation--">getForceFormulaRecalculation</a></span>()</code>
-<div class="block">Whether Excel will be asked to recalculate all formulas when the  workbook is opened.</div>
+<div class="block">Whether excel will be asked to recalculate all formulas when the  workbook is opened.</div>
 </td>
 </tr>
 <tr id="i30" class="altColor">
@@ -457,7 +457,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html" ti
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/poi/hssf/usermodel/HSSFWorkbook.html#getNameIndex-java.lang.String-">getNameIndex</a></span>(java.lang.String&nbsp;name)</code>
 <div class="block">Gets the defined name index by name<br>
- <i>Note:</i> Excel defined names are case-insensitive and
+ <i>Note:</i> excel defined names are case-insensitive and
  this method performs a case-insensitive search.</div>
 </td>
 </tr>
@@ -514,7 +514,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html" ti
 <tr id="i44" class="altColor">
 <td class="colFirst"><code>java.util.Collection&lt;java.lang.Integer&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/poi/hssf/usermodel/HSSFWorkbook.html#getSelectedTabs--">getSelectedTabs</a></span>()</code>
-<div class="block">Gets the selected sheets (if more than one, Excel calls these a [Group]).</div>
+<div class="block">Gets the selected sheets (if more than one, excel calls these a [Group]).</div>
 </td>
 </tr>
 <tr id="i45" class="rowColor">
@@ -646,7 +646,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html" ti
 <tr id="i66" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/poi/hssf/usermodel/HSSFWorkbook.html#setBackupFlag-boolean-">setBackupFlag</a></span>(boolean&nbsp;backupValue)</code>
-<div class="block">determine whether the Excel GUI will backup the workbook when saving.</div>
+<div class="block">determine whether the excel GUI will backup the workbook when saving.</div>
 </td>
 </tr>
 <tr id="i67" class="rowColor">
@@ -1140,7 +1140,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html" ti
 <li class="blockList">
 <h4>getSelectedTabs</h4>
 <pre>public&nbsp;java.util.Collection&lt;java.lang.Integer&gt;&nbsp;getSelectedTabs()</pre>
-<div class="block">Gets the selected sheets (if more than one, Excel calls these a [Group]).</div>
+<div class="block">Gets the selected sheets (if more than one, excel calls these a [Group]).</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>indices of selected sheets</dd>
@@ -1154,9 +1154,9 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html" ti
 <li class="blockList">
 <h4>setActiveSheet</h4>
 <pre>public&nbsp;void&nbsp;setActiveSheet(int&nbsp;index)</pre>
-<div class="block">Convenience method to set the active sheet.  The active sheet is is the sheet
- which is currently displayed when the workbook is viewed in Excel.
- 'Selected' sheet(s) is a distinct concept.</div>
+<div class="block">Convenience method to set the active sheet. The active sheet is is the sheet
+    which is currently displayed when the workbook is viewed in excel.
+    'Selected' sheet(s) is a distinct concept.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html#setActiveSheet-int-">setActiveSheet</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html" title="interface in org.apache.poi.ss.usermodel">Workbook</a></code></dd>
@@ -1487,8 +1487,8 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html" ti
  Use this to create new sheets.
 
  <p>
-     Note that Excel allows sheet names up to 31 chars in length but other applications
-     (such as OpenOffice) allow more. Some versions of Excel crash with names longer than 31 chars,
+     Note that excel allows sheet names up to 31 chars in length but other applications
+     (such as OpenOffice) allow more. Some versions of excel crash with names longer than 31 chars,
      others - truncate such names to 31 character.
  </p>
  <p>
@@ -1502,7 +1502,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html" ti
      </code></pre>
  </p>
 
- Except the 31-character constraint, Excel applies some other rules:
+ Except the 31-character constraint, excel applies some other rules:
  <p>
  Sheet name MUST be unique in the workbook and MUST NOT contain the any of the following characters:
  <ul>
@@ -1630,7 +1630,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html" ti
 <div class="block">Removes sheet at the given index.<p>
 
  Care must be taken if the removed sheet is the currently active or only selected sheet in
- the workbook. There are a few situations when Excel must have a selection and/or active
+ the workbook. There are a few situations when excel must have a selection and/or active
  sheet. (For example when printing - see Bug 40414).<br>
 
  This method makes sure that if the removed sheet was active, another sheet will become
@@ -1652,7 +1652,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html" ti
 <li class="blockList">
 <h4>setBackupFlag</h4>
 <pre>public&nbsp;void&nbsp;setBackupFlag(boolean&nbsp;backupValue)</pre>
-<div class="block">determine whether the Excel GUI will backup the workbook when saving.</div>
+<div class="block">determine whether the excel GUI will backup the workbook when saving.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>backupValue</code> - true to indicate a backup will be performed.</dd>
@@ -1666,7 +1666,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html" ti
 <li class="blockList">
 <h4>getBackupFlag</h4>
 <pre>public&nbsp;boolean&nbsp;getBackupFlag()</pre>
-<div class="block">determine whether the Excel GUI will backup the workbook when saving.</div>
+<div class="block">determine whether the excel GUI will backup the workbook when saving.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the current setting for backups.</dd>
@@ -2182,7 +2182,7 @@ public&nbsp;<a href="../../../../../org/apache/poi/hssf/usermodel/HSSFFont.html"
 <pre>public&nbsp;int&nbsp;getNameIndex(java.lang.String&nbsp;name)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html#getNameIndex-java.lang.String-">Workbook</a></code></span></div>
 <div class="block">Gets the defined name index by name<br>
- <i>Note:</i> Excel defined names are case-insensitive and
+ <i>Note:</i> excel defined names are case-insensitive and
  this method performs a case-insensitive search.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -2501,13 +2501,13 @@ public&nbsp;<a href="../../../../../org/apache/poi/hssf/usermodel/HSSFFont.html"
 <pre>public&nbsp;void&nbsp;setForceFormulaRecalculation(boolean&nbsp;value)</pre>
 <div class="block">Whether the application shall perform a full recalculation when the workbook is opened.
  <p>
- Typically you want to force formula recalculation when you modify cell formulas or values
- of a workbook previously created by Excel. When set to true, this flag will tell Excel
- that it needs to recalculate all formulas in the workbook the next time the file is opened.
+     Typically you want to force formula recalculation when you modify cell formulas or values
+     of a workbook previously created by excel. When set to true, this flag will tell excel
+     that it needs to recalculate all formulas in the workbook the next time the file is opened.
  </p>
  <p>
  Note, that recalculation updates cached formula results and, thus, modifies the workbook.
- Depending on the version, Excel may prompt you with "Do you want to save the changes in <em>filename</em>?"
+ Depending on the version, excel may prompt you with "Do you want to save the changes in <em>filename</em>?"
  on close.
  </p></div>
 <dl>
@@ -2528,7 +2528,7 @@ public&nbsp;<a href="../../../../../org/apache/poi/hssf/usermodel/HSSFFont.html"
 <li class="blockList">
 <h4>getForceFormulaRecalculation</h4>
 <pre>public&nbsp;boolean&nbsp;getForceFormulaRecalculation()</pre>
-<div class="block">Whether Excel will be asked to recalculate all formulas when the  workbook is opened.</div>
+<div class="block">Whether excel will be asked to recalculate all formulas when the  workbook is opened.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html#getForceFormulaRecalculation--">getForceFormulaRecalculation</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html" title="interface in org.apache.poi.ss.usermodel">Workbook</a></code></dd>
@@ -2546,7 +2546,7 @@ public&nbsp;<a href="../../../../../org/apache/poi/hssf/usermodel/HSSFFont.html"
 <pre>public&nbsp;boolean&nbsp;changeExternalReference(java.lang.String&nbsp;oldUrl,
                                        java.lang.String&nbsp;newUrl)</pre>
 <div class="block">Changes an external referenced file to another file.
- A formula in Excel which references a cell in another file is saved in two parts:
+ A formula in excel which references a cell in another file is saved in two parts:
  The referenced file is stored in an reference table. the row/cell information is saved separate.
  This method invocation will only change the reference in the lookup-table itself.</div>
 <dl>

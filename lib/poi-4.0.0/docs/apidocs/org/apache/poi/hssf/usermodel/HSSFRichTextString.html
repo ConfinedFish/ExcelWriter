@@ -119,8 +119,8 @@ implements java.lang.Comparable&lt;<a href="../../../../../org/apache/poi/hssf/u
  arbitary parts of the string.
 
  <p>
- Note, that in certain cases creating too many HSSFRichTextString cells may cause Excel 2003 and lower to crash
- when changing the color of the cells and then saving the Excel file. Compare two snippets that produce equivalent output:
+ Note, that in certain cases creating too many HSSFRichTextString cells may cause excel 2003 and lower to crash
+ when changing the color of the cells and then saving the excel file. Compare two snippets that produce equivalent output:
 
  <p><blockquote><pre>
   HSSFCell hssfCell = row.createCell(idx);
@@ -147,7 +147,7 @@ implements java.lang.Comparable&lt;<a href="../../../../../org/apache/poi/hssf/u
   hssfCell.setCellValue( richString );
  </pre></blockquote><p>
 
- Excel always uses the latter approach: for a reach text containing N runs Excel saves the font of the first run in the cell's
+ excel always uses the latter approach: for a reach text containing N runs excel saves the font of the first run in the cell's
  style and subsequent N-1 runs override this font.
 
  <p> For more information regarding this behavior please consult Bugzilla 47543:

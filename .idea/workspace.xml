@@ -1,22 +1,1064 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ChangeListManager">
+    <list default="true" id="51cf47c6-e939-4a26-adb9-06f40ed04dda" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/poi_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AllCards.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deck.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/AllSets.json.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/json-simple-1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cards/Card.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cards/Deck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cards/Library.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cards/type/Color.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cards/type/Type.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/excel/ExcelMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/json/Jason.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/ooxml_lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/poi_4_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExcelWriter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ExcelWriter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/class-use/OldFileFormatException.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/class-use/OldFileFormatException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/class-use/UnsupportedFileFormatException.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/class-use/UnsupportedFileFormatException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/common/usermodel/class-use/Hyperlink.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/common/usermodel/class-use/Hyperlink.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ddf/EscherBSERecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ddf/EscherBSERecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ddf/EscherDggRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ddf/EscherDggRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/extractor/class-use/POIOLE2TextExtractor.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/extractor/class-use/POIOLE2TextExtractor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/extractor/class-use/POITextExtractor.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/extractor/class-use/POITextExtractor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hpsf/ClassIDPredefined.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hpsf/ClassIDPredefined.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hslf/record/ExOleObjAtom.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hslf/record/ExOleObjAtom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hslf/record/TextBytesAtom.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hslf/record/TextBytesAtom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hslf/usermodel/HSLFObjectShape.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hslf/usermodel/HSLFObjectShape.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hslf/usermodel/HSLFTextShape.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hslf/usermodel/HSLFTextShape.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/converter/ExcelToFoConverter.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/converter/ExcelToFoConverter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/converter/ExcelToHtmlConverter.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/converter/ExcelToHtmlConverter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/dev/BiffDrawingToXml.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/dev/BiffDrawingToXml.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/dev/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/dev/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/eventusermodel/FormatTrackingHSSFListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/eventusermodel/FormatTrackingHSSFListener.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/eventusermodel/MissingRecordAwareHSSFListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/eventusermodel/MissingRecordAwareHSSFListener.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/extractor/EventBasedExcelExtractor.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/extractor/EventBasedExcelExtractor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/extractor/ExcelExtractor.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/extractor/ExcelExtractor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/extractor/OldExcelExtractor.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/extractor/OldExcelExtractor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/extractor/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/extractor/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/model/InternalSheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/model/InternalSheet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/model/InternalWorkbook.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/model/InternalWorkbook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/BOFRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/BOFRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/BackupRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/BackupRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/BlankRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/BlankRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/BookBoolRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/BookBoolRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/BoolErrRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/BoolErrRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/BoundSheetRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/BoundSheetRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/CFHeader12Record.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/CFHeader12Record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/CFRule12Record.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/CFRule12Record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/CFRuleBase.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/CFRuleBase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/CFRuleRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/CFRuleRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/CalcCountRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/CalcCountRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/CalcModeRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/CalcModeRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/CodepageRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/CodepageRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/ColumnInfoRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/ColumnInfoRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/CountryRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/CountryRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/DBCellRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/DBCellRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/DSFRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/DSFRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/DateWindow1904Record.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/DateWindow1904Record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/DefaultColWidthRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/DefaultColWidthRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/DefaultRowHeightRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/DefaultRowHeightRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/DeltaRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/DeltaRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/DimensionsRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/DimensionsRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/EOFRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/EOFRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/ExtSSTRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/ExtSSTRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/ExtendedFormatRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/ExtendedFormatRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/FileSharingRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/FileSharingRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/FnGroupCountRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/FnGroupCountRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/FontRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/FontRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/FooterRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/FooterRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/FormatRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/FormatRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/FormulaRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/FormulaRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/GridsetRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/GridsetRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/GutsRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/GutsRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/HCenterRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/HCenterRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/HeaderFooterRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/HeaderFooterRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/HeaderRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/HeaderRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/HideObjRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/HideObjRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/HyperlinkRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/HyperlinkRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/IndexRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/IndexRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/InterfaceEndRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/InterfaceEndRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/InterfaceHdrRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/InterfaceHdrRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/IterationRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/IterationRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/LabelRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/LabelRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/LabelSSTRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/LabelSSTRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/MMSRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/MMSRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/MulBlankRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/MulBlankRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/MulRKRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/MulRKRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/NumberRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/NumberRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/ObjectProtectRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/ObjectProtectRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/PageBreakRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/PageBreakRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/PasswordRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/PasswordRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/PasswordRev4Record.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/PasswordRev4Record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/PrecisionRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/PrecisionRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/PrintGridlinesRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/PrintGridlinesRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/PrintHeadersRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/PrintHeadersRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/PrintSetupRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/PrintSetupRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/ProtectRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/ProtectRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/ProtectionRev4Record.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/ProtectionRev4Record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/RKRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/RKRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/RecalcIdRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/RecalcIdRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/RefModeRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/RefModeRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/RefreshAllRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/RefreshAllRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/RowRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/RowRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/SCLRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/SCLRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/SSTRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/SSTRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/SaveRecalcRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/SaveRecalcRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/ScenarioProtectRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/ScenarioProtectRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/SelectionRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/SelectionRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/StyleRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/StyleRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/TabIdRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/TabIdRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/UseSelFSRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/UseSelFSRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/VCenterRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/VCenterRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/WSBoolRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/WSBoolRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/WindowOneRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/WindowOneRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/WindowProtectRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/WindowProtectRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/WindowTwoRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/WindowTwoRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/WriteAccessRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/WriteAccessRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/WriteProtectRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/WriteProtectRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/aggregates/CFRecordsAggregate.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/aggregates/CFRecordsAggregate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/aggregates/PageSettingsBlock.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/aggregates/PageSettingsBlock.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/aggregates/WorksheetProtectionBlock.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/aggregates/WorksheetProtectionBlock.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/chart/ChartRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/chart/ChartRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/class-use/CFHeaderBase.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/class-use/CFHeaderBase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/class-use/CellValueRecordInterface.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/class-use/CellValueRecordInterface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/class-use/Record.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/class-use/Record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/class-use/RecordBase.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/class-use/RecordBase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/class-use/StandardRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/class-use/StandardRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/common/FeatFormulaErr2.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/common/FeatFormulaErr2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/common/FeatSmartTag.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/common/FeatSmartTag.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/common/FutureRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/common/FutureRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/common/UnicodeString.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/common/UnicodeString.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/common/class-use/FutureRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/common/class-use/FutureRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/common/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/common/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/common/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/common/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/record/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/DVConstraint.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/DVConstraint.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/EscherGraphics.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/EscherGraphics.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/EscherGraphics2d.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/EscherGraphics2d.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFCell.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFCell.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFCellStyle.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFCellStyle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFClientAnchor.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFClientAnchor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFConditionalFormatting.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFConditionalFormatting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFConditionalFormattingRule.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFConditionalFormattingRule.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFDataFormat.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFDataFormat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFDataFormatter.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFDataFormatter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFDateUtil.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFDateUtil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFEvaluationWorkbook.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFEvaluationWorkbook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFHyperlink.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFHyperlink.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFName.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFName.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFOptimiser.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFOptimiser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFPatriarch.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFPatriarch.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFRichTextString.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFRichTextString.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFRow.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFRow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFShape.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFShape.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFShapeFactory.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFShapeFactory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFSheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFSheet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFSheetConditionalFormatting.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFSheetConditionalFormatting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFWorkbook.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/HSSFWorkbook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/class-use/HSSFConditionalFormattingRule.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/class-use/HSSFConditionalFormattingRule.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/class-use/HSSFWorkbook.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/class-use/HSSFWorkbook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/usermodel/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/util/CellReference.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/util/CellReference.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/util/HSSFColor.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/hssf/util/HSSFColor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ooxml/extractor/class-use/POIXMLTextExtractor.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ooxml/extractor/class-use/POIXMLTextExtractor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/openxml4j/exceptions/OLE2NotOfficeXmlFileException.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/openxml4j/exceptions/OLE2NotOfficeXmlFileException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/openxml4j/exceptions/class-use/NotOfficeXmlFileException.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/openxml4j/exceptions/class-use/NotOfficeXmlFileException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/openxml4j/exceptions/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/openxml4j/exceptions/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/poifs/filesystem/FileMagic.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/poifs/filesystem/FileMagic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/sl/draw/binding/STShapeType.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/sl/draw/binding/STShapeType.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/sl/usermodel/ObjectShape.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/sl/usermodel/ObjectShape.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/SpreadsheetVersion.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/SpreadsheetVersion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/class-use/SpreadsheetVersion.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/class-use/SpreadsheetVersion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/extractor/EmbeddedExtractor.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/extractor/EmbeddedExtractor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/extractor/ExcelExtractor.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/extractor/ExcelExtractor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/extractor/class-use/ExcelExtractor.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/extractor/class-use/ExcelExtractor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/extractor/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/extractor/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/extractor/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/extractor/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/format/CellFormat.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/format/CellFormat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/format/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/format/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/format/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/format/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/ConditionalFormattingEvaluator.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/ConditionalFormattingEvaluator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/DataValidationEvaluator.OperatorEnum.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/DataValidationEvaluator.OperatorEnum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/DataValidationEvaluator.ValidationEnum.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/DataValidationEvaluator.ValidationEnum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/DataValidationEvaluator.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/DataValidationEvaluator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/EvaluationConditionalFormatRule.OperatorEnum.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/EvaluationConditionalFormatRule.OperatorEnum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/EvaluationConditionalFormatRule.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/EvaluationConditionalFormatRule.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/FormulaParsingWorkbook.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/FormulaParsingWorkbook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/FormulaType.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/FormulaType.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/class-use/ConditionalFormattingEvaluator.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/class-use/ConditionalFormattingEvaluator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/class-use/EvaluationConditionalFormatRule.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/class-use/EvaluationConditionalFormatRule.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/class-use/FormulaType.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/class-use/FormulaType.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/ErrorEval.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/ErrorEval.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/EvaluationException.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/EvaluationException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/FunctionEval.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/FunctionEval.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/OperandResolver.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/OperandResolver.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/PercentEval.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/PercentEval.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/RelationalOperationEval.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/RelationalOperationEval.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/TwoOperandNumericOperation.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/TwoOperandNumericOperation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/class-use/AreaEval.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/class-use/AreaEval.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/class-use/ErrorEval.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/class-use/ErrorEval.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/class-use/EvaluationException.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/class-use/EvaluationException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/class-use/ValueEval.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/class-use/ValueEval.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/eval/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/function/FunctionMetadata.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/function/FunctionMetadata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/function/FunctionMetadataRegistry.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/function/FunctionMetadataRegistry.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/function/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/function/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/function/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/function/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Address.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Address.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Areas.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Areas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/ArrayFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/ArrayFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Bin2Dec.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Bin2Dec.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/BooleanFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/BooleanFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/CalendarFieldFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/CalendarFieldFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Choose.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Choose.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Code.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Code.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Column.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Column.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Columns.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Columns.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Complex.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Complex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Count.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Count.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Counta.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Counta.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Countif.StringMatcher.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Countif.StringMatcher.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Countifs.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Countifs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/DStarRunner.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/DStarRunner.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/DateFunc.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/DateFunc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Days360.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Days360.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Dec2Bin.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Dec2Bin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Dec2Hex.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Dec2Hex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Delta.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Delta.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/EDate.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/EDate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/EOMonth.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/EOMonth.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Errortype.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Errortype.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/FactDouble.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/FactDouble.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Finance.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Finance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/FinanceFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/FinanceFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/FinanceLib.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/FinanceLib.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Fixed.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Fixed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Fixed0ArgFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Fixed0ArgFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Fixed1ArgFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Fixed1ArgFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Fixed2ArgFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Fixed2ArgFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Fixed3ArgFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Fixed3ArgFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Fixed4ArgFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Fixed4ArgFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/FreeRefFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/FreeRefFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Function.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Function.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Hex2Dec.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Hex2Dec.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Hlookup.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Hlookup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Hyperlink.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Hyperlink.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/IfFunc.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/IfFunc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/ImReal.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/ImReal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Imaginary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Imaginary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Indirect.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Indirect.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Intercept.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Intercept.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Irr.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Irr.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/LogicalFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/LogicalFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Lookup.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Lookup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Match.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Match.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Mirr.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Mirr.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Mode.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Mode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/MultiOperandNumericFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/MultiOperandNumericFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Na.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Na.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/NotImplementedFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/NotImplementedFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Now.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Now.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Npv.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Npv.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/NumericFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/NumericFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Oct2Dec.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Oct2Dec.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Offset.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Offset.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Quotient.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Quotient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Rank.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Rank.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Rate.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Rate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Replace.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Replace.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Rept.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Rept.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Roman.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Roman.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/RowFunc.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/RowFunc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Rows.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Rows.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Slope.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Slope.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Substitute.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Substitute.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Subtotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Subtotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Sumif.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Sumif.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Sumifs.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Sumifs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Sumproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Sumproduct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Sumx2my2.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Sumx2my2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Sumx2py2.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Sumx2py2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Sumxmy2.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Sumxmy2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/T.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/T.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/TextFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/TextFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/TimeFunc.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/TimeFunc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Today.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Today.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Value.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Value.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Vlookup.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/Vlookup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/WeekNum.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/WeekNum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/WeekdayFunc.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/WeekdayFunc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/ArrayMode.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/ArrayMode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Fixed0ArgFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Fixed0ArgFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Fixed1ArgFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Fixed1ArgFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Fixed2ArgFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Fixed2ArgFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Fixed3ArgFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Fixed3ArgFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Fixed4ArgFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Fixed4ArgFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/FreeRefFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/FreeRefFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Function.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Function.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Function0Arg.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Function0Arg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Function1Arg.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Function1Arg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Function2Arg.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Function2Arg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Function3Arg.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Function3Arg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Function4Arg.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/Function4Arg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/XYNumericFunction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/class-use/XYNumericFunction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/functions/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/ptg/AbstractFunctionPtg.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/ptg/AbstractFunctionPtg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/ptg/IntPtg.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/ptg/IntPtg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/ptg/LessThanPtg.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/ptg/LessThanPtg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/ptg/class-use/OperationPtg.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/ptg/class-use/OperationPtg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/ptg/class-use/Ptg.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/ptg/class-use/Ptg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/ptg/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/ptg/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/ptg/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/formula/ptg/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/Cell.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/Cell.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/CellStyle.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/CellStyle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/ClientAnchor.AnchorType.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/ClientAnchor.AnchorType.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/ConditionalFormatting.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/ConditionalFormatting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/ConditionalFormattingRule.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/ConditionalFormattingRule.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/DataFormatter.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/DataFormatter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/DateUtil.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/DateUtil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/ExcelGeneralNumberFormat.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/ExcelGeneralNumberFormat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/ExcelNumberFormat.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/ExcelNumberFormat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/ExcelStyleDateFormatter.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/ExcelStyleDateFormatter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/Font.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/Font.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/FractionFormat.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/FractionFormat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/Hyperlink.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/Hyperlink.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/Name.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/Name.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/Row.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/Row.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/Sheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/Sheet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/SheetConditionalFormatting.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/SheetConditionalFormatting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/SheetVisibility.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/SheetVisibility.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/Table.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/Table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/Workbook.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/Workbook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/class-use/Cell.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/class-use/Cell.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/class-use/DateUtil.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/class-use/DateUtil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/usermodel/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/util/CellRangeAddressBase.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/util/CellRangeAddressBase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/util/CellRangeAddressList.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/util/CellRangeAddressList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/util/CellReference.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/util/CellReference.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/util/CellUtil.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/util/CellUtil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/util/DateFormatConverter.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/util/DateFormatConverter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/util/NumberComparer.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/util/NumberComparer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/util/NumberToTextConverter.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/util/NumberToTextConverter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/util/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/util/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/util/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/ss/util/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/util/LocaleUtil.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/util/LocaleUtil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/util/StringUtil.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/util/StringUtil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/util/Units.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/util/Units.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/util/class-use/Beta.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/util/class-use/Beta.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xslf/usermodel/XSLFObjectShape.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xslf/usermodel/XSLFObjectShape.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/eventusermodel/XSSFBReader.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/eventusermodel/XSSFBReader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/extractor/XSSFBEventBasedExcelExtractor.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/extractor/XSSFBEventBasedExcelExtractor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/extractor/XSSFEventBasedExcelExtractor.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/extractor/XSSFEventBasedExcelExtractor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/extractor/XSSFExcelExtractor.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/extractor/XSSFExcelExtractor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/extractor/class-use/XSSFEventBasedExcelExtractor.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/extractor/class-use/XSSFEventBasedExcelExtractor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/extractor/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/extractor/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/extractor/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/extractor/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/model/Comments.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/model/Comments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/model/ExternalLinksTable.ExternalName.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/model/ExternalLinksTable.ExternalName.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/model/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/model/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/model/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/model/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/streaming/SXSSFCell.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/streaming/SXSSFCell.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/streaming/SXSSFSheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/streaming/SXSSFSheet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/streaming/SXSSFWorkbook.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/streaming/SXSSFWorkbook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/BaseXSSFEvaluationWorkbook.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/BaseXSSFEvaluationWorkbook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFCell.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFCell.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFCellStyle.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFCellStyle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFConditionalFormatting.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFConditionalFormatting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFConditionalFormattingRule.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFConditionalFormattingRule.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFDataFormat.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFDataFormat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFDataValidationConstraint.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFDataValidationConstraint.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFFont.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFFont.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFName.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFName.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFSheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFSheet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFSheetConditionalFormatting.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFSheetConditionalFormatting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFTable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFVMLDrawing.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFVMLDrawing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFWorkbook.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/XSSFWorkbook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/extensions/XSSFCellAlignment.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/org/apache/poi/xssf/usermodel/extensions/XSSFCellAlignment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/apidocs/overview-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/casestudies.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/casestudies.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/changes.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/changes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/diagram/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/diagram/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/document/docoverview.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/document/docoverview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/document/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/document/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/document/projectplan.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/document/projectplan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/document/quick-guide-xwpf.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/document/quick-guide-xwpf.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/document/quick-guide.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/document/quick-guide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/hmef/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/hmef/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/hpbf/file-format.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/hpbf/file-format.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/hpbf/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/hpbf/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/hpsf/how-to.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/hpsf/how-to.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/hpsf/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/hpsf/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/hpsf/internals.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/hpsf/internals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/hpsf/thumbnails.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/hpsf/thumbnails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/hpsf/todo.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/hpsf/todo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/hsmf/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/hsmf/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/logging.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/logging.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/oxml4j/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/oxml4j/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/poi-jvm-languages.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/poi-jvm-languages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/poi-ruby.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/poi-ruby.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/poifs/design.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/poifs/design.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/poifs/embeded.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/poifs/embeded.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/poifs/fileformat.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/poifs/fileformat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/poifs/how-to.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/poifs/how-to.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/poifs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/poifs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/poifs/usecases.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/poifs/usecases.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/slideshow/how-to-shapes.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/slideshow/how-to-shapes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/slideshow/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/slideshow/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/slideshow/ppt-file-format.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/slideshow/ppt-file-format.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/slideshow/quick-guide.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/slideshow/quick-guide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/slideshow/xslf-cookbook.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/slideshow/xslf-cookbook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/chart.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/chart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/converting.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/converting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/diagram1.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/diagram1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/diagrams.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/diagrams.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/eval-devguide.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/eval-devguide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/eval.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/eval.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/examples.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/examples.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/excelant.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/excelant.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/formula.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/formula.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/hacking-hssf.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/hacking-hssf.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/how-to.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/how-to.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/limitations.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/limitations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/quick-guide.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/quick-guide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/record-generator.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/record-generator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/use-case.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/use-case.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/user-defined-functions.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/components/spreadsheet/user-defined-functions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/guidelines.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/guidelines.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/historyandfuture.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/historyandfuture.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/plan/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/plan/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/plan/vision10.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/plan/vision10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/plan/vision20.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/plan/vision20.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/references/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/references/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/references/logocontest.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/references/logocontest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/resolutions/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/resolutions/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/resolutions/res001.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/resolutions/res001.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/subversion.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/subversion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/who.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/devel/who.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/download.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/download.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/encryption.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/encryption.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/help/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/help/faq.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/help/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/help/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/legal.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/legal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/linkmap.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/linkmap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/related-projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/related-projects.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/docs/text-extraction.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/poi-4.0.0/docs/text-extraction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/poi-4.0.0/dom4j-1.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Excel Writer/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Excel Writer/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1356239263">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="21" />
+          <entry key="java" value="19" />
+          <entry key="json" value="1" />
+          <entry key="txt" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="21" />
+          <entry key="JAVA" value="19" />
+          <entry key="JSON" value="1" />
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="6780" />
+          <entry key="txt" value="98" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="6780" />
+          <entry key="PLAIN_TEXT" value="98" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/json/Jason.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="45" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/deck.txt" />
+        <option value="$PROJECT_DIR$/src/Card.java" />
+        <option value="$PROJECT_DIR$/src/Application.java" />
+        <option value="$PROJECT_DIR$/src/Deck.java" />
+        <option value="$PROJECT_DIR$/src/excel/ExcelMain.java" />
+        <option value="$PROJECT_DIR$/src/cards/Type.java" />
+        <option value="$PROJECT_DIR$/src/cards/type/CreatureType.java" />
+        <option value="$PROJECT_DIR$/src/cards/type/SubType.java" />
+        <option value="$PROJECT_DIR$/src/cards/type/Color.java" />
+        <option value="$PROJECT_DIR$/src/cards/Card.java" />
+        <option value="$PROJECT_DIR$/src/cards/type/Type.java" />
+        <option value="$PROJECT_DIR$/src/json/ReadJason.java" />
+        <option value="$PROJECT_DIR$/src/json/Jaso.java" />
+        <option value="$PROJECT_DIR$/src/cards/Library.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/json/Jason.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-254" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ExcelWriter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ExcelWriter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExcelWriter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ExcelWriter" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExcelWriter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ExcelWriter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExcelWriter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ExcelWriter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cards" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExcelWriter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ExcelWriter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="json" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Alex/Desktop/git/ExcelWriter/src/Card.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542674054393" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/gson-2.8.0.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\Desktop\git\ExcelWriter\src" />
+      <recent name="C:\Users\Alex\Desktop\git\ExcelWriter" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\Desktop\git\ExcelWriter\lib" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="ExcelWriter" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="51cf47c6-e939-4a26-adb9-06f40ed04dda" name="Default Changelist" comment="" />
+      <created>1542504602787</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542504602787</updated>
+      <workItem from="1542504603934" duration="1548000" />
+      <workItem from="1542532697651" duration="16522000" />
+      <workItem from="1542669772452" duration="4315000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="22385000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.329718" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/json/Jason.java</url>
+          <line>15</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Set.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/Iterable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="47" column="16" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deck.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application.java" />
+    <entry file="file://$PROJECT_DIR$/src/JSON-java-master/JSONObject.java" />
+    <entry file="file://$PROJECT_DIR$/lib/JSON-java-master/JSONException.java" />
+    <entry file="file://$PROJECT_DIR$/src/cards/type/SubType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="806">
+          <caret line="236" column="10" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="236" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AllCards.json">
+      <provider selected="true" editor-type-id="LargeFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cards/type/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cards/type/Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="243" column="10" selection-start-line="243" selection-start-column="10" selection-end-line="243" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cards/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#930#931#0" expanded="true" />
+            <element signature="e#953#954#0" expanded="true" />
+            <element signature="e#1046#1047#0" expanded="true" />
+            <element signature="e#1075#1076#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/excel/ExcelMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cards/Deck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cards/Library.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#261#262#0" expanded="true" />
+            <element signature="e#286#287#0" expanded="true" />
+            <element signature="e#311#312#0" expanded="true" />
+            <element signature="e#336#337#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.0.jar!/com/google/gson/internal/ConstructorConstructor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.0.jar!/com/google/gson/internal/bind/CollectionTypeAdapterFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.0.jar!/com/google/gson/internal/bind/MapTypeAdapterFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.0.jar!/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.0.jar!/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.0.jar!/com/google/gson/internal/JsonReaderInternalAccess.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.0.jar!/com/google/gson/stream/JsonReader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="171" selection-start-line="171" selection-end-line="171" />
+          <folding>
+            <element signature="e#2752#2753#0" expanded="true" />
+            <element signature="e#2790#2791#0" expanded="true" />
+            <element signature="e#2830#2831#0" expanded="true" />
+            <element signature="e#2865#2866#0" expanded="true" />
+            <element signature="e#37349#38255#0" expanded="true" />
+            <element signature="e#38254#38255#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.0.jar!/com/google/gson/internal/$Gson$Preconditions.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.0.jar!/com/google/gson/Gson.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="301" selection-start-line="301" selection-end-line="301" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.0.jar!/com/google/gson/internal/Excluder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.0.jar!/com/google/gson/internal/bind/ObjectTypeAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.0.jar!/com/google/gson/internal/bind/TypeAdapters.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="148" selection-start-line="148" selection-end-line="148" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.0.jar!/com/google/gson/TypeAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.0.jar!/com/google/gson/reflect/TypeToken.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="e#1472#1473#0" expanded="true" />
+            <element signature="e#6618#6619#0" expanded="true" />
+            <element signature="e#6654#6655#0" expanded="true" />
+            <element signature="e#6931#6932#0" expanded="true" />
+            <element signature="e#6973#6974#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.0.jar!/com/google/gson/internal/$Gson$Types.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/json/Jason.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="45" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>ExcelWriter</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>9</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>poi-4.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

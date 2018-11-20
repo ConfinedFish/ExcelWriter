@@ -394,7 +394,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html" ti
 <tr id="i23" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/poi/xssf/streaming/SXSSFWorkbook.html#getForceFormulaRecalculation--">getForceFormulaRecalculation</a></span>()</code>
-<div class="block">Whether Excel will be asked to recalculate all formulas when the  workbook is opened.</div>
+<div class="block">Whether excel will be asked to recalculate all formulas when the  workbook is opened.</div>
 </td>
 </tr>
 <tr id="i24" class="altColor">
@@ -803,7 +803,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html" ti
    </li>
    <li>
     Override existing cells and rows. The API silently allows that but
-    the output file is invalid and Excel cannot read it.
+    the output file is invalid and excel cannot read it.
    </li>
  </ul></div>
 <dl>
@@ -1056,9 +1056,9 @@ protected&nbsp;<a href="../../../../../org/apache/poi/xssf/model/SharedStringsTa
 <li class="blockList">
 <h4>getActiveSheetIndex</h4>
 <pre>public&nbsp;int&nbsp;getActiveSheetIndex()</pre>
-<div class="block">Convenience method to get the active sheet.  The active sheet is is the sheet
- which is currently displayed when the workbook is viewed in Excel.
- 'Selected' sheet(s) is a distinct concept.</div>
+<div class="block">Convenience method to get the active sheet. The active sheet is is the sheet
+    which is currently displayed when the workbook is viewed in excel.
+    'Selected' sheet(s) is a distinct concept.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html#getActiveSheetIndex--">getActiveSheetIndex</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html" title="interface in org.apache.poi.ss.usermodel">Workbook</a></code></dd>
@@ -1074,9 +1074,9 @@ protected&nbsp;<a href="../../../../../org/apache/poi/xssf/model/SharedStringsTa
 <li class="blockList">
 <h4>setActiveSheet</h4>
 <pre>public&nbsp;void&nbsp;setActiveSheet(int&nbsp;sheetIndex)</pre>
-<div class="block">Convenience method to set the active sheet.  The active sheet is is the sheet
- which is currently displayed when the workbook is viewed in Excel.
- 'Selected' sheet(s) is a distinct concept.</div>
+<div class="block">Convenience method to set the active sheet. The active sheet is is the sheet
+    which is currently displayed when the workbook is viewed in excel.
+    'Selected' sheet(s) is a distinct concept.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html#setActiveSheet-int-">setActiveSheet</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html" title="interface in org.apache.poi.ss.usermodel">Workbook</a></code></dd>
@@ -2113,7 +2113,7 @@ public&nbsp;int&nbsp;getNameIndex(java.lang.String&nbsp;name)</pre>
  Use <a href="../../../../../org/apache/poi/xssf/streaming/SXSSFWorkbook.html#getName-java.lang.String-"><code>getName(String)</code></a> instead.</span></div>
 <div class="block">Gets the defined name index by name
 
- <i>Note:</i> Excel defined names are case-insensitive and
+ <i>Note:</i> excel defined names are case-insensitive and
  this method performs a case-insensitive search.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -2216,9 +2216,9 @@ public&nbsp;int&nbsp;linkExternalWorkbook(java.lang.String&nbsp;name,
 <pre>public&nbsp;void&nbsp;setForceFormulaRecalculation(boolean&nbsp;value)</pre>
 <div class="block">Whether the application shall perform a full recalculation when the workbook is opened.
  <p>
- Typically you want to force formula recalculation when you modify cell formulas or values
- of a workbook previously created by Excel. When set to 0, this flag will tell Excel
- that it needs to recalculate all formulas in the workbook the next time the file is opened.
+     Typically you want to force formula recalculation when you modify cell formulas or values
+     of a workbook previously created by excel. When set to 0, this flag will tell excel
+     that it needs to recalculate all formulas in the workbook the next time the file is opened.
  </p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -2238,7 +2238,7 @@ public&nbsp;int&nbsp;linkExternalWorkbook(java.lang.String&nbsp;name,
 <li class="blockList">
 <h4>getForceFormulaRecalculation</h4>
 <pre>public&nbsp;boolean&nbsp;getForceFormulaRecalculation()</pre>
-<div class="block">Whether Excel will be asked to recalculate all formulas when the  workbook is opened.</div>
+<div class="block">Whether excel will be asked to recalculate all formulas when the  workbook is opened.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html#getForceFormulaRecalculation--">getForceFormulaRecalculation</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html" title="interface in org.apache.poi.ss.usermodel">Workbook</a></code></dd>

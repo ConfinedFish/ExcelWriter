@@ -202,14 +202,14 @@ private double sumValues(ValueEval[] values) throws EvaluationException {
   - Type management (typecasting etc) is simpler because error conditions have been separated from
  intermediate calculation values.<br>
   - Fewer local variables are required. Local variables can have stronger types.<br>
-  - It is easier to mimic common Excel error handling behaviour (exit upon encountering first 
+  - It is easier to mimic common excel error handling behaviour (exit upon encountering first
   error), because exceptions conveniently propagate up the call stack regardless of execution 
   points or the number of levels of nested calls.<p>
   
  <b>Note</b> - Only standard evaluation errors are represented by <tt>EvaluationException</tt> (
- i.e. conditions expected to be encountered when evaluating arbitrary Excel formulas). Conditions
- that could never occur in an Excel spreadsheet should result in runtime exceptions. Care should
- be taken to not translate any POI internal error into an Excel evaluation error code.</div>
+ i.e. conditions expected to be encountered when evaluating arbitrary excel formulas). Conditions
+ that could never occur in an excel spreadsheet should result in runtime exceptions. Care should
+ be taken to not translate any POI internal error into an excel evaluation error code.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
 <dd>Josh Micich</dd>

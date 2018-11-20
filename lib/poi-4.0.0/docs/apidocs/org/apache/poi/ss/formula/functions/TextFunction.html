@@ -147,7 +147,7 @@ implements <a href="../../../../../../org/apache/poi/ss/formula/functions/Functi
 <td class="colFirst"><code>static <a href="../../../../../../org/apache/poi/ss/formula/functions/Function.html" title="interface in org.apache.poi.ss.formula.functions">Function</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../org/apache/poi/ss/formula/functions/TextFunction.html#CLEAN">CLEAN</a></span></code>
 <div class="block">An implementation of the CLEAN function:
- In Excel, the Clean function removes all non-printable characters from a string.</div>
+ In excel, the Clean function removes all non-printable characters from a string.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -390,7 +390,7 @@ implements <a href="../../../../../../org/apache/poi/ss/formula/functions/Functi
 <h4>CLEAN</h4>
 <pre>public static final&nbsp;<a href="../../../../../../org/apache/poi/ss/formula/functions/Function.html" title="interface in org.apache.poi.ss.formula.functions">Function</a> CLEAN</pre>
 <div class="block">An implementation of the CLEAN function:
- In Excel, the Clean function removes all non-printable characters from a string.
+ In excel, the Clean function removes all non-printable characters from a string.
 
  Author: Aniket Banerjee(banerjee@google.com)</div>
 </li>
@@ -457,7 +457,7 @@ implements <a href="../../../../../../org/apache/poi/ss/formula/functions/Functi
 <pre>public static final&nbsp;<a href="../../../../../../org/apache/poi/ss/formula/functions/Function.html" title="interface in org.apache.poi.ss.formula.functions">Function</a> TEXT</pre>
 <div class="block">An implementation of the TEXT function<br>
  TEXT returns a number value formatted with the given number formatting string. 
- This function is not a complete implementation of the Excel function, but
+ This function is not a complete implementation of the excel function, but
   handles most of the common cases. All work is passed down to 
   <a href="../../../../../../org/apache/poi/ss/usermodel/DataFormatter.html" title="class in org.apache.poi.ss.usermodel"><code>DataFormatter</code></a> to be done, as this works much the same as the
   display focused work that that does. 
@@ -592,7 +592,7 @@ implements <a href="../../../../../../org/apache/poi/ss/formula/functions/Functi
 <dd><code>srcCellCol</code> - column index of the cell containing the formula under evaluation</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The evaluated result, possibly an <a href="../../../../../../org/apache/poi/ss/formula/eval/ErrorEval.html" title="class in org.apache.poi.ss.formula.eval"><code>ErrorEval</code></a>, never <code>null</code>.
- <b>Note</b> - Excel uses the error code <i>#NUM!</i> instead of IEEE <i>NaN</i>, so when
+ <b>Note</b> - excel uses the error code <i>#NUM!</i> instead of IEEE <i>NaN</i>, so when
  numeric functions evaluate to <code>Double.NaN</code> be sure to translate the result to <a href="../../../../../../org/apache/poi/ss/formula/eval/ErrorEval.html#NUM_ERROR"><code>ErrorEval.NUM_ERROR</code></a>.</dd>
 </dl>
 </li>

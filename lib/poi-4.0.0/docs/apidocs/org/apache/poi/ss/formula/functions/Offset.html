@@ -115,7 +115,7 @@ var activeTableTab = "activeTableTab";
 <pre>public final class <span class="typeNameLabel">Offset</span>
 extends java.lang.Object
 implements <a href="../../../../../../org/apache/poi/ss/formula/functions/Function.html" title="interface in org.apache.poi.ss.formula.functions">Function</a></pre>
-<div class="block">Implementation for Excel function OFFSET()<p>
+<div class="block">Implementation for excel function OFFSET()<p>
 
  OFFSET returns an area reference that is a specified number of rows and columns from a
  reference cell or area.<p>
@@ -230,7 +230,7 @@ implements <a href="../../../../../../org/apache/poi/ss/formula/functions/Functi
 <dd><code>srcCellCol</code> - column index of the cell containing the formula under evaluation</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The evaluated result, possibly an <a href="../../../../../../org/apache/poi/ss/formula/eval/ErrorEval.html" title="class in org.apache.poi.ss.formula.eval"><code>ErrorEval</code></a>, never <code>null</code>.
- <b>Note</b> - Excel uses the error code <i>#NUM!</i> instead of IEEE <i>NaN</i>, so when
+ <b>Note</b> - excel uses the error code <i>#NUM!</i> instead of IEEE <i>NaN</i>, so when
  numeric functions evaluate to <code>Double.NaN</code> be sure to translate the result to <a href="../../../../../../org/apache/poi/ss/formula/eval/ErrorEval.html#NUM_ERROR"><code>ErrorEval.NUM_ERROR</code></a>.</dd>
 </dl>
 </li>

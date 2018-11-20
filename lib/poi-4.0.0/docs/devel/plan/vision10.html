@@ -39,7 +39,7 @@
     |start Project Logo
     +-->
 <div class="projectlogo">
-<a href="https://poi.apache.org"><img class="logoImage" alt="Apache POI" src="../../images/project-header.png" title="Apache POI is well-known in the Java field as a library for reading and writing Microsoft Office file formats, such as Excel, PowerPoint, Word, Visio, Publisher and Outlook. It supports both the older (OLE2) and new (OOXML - Office Open XML) formats."></a>
+<a href="https://poi.apache.org"><img class="logoImage" alt="Apache POI" src="../../images/project-header.png" title="Apache POI is well-known in the Java field as a library for reading and writing Microsoft Office file formats, such as excel, PowerPoint, Word, Visio, Publisher and Outlook. It supports both the older (OLE2) and new (OOXML - Office Open XML) formats."></a>
 </div>
 <!--+
     |end Project Logo
@@ -200,7 +200,7 @@ document.write("Last Published: " + document.lastModified);
 <p>
 		Lastly, the scope of the project expanded dramatically near the end 
 		of the 1.0 cycle.  Our vision at the time was to focus merely on the
-		Excel port (having no idea how the project would grow or be received)
+		excel port (having no idea how the project would grow or be received)
 		and provide the OLE 2 Compound Document port for others to port later
 		formats.  We now plan to spearhead these ports under the umbrella of 
 		the POI project.  So, you've been warned.  Read on, but just realize
@@ -208,7 +208,7 @@ document.write("Last Published: " + document.lastModified);
 	</p>
 <p>
 		If I recall major holes were: a complete understanding of the format 
-		of OLE 2 Compound Document format, Excel file format, and exactly how
+		of OLE 2 Compound Document format, excel file format, and exactly how
 		Cocoon 2 Serializers worked.  (that just about covers the whole range
 		huh?)
 	</p>
@@ -226,9 +226,9 @@ document.write("Last Published: " + document.lastModified);
 		features of the HSSF Serializer for Cocoon 2 and related libraries.
 		The HSSF Serializer is a java class supporting the Serializer
 		interface from the Cocoon 2 project and outputting in a compatible
-		format of that used by the spreadsheet program Microsoft Excel '97.
+		format of that used by the spreadsheet program Microsoft excel '97.
 		The HSSF Serializer will be responsible for converting XML
-		spreadsheet-like documents into Excel-compatible XLS spreadsheets.
+		spreadsheet-like documents into excel-compatible XLS spreadsheets.
 	</p>
 <a name="1.2+Project+Overview"></a>
 <h3 class="boxed">1.2 Project Overview</h3>
@@ -236,7 +236,7 @@ document.write("Last Published: " + document.lastModified);
 		Many web apps today hit a brick wall
 		when it comes to the user request that they be able to easily
 		manipulate their reports and data extracts in the popular Microsoft
-		Excel spreadsheet format. This often causes inferior technologies to be
+		excel spreadsheet format. This often causes inferior technologies to be
 		chosen for the project simply because they easily support this
 		format. This project seeks to extend existing XML, Java and Apache
 		Cocoon 2 project technologies by: 	  
@@ -253,13 +253,13 @@ document.write("Last Published: " + document.lastModified);
 <li>
 				providing a library (HSSF) for
 				manipulating spreadsheet data and outputting it in a compatible
-				format to Microsoft Excel XLS format;
+				format to Microsoft excel XLS format;
 			</li>
 			
 <li>
 				and providing a Cocoon 2
 				Serializer (HSSFSerializer) for serializing XML documents as
-				Excel-compatible spreadsheets.
+				excel-compatible spreadsheets.
 			</li>
 		
 </ul>
@@ -289,7 +289,7 @@ document.write("Last Published: " + document.lastModified);
 <li>
 		Our intended audience for the HSSF
 		library portion of this project is ourselves as we are developing
-		the Serializer and anyone who needs to write to Excel spreadsheets
+		the Serializer and anyone who needs to write to excel spreadsheets
 		in a non-XML Java environment or who has specific needs not
 		addressed by the Serializer.
 		</li>
@@ -322,19 +322,19 @@ document.write("Last Published: " + document.lastModified);
 	</p>
 <p>
 		There is currently no good way to write
-		to Microsoft Excel documents from Java or from a non-Microsoft
+		to Microsoft excel documents from Java or from a non-Microsoft
 		Windows based platform for that matter. Developers need an easy to
 		use library that supports a reasonable feature set and allows
 		seperation of data from formatting/stylistic concerns.
 	</p>
 <p>
-		There is currently no good way to
-		transform XML data to Microsoft Excel. Apache's Cocoon 2 project
-		supplies a complete framework for XML, but nothing for outputting in
-		Excel's XLS format. Developers and power users alike need a simple
-		method to output XML documents to Excel through server-side
-		processing.
-	</p>
+    There is currently no good way to
+    transform XML data to Microsoft excel. Apache's Cocoon 2 project
+    supplies a complete framework for XML, but nothing for outputting in
+    excel's XLS format. Developers and power users alike need a simple
+    method to output XML documents to excel through server-side
+    processing.
+</p>
 </div>
  
 <a name="3.+Project+Overview"></a>
@@ -354,11 +354,11 @@ document.write("Last Published: " + document.lastModified);
 <p>
 		For developers on a Java and/or XML
 		environment this project will provide all the tools necessary for
-		outputting XML data in the Microsoft Excel format. This project seeks
+		outputting XML data in the Microsoft excel format. This project seeks
 		to make the use of Microsoft Windows based servers unnecessary for
 		file format considerations and to fully document the OLE 2 Compound
 		Document format. The project aims not only to provide the tools for
-		serializing XML to Excel's file format and the tools for writing to
+		serializing XML to excel's file format and the tools for writing to
 		that file format from Java, but also to provide the tools for later
 		projects to convert other OLE 2 Compound Document formats to pure
 		Java APIs.
@@ -396,10 +396,10 @@ document.write("Last Published: " + document.lastModified);
 <tr>
 			
 <td colspan="1" rowspan="1">
-				Utilize XML to output in Excel
+				Utilize XML to output in excel
 			</td>
 			<td colspan="1" rowspan="1">
-				Serializer will output in Excel
+				Serializer will output in excel
 			</td>
 		
 </tr>
@@ -407,10 +407,10 @@ document.write("Last Published: " + document.lastModified);
 <tr>
 			
 <td colspan="1" rowspan="1">
-				Java API to output in Excel on any platform
+				Java API to output in excel on any platform
 			</td>
 			<td colspan="1" rowspan="1">
-				The project will develop an API that outputs in Excel using
+				The project will develop an API that outputs in excel using
 				pure Java.
 			</td>
 		
@@ -486,18 +486,18 @@ document.write("Last Published: " + document.lastModified);
 		
 <li>
 			Low level structures representing
-			the structures in an Excel file.
+			the structures in an excel file.
 		</li>
 		
 <li>
 			A low-level API for creating and
-			manipulating Excel files and writing them into POI filesystems.
+			manipulating excel files and writing them into POI filesystems.
 		</li>
 		
 <li>
 			A high level model and style
 			interface for manipulating spreadsheet data without knowing anything
-			about the Excel format itself.
+			about the excel format itself.
 		</li>
 	
 </ul>
@@ -575,7 +575,7 @@ document.write("Last Published: " + document.lastModified);
 		constructs.</li>
 		
 <li>Full documentation of the HSSF
-		file format (which will be a subset of the Excel '97 File format).
+		file format (which will be a subset of the excel '97 File format).
 		This must be done with care for legal reasons.</li>
 		
 <li>Full documentation of the APIs and
@@ -722,7 +722,7 @@ document.write("Last Published: " + document.lastModified);
 		The HSSF File Format as implemented by
 		the HSSF API will be fully documented. No documentation will be
 		provided for features that are not supported by HSSF API that are
-		supported by the Excel 97 File Format. Care will be taken not to
+		supported by the excel 97 File Format. Care will be taken not to
 		infringe on any "legal stuff".	
 	</p>
 <a name="6.4.+HSSF+API"></a>

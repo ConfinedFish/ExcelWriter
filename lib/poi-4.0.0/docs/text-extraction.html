@@ -39,7 +39,7 @@
     |start Project Logo
     +-->
 <div class="projectlogo">
-<a href="https://poi.apache.org"><img class="logoImage" alt="Apache POI" src="images/project-header.png" title="Apache POI is well-known in the Java field as a library for reading and writing Microsoft Office file formats, such as Excel, PowerPoint, Word, Visio, Publisher and Outlook. It supports both the older (OLE2) and new (OOXML - Office Open XML) formats."></a>
+<a href="https://poi.apache.org"><img class="logoImage" alt="Apache POI" src="images/project-header.png" title="Apache POI is well-known in the Java field as a library for reading and writing Microsoft Office file formats, such as excel, PowerPoint, Word, Visio, Publisher and Outlook. It supports both the older (OLE2) and new (OOXML - Office Open XML) formats."></a>
 </div>
 <!--+
     |end Project Logo
@@ -231,7 +231,7 @@ document.write("Last Published: " + document.lastModified);
 
     
 <a name="Excel"></a>
-<h2 class="boxed">Excel</h2>
+<h2 class="boxed">excel</h2>
 <div class="section">
 <p>For .xls files, there is 
       <em>org.apache.poi.hssf.extractor.ExcelExtractor</em>, which will 
@@ -240,7 +240,7 @@ document.write("Last Published: " + document.lastModified);
       <em>org.apache.poi.xssf.extractor.XSSFExcelExtractor</em>, which 
       provides the same functionality.</p>
 <p>For those working in constrained memory footprints, there are
-      two more Excel text extractors available. For .xls files, it's
+      two more excel text extractors available. For .xls files, it's
       <em>org.apache.poi.hssf.extractor.EventBasedExcelExtractor</em>,
       based on the streaming EventUserModel code, and will generally
       deliver a lower memory footprint for extraction. However, it will
@@ -299,7 +299,7 @@ document.write("Last Published: " + document.lastModified);
 <a name="Embedded+Objects"></a>
 <h2 class="boxed">Embedded Objects</h2>
 <div class="section">
-<p>Extractors already exist for Excel, Word, PowerPoint and Visio; 
+<p>Extractors already exist for excel, Word, PowerPoint and Visio;
         if one of these objects is embedded into a worksheet, the ExtractorFactory class can be used to recover an extractor for it.     
       </p>
 <pre class="code">
@@ -308,12 +308,12 @@ POIFSFileSystem fileSystem = new POIFSFileSystem(fis);
 // Firstly, get an extractor for the Workbook
 POIOLE2TextExtractor oleTextExtractor = 
    ExtractorFactory.createExtractor(fileSystem);
-// Then a List of extractors for any embedded Excel, Word, PowerPoint
+// Then a List of extractors for any embedded excel, Word, PowerPoint
 // or Visio objects embedded into it.
 POITextExtractor[] embeddedExtractors =
    ExtractorFactory.getEmbededDocsTextExtractors(oleTextExtractor);
 for (POITextExtractor textExtractor : embeddedExtractors) {
-   // If the embedded object was an Excel spreadsheet.
+   // If the embedded object was an excel spreadsheet.
    if (textExtractor instanceof ExcelExtractor) {
       ExcelExtractor excelExtractor = (ExcelExtractor) textExtractor;
       System.out.println(excelExtractor.getText());

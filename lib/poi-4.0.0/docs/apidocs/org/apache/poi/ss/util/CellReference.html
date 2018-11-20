@@ -114,7 +114,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">CellReference</span>
 extends java.lang.Object</pre>
-<div class="block"><p>Common conversion functions between Excel style A1, C27 style
+<div class="block"><p>Common conversion functions between excel style A1, C27 style
   cell references, and POI usermodel style row=0, column=0
   style references. Handles sheet-based and sheet-free references
   as well, eg "Sheet1!A1" and "$B$72"</p>
@@ -510,7 +510,7 @@ extends java.lang.Object</pre>
  named ranges, and in those circumstances, the question of whether the potential cell
  reference is valid (in range) becomes important.
  <p>
- Note - that the maximum sheet size varies across Excel versions:
+ Note - that the maximum sheet size varies across excel versions:
  <p>
  <blockquote><table border="0" cellpadding="1" cellspacing="0"
                  summary="Notable cases.">
@@ -519,7 +519,7 @@ extends java.lang.Object</pre>
    <tr><td>97-2003</td><td>BIFF8</td><td>"IV" (2^8)</td><td>65536 (2^14)</td></tr>
    <tr><td>2007</td><td>BIFF12</td><td>"XFD" (2^14)</td><td>1048576 (2^20)</td></tr>
  </table></blockquote>
- POI currently targets BIFF8 (Excel 97-2003), so the following behaviour can be observed for
+ POI currently targets BIFF8 (excel 97-2003), so the following behaviour can be observed for
  this method:
  <blockquote><table border="0" cellpadding="1" cellspacing="0"
                  summary="Notable cases.">

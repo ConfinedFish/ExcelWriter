@@ -293,12 +293,12 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/ConditionalFormat
 <pre>public&nbsp;void&nbsp;setRule(int&nbsp;idx,
                     <a href="../../../../../org/apache/poi/hssf/usermodel/HSSFConditionalFormattingRule.html" title="class in org.apache.poi.hssf.usermodel">HSSFConditionalFormattingRule</a>&nbsp;cfRule)</pre>
 <div class="block">Replaces an existing Conditional Formatting rule at position idx. 
- Older versions of Excel only allow up to 3 Conditional Formatting rules,
+ Older versions of excel only allow up to 3 Conditional Formatting rules,
   and will ignore rules beyond that, while newer versions are fine.
  This method can be useful to modify existing  Conditional Formatting rules.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>idx</code> - position of the rule. Should be between 0 and 2 for older Excel versions</dd>
+<dd><code>idx</code> - position of the rule. Should be between 0 and 2 for older excel versions</dd>
 <dd><code>cfRule</code> - - Conditional Formatting rule</dd>
 </dl>
 </li>
@@ -313,14 +313,14 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/ConditionalFormat
                     <a href="../../../../../org/apache/poi/ss/usermodel/ConditionalFormattingRule.html" title="interface in org.apache.poi.ss.usermodel">ConditionalFormattingRule</a>&nbsp;cfRule)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/ConditionalFormatting.html#setRule-int-org.apache.poi.ss.usermodel.ConditionalFormattingRule-">ConditionalFormatting</a></code></span></div>
 <div class="block">Replaces an existing Conditional Formatting rule at position idx.
- Excel pre-2007 allows to create up to 3 Conditional Formatting rules,
+ excel pre-2007 allows to create up to 3 Conditional Formatting rules,
   2007 and later allow unlimited numbers.
  This method can be useful to modify existing  Conditional Formatting rules.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/poi/ss/usermodel/ConditionalFormatting.html#setRule-int-org.apache.poi.ss.usermodel.ConditionalFormattingRule-">setRule</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/ConditionalFormatting.html" title="interface in org.apache.poi.ss.usermodel">ConditionalFormatting</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>idx</code> - position of the rule. Should be between 0 and 2 for Excel before 2007, otherwise 0+.</dd>
+<dd><code>idx</code> - position of the rule. Should be between 0 and 2 for excel before 2007, otherwise 0+.</dd>
 <dd><code>cfRule</code> - - Conditional Formatting rule</dd>
 </dl>
 </li>
@@ -333,7 +333,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/ConditionalFormat
 <h4>addRule</h4>
 <pre>public&nbsp;void&nbsp;addRule(<a href="../../../../../org/apache/poi/hssf/usermodel/HSSFConditionalFormattingRule.html" title="class in org.apache.poi.hssf.usermodel">HSSFConditionalFormattingRule</a>&nbsp;cfRule)</pre>
 <div class="block">add a Conditional Formatting rule. 
- Excel allows to create up to 3 Conditional Formatting rules.</div>
+ excel allows to create up to 3 Conditional Formatting rules.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>cfRule</code> - - Conditional Formatting rule</dd>
@@ -349,7 +349,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/ConditionalFormat
 <pre>public&nbsp;void&nbsp;addRule(<a href="../../../../../org/apache/poi/ss/usermodel/ConditionalFormattingRule.html" title="interface in org.apache.poi.ss.usermodel">ConditionalFormattingRule</a>&nbsp;cfRule)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/ConditionalFormatting.html#addRule-org.apache.poi.ss.usermodel.ConditionalFormattingRule-">ConditionalFormatting</a></code></span></div>
 <div class="block">Add a Conditional Formatting rule.
- Excel pre-2007 allows to create up to 3 Conditional Formatting rules.</div>
+ excel pre-2007 allows to create up to 3 Conditional Formatting rules.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/poi/ss/usermodel/ConditionalFormatting.html#addRule-org.apache.poi.ss.usermodel.ConditionalFormattingRule-">addRule</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/ConditionalFormatting.html" title="interface in org.apache.poi.ss.usermodel">ConditionalFormatting</a></code></dd>

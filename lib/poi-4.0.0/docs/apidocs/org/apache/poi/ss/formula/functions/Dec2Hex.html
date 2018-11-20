@@ -115,7 +115,7 @@ var activeTableTab = "activeTableTab";
 <pre>public final class <span class="typeNameLabel">Dec2Hex</span>
 extends java.lang.Object
 implements <a href="../../../../../../org/apache/poi/ss/formula/functions/FreeRefFunction.html" title="interface in org.apache.poi.ss.formula.functions">FreeRefFunction</a></pre>
-<div class="block">Implementation for Excel DELTA() function.<p>
+<div class="block">Implementation for excel DELTA() function.<p>
  <p>
  <b>Syntax</b>:<br> <b>DEC2HEX  </b>(<b>number</b>,<b>places</b> )<br>
  <p>
@@ -334,7 +334,7 @@ implements <a href="../../../../../../org/apache/poi/ss/formula/functions/FreeRe
              may also be used to dynamically create reference evals.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>never <code>null</code>. Possibly an instance of <tt>ErrorEval</tt> in the case of
- a specified Excel error (Exceptions are never thrown to represent Excel errors).</dd>
+ a specified excel error (Exceptions are never thrown to represent excel errors).</dd>
 </dl>
 </li>
 </ul>
@@ -357,7 +357,7 @@ implements <a href="../../../../../../org/apache/poi/ss/formula/functions/FreeRe
 <dd><code>srcColumnIndex</code> - column index of the cell containing the formula under evaluation</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The evaluated result, possibly an <a href="../../../../../../org/apache/poi/ss/formula/eval/ErrorEval.html" title="class in org.apache.poi.ss.formula.eval"><code>ErrorEval</code></a>, never <code>null</code>.
- <b>Note</b> - Excel uses the error code <i>#NUM!</i> instead of IEEE <i>NaN</i>, so when
+ <b>Note</b> - excel uses the error code <i>#NUM!</i> instead of IEEE <i>NaN</i>, so when
  numeric functions evaluate to <code>Double.NaN</code> be sure to translate the result to <a href="../../../../../../org/apache/poi/ss/formula/eval/ErrorEval.html#NUM_ERROR"><code>ErrorEval.NUM_ERROR</code></a>.</dd>
 </dl>
 </li>

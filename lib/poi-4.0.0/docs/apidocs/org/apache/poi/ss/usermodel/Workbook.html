@@ -110,7 +110,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public interface <span class="typeNameLabel">Workbook</span>
 extends java.io.Closeable, java.lang.Iterable&lt;<a href="../../../../../org/apache/poi/ss/usermodel/Sheet.html" title="interface in org.apache.poi.ss.usermodel">Sheet</a>&gt;</pre>
-<div class="block">High level representation of a Excel workbook.  This is the first object most users
+<div class="block">High level representation of a excel workbook.  This is the first object most users
  will construct whether they are reading or writing a workbook.  It is also the
  top level object for creating new sheets/etc.</div>
 </li>
@@ -321,7 +321,7 @@ extends java.io.Closeable, java.lang.Iterable&lt;<a href="../../../../../org/apa
 <tr id="i20" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html#getForceFormulaRecalculation--">getForceFormulaRecalculation</a></span>()</code>
-<div class="block">Whether Excel will be asked to recalculate all formulas when the  workbook is opened.</div>
+<div class="block">Whether excel will be asked to recalculate all formulas when the  workbook is opened.</div>
 </td>
 </tr>
 <tr id="i21" class="rowColor">
@@ -709,9 +709,9 @@ extends java.io.Closeable, java.lang.Iterable&lt;<a href="../../../../../org/apa
 <li class="blockList">
 <h4>getActiveSheetIndex</h4>
 <pre>int&nbsp;getActiveSheetIndex()</pre>
-<div class="block">Convenience method to get the active sheet.  The active sheet is is the sheet
- which is currently displayed when the workbook is viewed in Excel.
- 'Selected' sheet(s) is a distinct concept.</div>
+<div class="block">Convenience method to get the active sheet. The active sheet is is the sheet
+    which is currently displayed when the workbook is viewed in excel.
+    'Selected' sheet(s) is a distinct concept.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the index of the active sheet (0-based)</dd>
@@ -725,9 +725,9 @@ extends java.io.Closeable, java.lang.Iterable&lt;<a href="../../../../../org/apa
 <li class="blockList">
 <h4>setActiveSheet</h4>
 <pre>void&nbsp;setActiveSheet(int&nbsp;sheetIndex)</pre>
-<div class="block">Convenience method to set the active sheet.  The active sheet is is the sheet
- which is currently displayed when the workbook is viewed in Excel.
- 'Selected' sheet(s) is a distinct concept.</div>
+<div class="block">Convenience method to set the active sheet. The active sheet is is the sheet
+    which is currently displayed when the workbook is viewed in excel.
+    'Selected' sheet(s) is a distinct concept.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>sheetIndex</code> - index of the active sheet (0-based)</dd>
@@ -896,8 +896,8 @@ extends java.io.Closeable, java.lang.Iterable&lt;<a href="../../../../../org/apa
  Use this to create new sheets.
 
  <p>
-     Note that Excel allows sheet names up to 31 chars in length but other applications
-     (such as OpenOffice) allow more. Some versions of Excel crash with names longer than 31 chars,
+     Note that excel allows sheet names up to 31 chars in length but other applications
+     (such as OpenOffice) allow more. Some versions of excel crash with names longer than 31 chars,
      others - truncate such names to 31 character.
  </p>
  <p>
@@ -911,7 +911,7 @@ extends java.io.Closeable, java.lang.Iterable&lt;<a href="../../../../../org/apa
      </code></pre>
  </p>
 
- Except the 31-character constraint, Excel applies some other rules:
+ Except the 31-character constraint, excel applies some other rules:
  <p>
  Sheet name MUST be unique in the workbook and MUST NOT contain the any of the following characters:
  <ul>
@@ -1331,7 +1331,7 @@ int&nbsp;getNameIndex(java.lang.String&nbsp;name)</pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">3.18. New projects should avoid accessing named ranges by index.
  Use <a href="../../../../../org/apache/poi/ss/usermodel/Workbook.html#getName-java.lang.String-"><code>getName(String)</code></a> instead.</span></div>
 <div class="block">Gets the defined name index by name<br>
- <i>Note:</i> Excel defined names are case-insensitive and
+ <i>Note:</i> excel defined names are case-insensitive and
  this method performs a case-insensitive search.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1733,13 +1733,13 @@ void&nbsp;removeName(java.lang.String&nbsp;name)</pre>
 <pre>void&nbsp;setForceFormulaRecalculation(boolean&nbsp;value)</pre>
 <div class="block">Whether the application shall perform a full recalculation when the workbook is opened.
  <p>
- Typically you want to force formula recalculation when you modify cell formulas or values
- of a workbook previously created by Excel. When set to true, this flag will tell Excel
- that it needs to recalculate all formulas in the workbook the next time the file is opened.
+     Typically you want to force formula recalculation when you modify cell formulas or values
+     of a workbook previously created by excel. When set to true, this flag will tell excel
+     that it needs to recalculate all formulas in the workbook the next time the file is opened.
  </p>
  <p>
  Note, that recalculation updates cached formula results and, thus, modifies the workbook.
- Depending on the version, Excel may prompt you with "Do you want to save the changes in <em>filename</em>?"
+ Depending on the version, excel may prompt you with "Do you want to save the changes in <em>filename</em>?"
  on close.
  </p></div>
 <dl>
@@ -1758,7 +1758,7 @@ void&nbsp;removeName(java.lang.String&nbsp;name)</pre>
 <li class="blockList">
 <h4>getForceFormulaRecalculation</h4>
 <pre>boolean&nbsp;getForceFormulaRecalculation()</pre>
-<div class="block">Whether Excel will be asked to recalculate all formulas when the  workbook is opened.</div>
+<div class="block">Whether excel will be asked to recalculate all formulas when the  workbook is opened.</div>
 <dl>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>3.8</dd>

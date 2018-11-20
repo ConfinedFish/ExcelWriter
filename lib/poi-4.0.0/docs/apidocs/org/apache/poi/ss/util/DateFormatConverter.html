@@ -110,12 +110,12 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">DateFormatConverter</span>
 extends java.lang.Object</pre>
-<div class="block">Convert java DateFormat patterns into Excel custom number formats.
+<div class="block">Convert java DateFormat patterns into excel custom number formats.
   For example, to format a date in excel using the "dd MMMM, yyyy" pattern and Japanese
   locale, use the following code:
 
   <pre><code>
-      // returns "[$-0411]dd MMMM, yyyy;@" where the [$-0411] prefix tells Excel to use the Japanese locale
+      // returns "[$-0411]dd MMMM, yyyy;@" where the [$-0411] prefix tells excel to use the Japanese locale
       String excelFormatPattern = DateFormatConverter.convert(Locale.JAPANESE, "dd MMMM, yyyy");
 
       CellStyle cellStyle = workbook.createCellStyle();
@@ -126,7 +126,7 @@ extends java.lang.Object</pre>
       cell.setCellStyle(cellStyle);  // formats date as '2012年3月17日'
   </code></pre>
 
- TODO Generalise this for all Excel format strings</div>
+ TODO Generalise this for all excel format strings</div>
 </li>
 </ul>
 </div>

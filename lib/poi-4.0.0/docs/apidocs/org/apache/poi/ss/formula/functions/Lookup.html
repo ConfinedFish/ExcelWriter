@@ -114,7 +114,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public final class <span class="typeNameLabel">Lookup</span>
 extends java.lang.Object</pre>
-<div class="block">Implementation of Excel function LOOKUP.<p>
+<div class="block">Implementation of excel function LOOKUP.<p>
 
  LOOKUP finds an index  row in a lookup table by the first column value and returns the value from another column.
 
@@ -275,7 +275,7 @@ extends java.lang.Object</pre>
 <dd><code>srcColumnIndex</code> - column index of the cell containing the formula under evaluation</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The evaluated result, possibly an <a href="../../../../../../org/apache/poi/ss/formula/eval/ErrorEval.html" title="class in org.apache.poi.ss.formula.eval"><code>ErrorEval</code></a>, never <code>null</code>.
- <b>Note</b> - Excel uses the error code <i>#NUM!</i> instead of IEEE <i>NaN</i>, so when
+ <b>Note</b> - excel uses the error code <i>#NUM!</i> instead of IEEE <i>NaN</i>, so when
  numeric functions evaluate to <code>Double.NaN</code> be sure to translate the result to <a href="../../../../../../org/apache/poi/ss/formula/eval/ErrorEval.html#NUM_ERROR"><code>ErrorEval.NUM_ERROR</code></a>.</dd>
 </dl>
 </li>

@@ -321,7 +321,7 @@ var activeTableTab = "activeTableTab";
 <tr id="i31" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/poi/ss/usermodel/Cell.html#setCellValue-java.util.Date-">setCellValue</a></span>(java.util.Date&nbsp;value)</code>
-<div class="block">Converts the supplied date to its equivalent Excel numeric value and sets
+<div class="block">Converts the supplied date to its equivalent excel numeric value and sets
  that into the cell.</div>
 </td>
 </tr>
@@ -540,11 +540,11 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>setCellValue</h4>
 <pre>void&nbsp;setCellValue(java.util.Date&nbsp;value)</pre>
-<div class="block"><p>Converts the supplied date to its equivalent Excel numeric value and sets
+<div class="block"><p>Converts the supplied date to its equivalent excel numeric value and sets
  that into the cell.</p>
  
- <p><b>Note</b> - There is actually no 'DATE' cell type in Excel. In many
- cases (when entering date values), Excel automatically adjusts the
+ <p><b>Note</b> - There is actually no 'DATE' cell type in excel. In many
+ cases (when entering date values), excel automatically adjusts the
  <i>cell style</i> to some date format, creating the illusion that the cell
  data type is now something besides <a href="../../../../../org/apache/poi/ss/usermodel/CellType.html#NUMERIC"><code>CellType.NUMERIC</code></a>.  POI
  does not attempt to replicate this behaviour.  To make a numeric cell
@@ -564,10 +564,10 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>setCellValue</h4>
 <pre>void&nbsp;setCellValue(java.util.Calendar&nbsp;value)</pre>
-<div class="block"><p>Set a date value for the cell. Excel treats dates as numeric so you will need to format the cell as
+<div class="block"><p>Set a date value for the cell. excel treats dates as numeric so you will need to format the cell as
  a date.</p>
  <p>
- This will set the cell value based on the Calendar's timezone. As Excel
+ This will set the cell value based on the Calendar's timezone. As excel
  does not support timezones this means that both 20:00+03:00 and
  20:00-03:00 will be reported as the same value (20:00) even that there
  are 6 hours difference between the two times. This difference can be
@@ -673,7 +673,7 @@ var activeTableTab = "activeTableTab";
 <dd><code>java.lang.IllegalStateException</code> - if the cell type returned by <a href="../../../../../org/apache/poi/ss/usermodel/Cell.html#getCellType--"><code>getCellType()</code></a> is <a href="../../../../../org/apache/poi/ss/usermodel/CellType.html#STRING"><code>CellType.STRING</code></a></dd>
 <dd><code>java.lang.NumberFormatException</code> - if the cell value isn't a parsable <code>double</code>.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../org/apache/poi/ss/usermodel/DataFormatter.html" title="class in org.apache.poi.ss.usermodel"><code>for turning this number into a string similar to that which Excel would render this number as.</code></a></dd>
+<dd><a href="../../../../../org/apache/poi/ss/usermodel/DataFormatter.html" title="class in org.apache.poi.ss.usermodel"><code>for turning this number into a string similar to that which excel would render this number as.</code></a></dd>
 </dl>
 </li>
 </ul>

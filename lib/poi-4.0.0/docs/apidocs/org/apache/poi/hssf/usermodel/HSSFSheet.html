@@ -917,7 +917,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Sheet.html" title
 <tr id="i115" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/poi/hssf/usermodel/HSSFSheet.html#setForceFormulaRecalculation-boolean-">setForceFormulaRecalculation</a></span>(boolean&nbsp;value)</code>
-<div class="block">Control if Excel should be asked to recalculate all formulas on this sheet
+<div class="block">Control if excel should be asked to recalculate all formulas on this sheet
  when the workbook is opened.</div>
 </td>
 </tr>
@@ -1456,7 +1456,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Sheet.html" title
  This results is a slightly less value of visible characters than passed to this method (approx. 1/2 of a character).<p>
  
  To compute the actual number of visible characters,
- Excel uses the following formula (Section 3.3.1.12 of the OOXML spec):<p>
+ excel uses the following formula (Section 3.3.1.12 of the OOXML spec):<p>
  
  <code>
  width = Truncate([{Number of Visible Characters} *
@@ -1464,7 +1464,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Sheet.html" title
  </code>
  <p>Using the Calibri font as an example, the maximum digit width of 11 point font size is 7 pixels (at 96 dpi).
  If you set a column width to be eight characters wide, e.g. <code>setColumnWidth(columnIndex, 8*256)</code>,
- then the actual value of visible characters (the value shown in Excel) is derived from the following equation:
+ then the actual value of visible characters (the value shown in excel) is derived from the following equation:
  <code>
  Truncate([numChars*7+5]/7*256)/256 = 8;
  </code>
@@ -1477,7 +1477,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Sheet.html" title
 <dd><code>columnIndex</code> - - the column to set (0-based)</dd>
 <dd><code>width</code> - - the width in units of 1/256th of a character width</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.IllegalArgumentException</code> - if width &gt; 255*256 (the maximum column width in Excel is 255 characters)</dd>
+<dd><code>java.lang.IllegalArgumentException</code> - if width &gt; 255*256 (the maximum column width in excel is 255 characters)</dd>
 </dl>
 </li>
 </ul>
@@ -1743,7 +1743,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Sheet.html" title
 <li class="blockList">
 <h4>setForceFormulaRecalculation</h4>
 <pre>public&nbsp;void&nbsp;setForceFormulaRecalculation(boolean&nbsp;value)</pre>
-<div class="block">Control if Excel should be asked to recalculate all formulas on this sheet
+<div class="block">Control if excel should be asked to recalculate all formulas on this sheet
  when the workbook is opened.<p>
  
  Calculating the formula values with <a href="../../../../../org/apache/poi/ss/usermodel/FormulaEvaluator.html" title="interface in org.apache.poi.ss.usermodel"><code>FormulaEvaluator</code></a> is the
@@ -2195,7 +2195,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Sheet.html" title
 <div class="block">Gets the flag indicating whether the window should show 0 (zero) in cells containing zero value.
  When false, cells with zero value appear blank instead of showing the number zero.
  <p>
- In Excel 2003 this option can be changed in the Options dialog on the View tab.
+ In excel 2003 this option can be changed in the Options dialog on the View tab.
  </p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -2215,7 +2215,7 @@ implements <a href="../../../../../org/apache/poi/ss/usermodel/Sheet.html" title
 <div class="block">Set whether the window should show 0 (zero) in cells containing zero value.
  When false, cells with zero value appear blank instead of showing the number zero.
  <p>
- In Excel 2003 this option can be set in the Options dialog on the View tab.
+ In excel 2003 this option can be set in the Options dialog on the View tab.
  </p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>

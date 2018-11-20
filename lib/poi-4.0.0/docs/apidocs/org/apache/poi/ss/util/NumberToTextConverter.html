@@ -110,7 +110,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public final class <span class="typeNameLabel">NumberToTextConverter</span>
 extends java.lang.Object</pre>
-<div class="block">Excel converts numbers to text with different rules to those of java, so
+<div class="block">excel converts numbers to text with different rules to those of java, so
   <code>Double.toString(value)</tt> won't do.
  <ul>
  <li>No more than 15 significant figures are output (java does 18).</li>
@@ -123,7 +123,7 @@ extends java.lang.Object</pre>
  IEEE 64-bit Double Rendering Comparison
 
  <table border="1" cellpadding="2" cellspacing="0" summary="IEEE 64-bit Double Rendering Comparison">
- <tr><th>Raw bits</th><th>Java</th><th>Excel</th></tr>
+ <tr><th>Raw bits</th><th>Java</th><th>excel</th></tr>
 
  <tr><td>0x0000000000000000L</td><td>0.0</td><td>0</td></tr>
  <tr><td>0x3FF0000000000000L</td><td>1.0</td><td>1</td></tr>
@@ -187,14 +187,14 @@ extends java.lang.Object</pre>
  </table>
 
  <b>Note</b>:
- Excel has inconsistent rules for the following numeric operations:
+ excel has inconsistent rules for the following numeric operations:
  <ul>
  <li>Conversion to string (as handled here)</li>
  <li>Rendering numerical quantities in the cell grid.</li>
  <li>Conversion from text</li>
  <li>General arithmetic</li>
  </ul>
- Excel's text to number conversion is not a true <i>inverse</i> of this operation.  The
+ excel's text to number conversion is not a true <i>inverse</i> of this operation.  The
  allowable ranges are different.  Some numbers that don't correctly convert to text actually
  <b>do</b> get handled properly when used in arithmetic evaluations.</div>
 <dl>
@@ -222,10 +222,10 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/poi/ss/util/NumberToTextConverter.html#toText-double-">toText</a></span>(double&nbsp;value)</code>
-<div class="block">Converts the supplied <tt>value</tt> to the text representation that Excel would give if
+<div class="block">Converts the supplied <tt>value</tt> to the text representation that excel would give if
  the value were to appear in an unformatted cell, or as a literal number in a formula.<br>
  Note - the results from this method differ slightly from those of <tt>Double.toString()</tt>
- In some special cases Excel behaves quite differently.</div>
+ In some special cases excel behaves quite differently.</div>
 </td>
 </tr>
 </table>
@@ -257,10 +257,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>toText</h4>
 <pre>public static&nbsp;java.lang.String&nbsp;toText(double&nbsp;value)</pre>
-<div class="block">Converts the supplied <tt>value</tt> to the text representation that Excel would give if
+<div class="block">Converts the supplied <tt>value</tt> to the text representation that excel would give if
  the value were to appear in an unformatted cell, or as a literal number in a formula.<br>
  Note - the results from this method differ slightly from those of <tt>Double.toString()</tt>
- In some special cases Excel behaves quite differently.  This function attempts to reproduce
+ In some special cases excel behaves quite differently.  This function attempts to reproduce
  those results.</div>
 </li>
 </ul>

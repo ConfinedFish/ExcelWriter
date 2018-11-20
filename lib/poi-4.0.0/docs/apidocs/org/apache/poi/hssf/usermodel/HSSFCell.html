@@ -819,7 +819,7 @@ public&nbsp;<a href="../../../../../org/apache/poi/ss/usermodel/CellType.html" t
 <li class="blockList">
 <h4>setCellValue</h4>
 <pre>public&nbsp;void&nbsp;setCellValue(java.util.Date&nbsp;value)</pre>
-<div class="block">set a date value for the cell. Excel treats dates as numeric so you will need to format the cell as
+<div class="block">set a date value for the cell. excel treats dates as numeric so you will need to format the cell as
  a date.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -838,10 +838,10 @@ public&nbsp;<a href="../../../../../org/apache/poi/ss/usermodel/CellType.html" t
 <li class="blockList">
 <h4>setCellValue</h4>
 <pre>public&nbsp;void&nbsp;setCellValue(java.util.Calendar&nbsp;value)</pre>
-<div class="block">set a date value for the cell. Excel treats dates as numeric so you will need to format the cell as
+<div class="block">set a date value for the cell. excel treats dates as numeric so you will need to format the cell as
  a date.
 
- This will set the cell value based on the Calendar's timezone. As Excel
+ This will set the cell value based on the Calendar's timezone. As excel
  does not support timezones this means that both 20:00+03:00 and
  20:00-03:00 will be reported as the same value (20:00) even that there
  are 6 hours difference between the two times. This difference can be
@@ -946,14 +946,14 @@ public&nbsp;<a href="../../../../../org/apache/poi/ss/usermodel/CellType.html" t
  For blank cells we return a 0.
  See <a href="../../../../../org/apache/poi/hssf/usermodel/HSSFDataFormatter.html" title="class in org.apache.poi.hssf.usermodel"><code>HSSFDataFormatter</code></a> for turning this
   number into a string similar to that which
-  Excel would render this number as.</div>
+  excel would render this number as.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../org/apache/poi/ss/usermodel/Cell.html#getNumericCellValue--">getNumericCellValue</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/Cell.html" title="interface in org.apache.poi.ss.usermodel">Cell</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the value of the cell as a number</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../org/apache/poi/ss/usermodel/DataFormatter.html" title="class in org.apache.poi.ss.usermodel"><code>for turning this number into a string similar to that which Excel would render this number as.</code></a></dd>
+<dd><a href="../../../../../org/apache/poi/ss/usermodel/DataFormatter.html" title="class in org.apache.poi.ss.usermodel"><code>for turning this number into a string similar to that which excel would render this number as.</code></a></dd>
 </dl>
 </li>
 </ul>

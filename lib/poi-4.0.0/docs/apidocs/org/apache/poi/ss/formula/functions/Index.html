@@ -115,7 +115,7 @@ var activeTableTab = "activeTableTab";
 <pre>public final class <span class="typeNameLabel">Index</span>
 extends java.lang.Object
 implements <a href="../../../../../../org/apache/poi/ss/formula/functions/Function2Arg.html" title="interface in org.apache.poi.ss.formula.functions">Function2Arg</a>, <a href="../../../../../../org/apache/poi/ss/formula/functions/Function3Arg.html" title="interface in org.apache.poi.ss.formula.functions">Function3Arg</a>, <a href="../../../../../../org/apache/poi/ss/formula/functions/Function4Arg.html" title="interface in org.apache.poi.ss.formula.functions">Function4Arg</a>, <a href="../../../../../../org/apache/poi/ss/formula/functions/ArrayMode.html" title="interface in org.apache.poi.ss.formula.functions">ArrayMode</a></pre>
-<div class="block">Implementation for the Excel function INDEX
+<div class="block">Implementation for the excel function INDEX
  <p>
 
  Syntax : <br>
@@ -319,7 +319,7 @@ implements <a href="../../../../../../org/apache/poi/ss/formula/functions/Functi
 <dd><code>srcColumnIndex</code> - column index of the cell containing the formula under evaluation</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The evaluated result, possibly an <a href="../../../../../../org/apache/poi/ss/formula/eval/ErrorEval.html" title="class in org.apache.poi.ss.formula.eval"><code>ErrorEval</code></a>, never <code>null</code>.
- <b>Note</b> - Excel uses the error code <i>#NUM!</i> instead of IEEE <i>NaN</i>, so when
+ <b>Note</b> - excel uses the error code <i>#NUM!</i> instead of IEEE <i>NaN</i>, so when
  numeric functions evaluate to <code>Double.NaN</code> be sure to translate the result to <a href="../../../../../../org/apache/poi/ss/formula/eval/ErrorEval.html#NUM_ERROR"><code>ErrorEval.NUM_ERROR</code></a>.</dd>
 </dl>
 </li>

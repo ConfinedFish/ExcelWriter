@@ -1128,7 +1128,7 @@ protected&nbsp;void&nbsp;setCellRef(<a href="../../../../../org/apache/poi/ss/ut
 <h4>updateHeaders</h4>
 <pre>public&nbsp;void&nbsp;updateHeaders()</pre>
 <div class="block">Synchronize table headers with cell values in the parent sheet.
- Headers <em>must</em> be in sync, otherwise Excel will display a
+ Headers <em>must</em> be in sync, otherwise excel will display a
  "Found unreadable content" message on startup.
  
  If calling both <a href="../../../../../org/apache/poi/xssf/usermodel/XSSFTable.html#updateReferences--"><code>updateReferences()</code></a> and
@@ -1136,7 +1136,7 @@ protected&nbsp;void&nbsp;setCellRef(<a href="../../../../../org/apache/poi/ss/ut
  should be called first.
  
  Note that a Table <em>must</em> have a header. To reproduce
-  the equivalent of inserting a table in Excel without Headers,
+  the equivalent of inserting a table in excel without Headers,
   manually add cells with values of "Column1", "Column2" etc first.</div>
 </li>
 </ul>
@@ -1220,7 +1220,7 @@ protected&nbsp;void&nbsp;setCellRef(<a href="../../../../../org/apache/poi/ss/ut
 <dd><code><a href="../../../../../org/apache/poi/ss/usermodel/Table.html#getTotalsRowCount--">getTotalsRowCount</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/Table.html" title="interface in org.apache.poi.ss.usermodel">Table</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>0 for no totals rows, 1 for totals row shown.
- Values &gt; 1 are not currently used by Excel up through 2016, and the OOXML spec
+ Values &gt; 1 are not currently used by excel up through 2016, and the OOXML spec
  doesn't define how they would be implemented.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>3.17 beta 1</dd>
@@ -1239,7 +1239,7 @@ protected&nbsp;void&nbsp;setCellRef(<a href="../../../../../org/apache/poi/ss/ut
 <dd><code><a href="../../../../../org/apache/poi/ss/usermodel/Table.html#getHeaderRowCount--">getHeaderRowCount</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/poi/ss/usermodel/Table.html" title="interface in org.apache.poi.ss.usermodel">Table</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>0 for no header rows, 1 for table headers shown.
- Values &gt; 1 might be used by Excel for pivot tables?</dd>
+ Values &gt; 1 might be used by excel for pivot tables?</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>3.17 beta 1</dd>
 </dl>

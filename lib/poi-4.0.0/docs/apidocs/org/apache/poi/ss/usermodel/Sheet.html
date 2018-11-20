@@ -110,7 +110,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public interface <span class="typeNameLabel">Sheet</span>
 extends java.lang.Iterable&lt;<a href="../../../../../org/apache/poi/ss/usermodel/Row.html" title="interface in org.apache.poi.ss.usermodel">Row</a>&gt;</pre>
-<div class="block">High level representation of a Excel worksheet.
+<div class="block">High level representation of a excel worksheet.
 
  <p>
  Sheets are the central structures within a workbook, and are where a user does most of his spreadsheet work.
@@ -380,7 +380,7 @@ extends java.lang.Iterable&lt;<a href="../../../../../org/apache/poi/ss/usermode
 <tr id="i29" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/poi/ss/usermodel/Sheet.html#getForceFormulaRecalculation--">getForceFormulaRecalculation</a></span>()</code>
-<div class="block">Whether Excel will be asked to recalculate all formulas in this sheet when the
+<div class="block">Whether excel will be asked to recalculate all formulas in this sheet when the
   workbook is opened.</div>
 </td>
 </tr>
@@ -421,7 +421,7 @@ extends java.lang.Iterable&lt;<a href="../../../../../org/apache/poi/ss/usermode
 <div class="block">Gets the last row on the sheet
 
  Note: rows which had content before and were set to empty later might
- still be counted as rows by Excel and Apache POI, so the result of this
+ still be counted as rows by excel and Apache POI, so the result of this
  method will include such rows and thus the returned value might be higher
  than expected!</div>
 </td>
@@ -805,7 +805,7 @@ extends java.lang.Iterable&lt;<a href="../../../../../org/apache/poi/ss/usermode
 <tr id="i96" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/poi/ss/usermodel/Sheet.html#setForceFormulaRecalculation-boolean-">setForceFormulaRecalculation</a></span>(boolean&nbsp;value)</code>
-<div class="block">Control if Excel should be asked to recalculate all formulas on this sheet
+<div class="block">Control if excel should be asked to recalculate all formulas on this sheet
  when the workbook is opened.</div>
 </td>
 </tr>
@@ -1188,7 +1188,7 @@ extends java.lang.Iterable&lt;<a href="../../../../../org/apache/poi/ss/usermode
 <div class="block">Gets the first row on the sheet.
 
  Note: rows which had content before and were set to empty later might
- still be counted as rows by Excel and Apache POI, so the result of this
+ still be counted as rows by excel and Apache POI, so the result of this
  method will include such rows and thus the returned value might be lower
  than expected!</div>
 <dl>
@@ -1207,7 +1207,7 @@ extends java.lang.Iterable&lt;<a href="../../../../../org/apache/poi/ss/usermode
 <div class="block">Gets the last row on the sheet
 
  Note: rows which had content before and were set to empty later might
- still be counted as rows by Excel and Apache POI, so the result of this
+ still be counted as rows by excel and Apache POI, so the result of this
  method will include such rows and thus the returned value might be higher
  than expected!</div>
 <dl>
@@ -1302,7 +1302,7 @@ extends java.lang.Iterable&lt;<a href="../../../../../org/apache/poi/ss/usermode
  This results is a slightly less value of visible characters than passed to this method (approx. 1/2 of a character).<p>
  
  To compute the actual number of visible characters,
- Excel uses the following formula (Section 3.3.1.12 of the OOXML spec):<p>
+ excel uses the following formula (Section 3.3.1.12 of the OOXML spec):<p>
  
  <code>
      width = Truncate([{Number of Visible Characters} *
@@ -1311,7 +1311,7 @@ extends java.lang.Iterable&lt;<a href="../../../../../org/apache/poi/ss/usermode
  
  Using the Calibri font as an example, the maximum digit width of 11 point font size is 7 pixels (at 96 dpi).
  If you set a column width to be eight characters wide, e.g. <code>setColumnWidth(columnIndex, 8*256)</code>,
- then the actual value of visible characters (the value shown in Excel) is derived from the following equation:
+ then the actual value of visible characters (the value shown in excel) is derived from the following equation:
   <code>
       Truncate([numChars*7+5]/7*256)/256 = 8;
   </code>
@@ -1322,7 +1322,7 @@ extends java.lang.Iterable&lt;<a href="../../../../../org/apache/poi/ss/usermode
 <dd><code>columnIndex</code> - - the column to set (0-based)</dd>
 <dd><code>width</code> - - the width in units of 1/256th of a character width</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.IllegalArgumentException</code> - if width &gt; 255*256 (the maximum column width in Excel is 255 characters)</dd>
+<dd><code>java.lang.IllegalArgumentException</code> - if width &gt; 255*256 (the maximum column width in excel is 255 characters)</dd>
 </dl>
 </li>
 </ul>
@@ -1668,7 +1668,7 @@ extends java.lang.Iterable&lt;<a href="../../../../../org/apache/poi/ss/usermode
 <li class="blockList">
 <h4>setForceFormulaRecalculation</h4>
 <pre>void&nbsp;setForceFormulaRecalculation(boolean&nbsp;value)</pre>
-<div class="block">Control if Excel should be asked to recalculate all formulas on this sheet
+<div class="block">Control if excel should be asked to recalculate all formulas on this sheet
  when the workbook is opened.
 
   <p>
@@ -1695,7 +1695,7 @@ extends java.lang.Iterable&lt;<a href="../../../../../org/apache/poi/ss/usermode
 <li class="blockList">
 <h4>getForceFormulaRecalculation</h4>
 <pre>boolean&nbsp;getForceFormulaRecalculation()</pre>
-<div class="block">Whether Excel will be asked to recalculate all formulas in this sheet when the
+<div class="block">Whether excel will be asked to recalculate all formulas in this sheet when the
   workbook is opened.</div>
 </li>
 </ul>

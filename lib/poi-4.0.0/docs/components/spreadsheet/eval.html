@@ -39,7 +39,7 @@
     |start Project Logo
     +-->
 <div class="projectlogo">
-<a href="https://poi.apache.org"><img class="logoImage" alt="Apache POI" src="../../images/project-header.png" title="Apache POI is well-known in the Java field as a library for reading and writing Microsoft Office file formats, such as Excel, PowerPoint, Word, Visio, Publisher and Outlook. It supports both the older (OLE2) and new (OOXML - Office Open XML) formats."></a>
+<a href="https://poi.apache.org"><img class="logoImage" alt="Apache POI" src="../../images/project-header.png" title="Apache POI is well-known in the Java field as a library for reading and writing Microsoft Office file formats, such as excel, PowerPoint, Word, Visio, Publisher and Outlook. It supports both the older (OLE2) and new (OOXML - Office Open XML) formats."></a>
 </div>
 <!--+
     |end Project Logo
@@ -113,7 +113,7 @@ document.write("Last Published: " + document.lastModified);
 <div class="menuitem">
 <a href="../../apidocs/index.html">Javadocs</a>
 </div>
-<div onclick="SwitchMenu('menu_selected_1.1.3', '../../skin/')" id="menu_selected_1.1.3Title" class="menutitle" style="background-image: url('../../skin/images/chapter_open.gif');">Excel (HSSF/XSSF)</div>
+<div onclick="SwitchMenu('menu_selected_1.1.3', '../../skin/')" id="menu_selected_1.1.3Title" class="menutitle" style="background-image: url('../../skin/images/chapter_open.gif');">excel (HSSF/XSSF)</div>
 <div id="menu_selected_1.1.3" class="selectedmenuitemgroup" style="display: block;">
 <div class="menuitem">
 <a href="../../components/spreadsheet/index.html">Overview</a>
@@ -298,7 +298,7 @@ document.write("Last Published: " + document.lastModified);
     <a name="Why+do+I+need+to+evaluate+formulas%3F"></a>
 <h2 class="boxed">Why do I need to evaluate formulas?</h2>
 <div class="section">
-<p>The Excel file format (both .xls and .xlsx) stores a "cached" result for
+<p>The excel file format (both .xls and .xlsx) stores a "cached" result for
          every formula along with the formula itself. This means that when the file
          is opened, it can be quickly displayed, without needing to spend a long
          time calculating all of the formula results. It also means that when reading
@@ -309,8 +309,8 @@ document.write("Last Published: " + document.lastModified);
          Evaluation to have these "cached" results updated. This is normally done
          after all changes have been performed, but before you write the file out.
          If you don't do this, there's a good chance that when you open the file in
-         Excel, until you go to the cell and hit enter or F9, you will either see 
-         the old value or '#VALUE!' for the cell. (Sometimes Excel will notice
+         excel, until you go to the cell and hit enter or F9, you will either see
+         the old value or '#VALUE!' for the cell. (Sometimes excel will notice
          itself, and trigger a recalculation on load, but unless you know you are
          using volatile functions it's generally best to trigger a <a href="#recalculation">Recalulation</a>
          through POI)
@@ -324,7 +324,7 @@ document.write("Last Published: " + document.lastModified);
 <div class="section">
 <p>The code currently provides implementations for all the arithmatic operators.
 				It also provides implementations for approx. 140 built in
-				functions in Excel. The framework however makes it easy to add 
+				functions in excel. The framework however makes it easy to add
 			 	implementation of new functions. See the <a href="eval-devguide.html"> Formula
         evaluation development guide</a>  and <a href="../../apidocs/org/apache/poi/hssf/record/formula/functions/package-summary.html">javadocs</a>
         for details. </p>
@@ -502,12 +502,12 @@ for (Sheet sheet : wb) {
 <h2 class="boxed">Recalculation of Formulas</h2>
 <div class="section">
 <p>
-        In certain cases  you may want to force Excel to re-calculate formulas when the workbook is opened.
+        In certain cases  you may want to force excel to re-calculate formulas when the workbook is opened.
         Consider the following example:
       </p>
 <p>
-        Open Excel and create a new workbook. On the first sheet set A1=1, B1=1, C1=A1+B1. 
-        Excel automatically calculates formulas and the value in C1 is 2. So far so good.
+        Open excel and create a new workbook. On the first sheet set A1=1, B1=1, C1=A1+B1.
+        excel automatically calculates formulas and the value in C1 is 2. So far so good.
       </p>
 <p>
         Now modify the workbook with POI:
@@ -523,8 +523,8 @@ for (Sheet sheet : wb) {
   out.close();
       </pre>
 <p>
-        Now open workbook2.xls in Excel and the value in C1 is still 2 while you expected 3. Wrong? No!
-        The point is that Excel caches previously calculated results and you need to trigger recalculation to updated them. 
+        Now open workbook2.xls in excel and the value in C1 is still 2 while you expected 3. Wrong? No!
+        The point is that excel caches previously calculated results and you need to trigger recalculation to updated them.
         It is not an issue when you are creating new workbooks from scratch, but important to remember when you are modifing 
         existing workbooks with formulas. This can be done in two ways:  
       </p>
@@ -540,8 +540,8 @@ for (Sheet sheet : wb) {
   wb.getCreationHelper().createFormulaEvaluator().evaluateAll();
         </pre>
 <p>
-        2. Delegate re-calculation to Excel. The application will perform a full recalculation when the workbook is opened:
-      </p>
+    2. Delegate re-calculation to excel. The application will perform a full recalculation when the workbook is opened:
+</p>
 <pre class="code">
   Workbook wb = WorkbookFactory.create(new FileInputStream("workbook.xls"));
 
@@ -557,7 +557,7 @@ for (Sheet sheet : wb) {
     <a name="External+%28Cross-Workbook%29+references"></a>
 <h2 class="boxed">External (Cross-Workbook) references</h2>
 <div class="section">
-<p>It is possible for a formula in an Excel spreadsheet to
+<p>It is possible for a formula in an excel spreadsheet to
          refer to a Named Range or Cell in a different workbook.
          These cross-workbook references are normally called <em>External
          References</em>. These are formulas which look something like:</p>

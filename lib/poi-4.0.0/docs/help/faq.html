@@ -39,7 +39,7 @@
     |start Project Logo
     +-->
 <div class="projectlogo">
-<a href="https://poi.apache.org"><img class="logoImage" alt="Apache POI" src="../images/project-header.png" title="Apache POI is well-known in the Java field as a library for reading and writing Microsoft Office file formats, such as Excel, PowerPoint, Word, Visio, Publisher and Outlook. It supports both the older (OLE2) and new (OOXML - Office Open XML) formats."></a>
+<a href="https://poi.apache.org"><img class="logoImage" alt="Apache POI" src="../images/project-header.png" title="Apache POI is well-known in the Java field as a library for reading and writing Microsoft Office file formats, such as excel, PowerPoint, Word, Visio, Publisher and Outlook. It supports both the older (OLE2) and new (OOXML - Office Open XML) formats."></a>
 </div>
 <!--+
     |end Project Logo
@@ -285,7 +285,7 @@ System.out.println("POI Scratchpad came from " + path);</pre>
       What is the HSSF "eventmodel"?
     </h2>
 <div class="section">
-<p>The SS eventmodel package is an API for reading Excel files without loading the whole spreadsheet into memory.  It does
+<p>The SS eventmodel package is an API for reading excel files without loading the whole spreadsheet into memory.  It does
         require more knowledge on the part of the user, but reduces memory consumption by more than
         tenfold.  It is based on the AWT event model in combination with SAX.  If you need read-only
         access, this is the best way to do it.</p>
@@ -313,7 +313,7 @@ System.out.println("POI Scratchpad came from " + path);</pre>
       How do you tell if a spreadsheet cell contains a date?
     </h2>
 <div class="section">
-<p>Excel stores dates as numbers therefore the only way to determine if a cell is
+<p>excel stores dates as numbers therefore the only way to determine if a cell is
         actually stored as a date is to look at the formatting. There is a helper method
         in HSSFDateUtil that checks for this.
         Thanks to Jason Hoffman for providing the solution.</p>
@@ -357,7 +357,7 @@ case HSSFCell.CELL_TYPE_NUMERIC:
         known to work.
       </p>
 <p>
-        To guarantee opening the file properly in Excel from IE, write out your file to a
+        To guarantee opening the file properly in excel from IE, write out your file to a
         temporary file under your web root from your servlet. Then send an http response
         to the browser to do a client side redirection to your temp file. (Note that using a
         server side redirect using RequestDispatcher will not be effective in this case)
@@ -369,7 +369,7 @@ case HSSFCell.CELL_TYPE_NUMERIC:
         requests happen for a static file.
       </p>
 <p>
-        None of this is particular to Excel. The same problem arises when you try to
+        None of this is particular to excel. The same problem arises when you try to
         generate any binary file dynamically to an IE client. For example, if you generate
         pdf files using
         <a href="https://xml.apache.org/fop">FOP</a>, you will come across many of the same issues.
@@ -403,7 +403,7 @@ case HSSFCell.CELL_TYPE_NUMERIC:
 </div>
 <a name="faq-N1014B"></a>
 <h2 class="boxed">13. 
-      I am using styles when creating a workbook in POI, but Excel refuses to open the file, complaining about "Too Many Styles".
+      I am using styles when creating a workbook in POI, but excel refuses to open the file, complaining about "Too Many Styles".
     </h2>
 <div class="section">
 <p>You just create the styles OUTSIDE of the loop in which you create cells.</p>

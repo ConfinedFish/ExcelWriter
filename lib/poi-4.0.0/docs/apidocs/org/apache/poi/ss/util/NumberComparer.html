@@ -110,7 +110,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public final class <span class="typeNameLabel">NumberComparer</span>
 extends java.lang.Object</pre>
-<div class="block">Excel compares numbers using different rules to those of java, so
+<div class="block">excel compares numbers using different rules to those of java, so
   <code>Double.compare(double, double)</code> won't do.</div>
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
@@ -155,7 +155,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/apache/poi/ss/util/NumberComparer.html#compare-double-double-">compare</a></span>(double&nbsp;a,
        double&nbsp;b)</code>
-<div class="block">This class attempts to reproduce Excel's behaviour for comparing numbers.</div>
+<div class="block">This class attempts to reproduce excel's behaviour for comparing numbers.</div>
 </td>
 </tr>
 </table>
@@ -205,17 +205,17 @@ extends java.lang.Object</pre>
 <h4>compare</h4>
 <pre>public static&nbsp;int&nbsp;compare(double&nbsp;a,
                           double&nbsp;b)</pre>
-<div class="block">This class attempts to reproduce Excel's behaviour for comparing numbers.  Results are
+<div class="block">This class attempts to reproduce excel's behaviour for comparing numbers.  Results are
  mostly the same as those from <code>Double.compare(double, double)</code> but with some
  rounding.  For numbers that are very close, this code converts to a format having 15
  decimal digits of precision and a decimal exponent, before completing the comparison.
  <p>
- In Excel formula evaluation, expressions like "(0.06-0.01)=0.05" evaluate to "TRUE" even
+ In excel formula evaluation, expressions like "(0.06-0.01)=0.05" evaluate to "TRUE" even
  though the equivalent java expression is <code>false</code>.  In examples like this,
- Excel achieves the effect by having additional logic for comparison operations.
+ excel achieves the effect by having additional logic for comparison operations.
  <p>
  <p>
- Note - Excel also gives special treatment to expressions like "0.06-0.01-0.05" which
+ Note - excel also gives special treatment to expressions like "0.06-0.01-0.05" which
  evaluates to "0" (in java, rounding anomalies give a result of 6.9E-18).  The special
  behaviour here is for different reasons to the example above:  If the last operator in a
  cell formula is '+' or '-' and the result is less than 2<sup>50</sup> times smaller than
@@ -230,7 +230,7 @@ extends java.lang.Object</pre>
  implemented in POI (as of Jul-2009).</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>negative, 0, or positive</code> according to the standard Excel comparison
+<dd><code>negative, 0, or positive</code> according to the standard excel comparison
  of values <tt>a</tt> and <tt>b</tt>.</dd>
 </dl>
 </li>
