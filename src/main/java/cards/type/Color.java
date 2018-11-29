@@ -1,4 +1,4 @@
-package cards.type;
+package main.java.cards.type;
 
 import java.util.ArrayList;
 import java.util.Arrays;

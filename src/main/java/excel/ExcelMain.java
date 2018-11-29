@@ -1,15 +1,22 @@
-package excel;
-
-import cards.Card;
-import cards.Library;
-import cards.type.SuperType;
-import excelwriter.DeckEditor;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.*;
+package main.java.excel;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.Font;
+import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+
+import main.java.cards.Card;
+import main.java.cards.Library;
+import main.java.cards.type.SuperType;
+import main.java.deckeditor.DeckEditor;
 
 public class ExcelMain {
 	public static void writeExcelFile(Library library){
@@ -56,7 +63,7 @@ public class ExcelMain {
 		}
 		
 	}
-	private static String stringBuilder(ArrayList arrayList){
+	private static String stringBuilder(ArrayList<?> arrayList){
 		StringBuilder builder = new StringBuilder();
 		for (Object t : arrayList)
 			builder.append(t.toString()).append(" ");

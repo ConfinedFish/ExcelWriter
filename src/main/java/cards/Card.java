@@ -1,10 +1,10 @@
-package cards;
-
-import cards.type.Color;
-import cards.type.SubType;
-import cards.type.SuperType;
+package main.java.cards;
 
 import java.util.ArrayList;
+
+import main.java.cards.type.Color;
+import main.java.cards.type.SubType;
+import main.java.cards.type.SuperType;
 
 public class Card {
     private String name, desc, manaCost;

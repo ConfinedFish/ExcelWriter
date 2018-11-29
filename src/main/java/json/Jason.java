@@ -1,7 +1,7 @@
-package json;
+package main.java.json;
 
-import cards.Library;
-import excelwriter.DeckEditor;
+import main.java.cards.Library;
+import main.java.deckeditor.DeckEditor;
 
 public class Jason {
 	public static Library readFile(String jsonname){

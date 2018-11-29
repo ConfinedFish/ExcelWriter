@@ -1,9 +1,9 @@
-package excelwriter;
-
-import excel.ExcelReader;
+package main.java.deckeditor;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+
+import main.java.excel.ExcelReader;
 
 public class DeckEditor{
 	//private static Library library = Jason.readFile("AllCards.json");
