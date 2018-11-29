@@ -3,16 +3,14 @@ package main.java.deckeditor;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import main.java.excel.ExcelReader;
+import main.java.gui.GUI;
 
 public class DeckEditor{
-	//private static Library library = Jason.readFile("AllCards.json");
     public static void main(String[] args) {
         new DeckEditor().run();
     }
     public void run(){
-		//excel.ExcelMain.writeExcelFile(library);
-		ExcelReader.readFile("Cards.xlsx");
+    	GUI.createAndShowGUI();
     }
 	public static void print(Object obj){
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
