@@ -1,10 +1,9 @@
 package main.java.gui;
 
-import java.awt.Button;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 
-public class Listener implements java.awt.event.ActionListener{
+public class Listener implements java.awt.event.ActionListener {
 	private TextField butt;
 	public Listener(TextField butt) {
 		this.butt = butt;
@@ -19,5 +18,4 @@ public class Listener implements java.awt.event.ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		butt.setText("Hello");
 	}
-
 }
