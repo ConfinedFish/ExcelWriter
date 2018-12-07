@@ -3,7 +3,10 @@ package main.java.gui;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
@@ -25,26 +28,56 @@ public class SetTableGUI extends JFrame {
 		super("sets");
 		ArrayList<CardSet> sets = Jason.sets;
 		Object[] colnames = Jason.columnNames.toArray();
-		DefaultTableModel model = new DefaultTableModel(colnames, 0);
+		DefaultTableModel model = new DefaultTableModel(colnames, 0) {
+			
+			private static final long serialVersionUID = 4914153800432984346L;
+			@Override
+			public boolean isCellEditable(int row, int col) {
+				int cardCol = 0;
+				for (int i = 0; i < columnIdentifiers.size(); i++) {
+					if (columnIdentifiers.get(i).equals("cards")) {
+						cardCol = i;
+					}
+				}
+				if (col == cardCol) {
+					return true;
+				}else {
+					return false;
+				}
+			}
+		};
 		JTable table = new JTable(model);
 		model.setColumnIdentifiers(colnames);
 		table.setModel(model);
+		table.setAutoCreateRowSorter(true);
 		for (int i = 0; i < sets.size(); i++) {
-			int totalSize = sets.get(i).getTotalSize();
-			String name = sets.get(i).getName();
-			String code = sets.get(i).getCode();
-			String releaseDate = sets.get(i).getReleaseDate();
-			String type = sets.get(i).getType();
-			String block = sets.get(i).getBlock();
-			ArrayList<Card> cards = sets.get(i).getCards();
-			Object[] data = { cards, code, name, releaseDate, totalSize, type, block};
-			model.addRow(data);
-		}
+			try {
+				ArrayList<Method> methods = new ArrayList<>(Arrays.asList(CardSet.class.getMethods()));
+				ArrayList<String> methodNames = new ArrayList<>();
+				ArrayList<Object> values = new ArrayList<>();
+				for (Method meth : methods) {
+					if (meth.getName().startsWith("get") && !meth.getName().equals("getClass")) {
+						methodNames.add(meth.getName());
+					}
+				}
+				Collections.sort(methodNames);
+				methods.clear();
+				for (String name : methodNames) {
+					methods.add(CardSet.class.getMethod(name));
+				}
+				for (Method meth : methods) {
+					values.add(meth.invoke(sets.get(i)));
+				}
+				model.addRow(values.toArray());
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		table.getColumn("cards").setCellRenderer(new ButtonRenderer());
 		table.getColumn("cards").setCellEditor(new ButtonEditor(new JCheckBox()));
-		JScrollPane scrollPane = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
-				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		add(scrollPane);
+			JScrollPane scrollPane = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+					JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+			add(scrollPane);
+		}
 	}
 	class ButtonRenderer extends JButton implements TableCellRenderer {
 		private static final long serialVersionUID = 1L;
@@ -67,7 +100,6 @@ public class SetTableGUI extends JFrame {
 	class ButtonEditor extends DefaultCellEditor {
 		private static final long serialVersionUID = 1L;
 		protected JButton button;
-		private String label;
 		private boolean isPushed;
 		private Object set;
 		public ButtonEditor(JCheckBox checkBox) {
@@ -90,17 +122,20 @@ public class SetTableGUI extends JFrame {
 				button.setBackground(table.getBackground());
 			}
 			set = value;
-			label = (value == null) ? "" : "cards";
 			isPushed = true;
 			return button;
 		}
 		public Object getCellEditorValue() {
+			ArrayList<Card> cards = new ArrayList<>();
 			if (isPushed) {
-				CardTableGUI table = new CardTableGUI(set);
-				table.setVisible(true);
+				if (set instanceof ArrayList) {
+					cards = (ArrayList<Card>)set;
+					CardTableGUI table = new CardTableGUI(set);
+					table.setVisible(true);
+				}
 			}
 			isPushed = false;
-			return new String(label);
+			return cards;
 		}
 		public boolean stopCellEditing() {
 			isPushed = false;

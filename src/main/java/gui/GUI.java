@@ -4,12 +4,14 @@ import java.awt.Dimension;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import main.java.cards.Card;
 import main.java.json.Jason;
 
 public class GUI extends JPanel {
@@ -33,7 +35,8 @@ public class GUI extends JPanel {
 		cardButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				CardTableGUI cardGUI = new CardTableGUI();
+				ArrayList<Card> c = Jason.dictonary.getList();
+				CardTableGUI cardGUI = new CardTableGUI(c);
 				cardGUI.setSize(new Dimension(500, 600));
 				cardGUI.setVisible(true);
 			}

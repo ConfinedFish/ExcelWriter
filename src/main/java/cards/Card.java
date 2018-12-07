@@ -10,25 +10,13 @@ import main.java.cards.type.SuperType;
 public class Card {
 	private String name, originalText, manaCost, printings, rarity;
 	private ArrayList<Format> legalities;
-	private ArrayList<SuperType> types;
+	private ArrayList<SuperType> supertypes;
 	private ArrayList<SubType> subtypes;
 	private ArrayList<Color> colorIdentity;
-	private Integer power, toughness;
+	private String power, toughness;
 	private Double convertedManaCost;
-	public Card(String name, String desc, String manaCost, Double cmc, ArrayList<SuperType> superType,
-			ArrayList<SubType> subtype, ArrayList<Color> colorIdentity, Integer power, Integer toughness) {
-		this.name = name;
-		this.originalText = desc;
-		this.manaCost = manaCost;
-		this.types = superType;
-		this.subtypes = subtype;
-		this.colorIdentity = colorIdentity;
-		this.power = power;
-		this.toughness = toughness;
-		this.convertedManaCost = cmc;
-	}
-	public Card() {
-	}
+	private String type;
+	public Card() {	}
 	public String getName() {
 		return name;
 	}
@@ -48,10 +36,10 @@ public class Card {
 		this.manaCost = manaCost;
 	}
 	public ArrayList<SuperType> getSuperType() {
-		return types;
+		return supertypes;
 	}
 	public void setSuperType(ArrayList<SuperType> superType) {
-		this.types = superType;
+		this.supertypes = superType;
 	}
 	public ArrayList<SubType> getSubtype() {
 		return subtypes;
@@ -65,16 +53,16 @@ public class Card {
 	public void setColorIdentity(ArrayList<Color> colorIdentity) {
 		this.colorIdentity = colorIdentity;
 	}
-	public Integer getPower() {
+	public String getPower() {
 		return power;
 	}
-	public void setPower(Integer power) {
+	public void setPower(String power) {
 		this.power = power;
 	}
-	public Integer getToughness() {
+	public String getToughness() {
 		return toughness;
 	}
-	public void setToughness(Integer toughness) {
+	public void setToughness(String toughness) {
 		this.toughness = toughness;
 	}
 	public Double getCMC() {
@@ -100,5 +88,11 @@ public class Card {
 	}
 	public void setRarity(String rarity) {
 		this.rarity = rarity;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
 	}
 }

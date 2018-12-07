@@ -46,7 +46,7 @@ public class ExcelMain {
 			row.createCell(5).setCellValue(stringBuilder(c.getColorIdentity()));
 			row.createCell(6).setCellValue(c.getPower() == null ? "" : c.getPower().toString());
 			row.createCell(7).setCellValue(c.getToughness() == null ? "" : c.getToughness().toString());
-			row.createCell(8).setCellValue(c.getSuperType().contains(SuperType.LAND) ? "" : c.getCMC().toString());
+			row.createCell(8).setCellValue(c.getSuperType().contains(SuperType.Land) ? "" : c.getCMC().toString());
 			if (rowNum % 1000 == 0 || rowNum == library.size())
 				DeckEditor.println(Math.round((double) rowNum / (double) library.size() * 100) + "%");
 		}

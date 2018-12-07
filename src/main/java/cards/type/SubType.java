@@ -4,38 +4,41 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public enum SubType {
-	ADVISOR, AETHERBORN, AJANI, ALARA, ALLY, AMINATOU, AND, ANGEL, ANGRATH, ANTEATER, ANTELOPE, APE, ARCANE, ARCHER,
-	ARCHON, ARKHOS, ARLINN, ARTIFICER, ASHIOK, ASSASSIN, ASSEMBLY, ASSEMBLYWORKER, ATOG, AURA, AUROCHS, AVATAR, AZGOL,
-	AZRA, BADGER, BARBARIAN, BASILISK, BAT, BEAR, BEAST, BEAVER, BEEBLE, BELENON, BERSERKER, BIRD, BLINKMOTH, BOAR,
-	BOLAS, BRAINIAC, BRINGER, BRUSHWAGG, BUREAUCRAT, CAMARID, CAMEL, CARIBOU, CARRIER, CARTOUCHE, CAT, CENTAUR,
-	CEPHALID, CHANDRA, CHICKEN, CHILD, CHIMERA, CITIZEN, CLAMFOLK, CLERIC, COCKATRICE, CONSPIRACY, CONSTRUCT,
-	CONTRAPTION, COW, COWARD, CRAB, CROCODILE, CURSE, CYBORG, CYCLOPS, DACK, DARETTI, DAUTHI, DEER, DEMON, DESERT,
-	DESERTER, DESIGNER, DEVIL, DINOSAUR, DJINN, DOMINARIA, DOMRI, DONKEY, DOVIN, DRAGON, DRAKE, DREADNOUGHT, DRONE,
-	DRUID, DRYAD, DWARF, EATURECRAY, EFREET, EGG, ELDER, ELDRAZI, ELEMENTAL, ELEPHANT, ELF, ELK, ELSPETH, ELVES,
-	EQUILOR, EQUIPMENT, ERGAMON, ESTRID, ETIQUETTE, EVER, EYE, FABACIN, FAERIE, FERRET, FISH, FLAGBEARER, FOREST,
-	FORTIFICATION, FOX, FREYALISE, FROG, FUNGUS, GAMER, GARGOYLE, GARRUK, GATE, GERM, GIANT, GIDEON, GNOME, GOAT,
-	GOBLIN, GOD, GOLEM, GORGON, GRAVEBORN, GREMLIN, GRIFFIN, GUS, HAG, HARPY, HATIFICER, HEAD, HELLION, HERO, HIPPO,
-	HIPPOGRIFF, HOMARID, HOMUNCULUS, HORMARID, HORROR, HORSE, HOST, HOUND, HUATLI, HUMAN, HYDRA, HYENA, IGPAY, ILLUSION,
-	IMP, INCARNATION, INNISTRAD, INSECT, IQUATANA, IR, ISLAND, JACE, JACKAL, JAYA, JELLYFISH, JUGGERNAUT, KALDHEIM,
-	KAMIGAWA, KANGAROO, KARN, KARSUS, KAVU, KAYA, KEPHALAI, KILLBOT, KINSHALA, KIORA, KIRIN, KITHKIN, KNIGHT, KOBOLD,
-	KOLBAHAN, KOR, KOTH, KRAKEN, KYNETH, LADY, LAIR, LAMIA, LAMMASU, LEECH, LEGEND, LEVIATHAN, LHURGOYF, LICID, LILIANA,
-	LIZARD, LOBSTER, LOCUS, LORWYN, LUVION, MANTICORE, MASTICORE, MEDITATION, MERCADIA, MERCENARY, MERFOLK, METATHRAN,
-	MIME, MINE, MINION, MINOTAUR, MIRRODIN, MOAG, MOLE, MONGER, MONGOOSE, MONGSENG, MONK, MONKEY, MOONFOLK, MOUNTAIN,
-	MUMMY, MURAGANDA, MUTANT, MYR, MYSTIC, NAGA, NAHIRI, NARSET, NAUTILUS, NEPHILIM, NEW, NIGHTMARE, NIGHTSTALKER,
-	NINJA, NISSA, NIXILIS, NOGGLE, NOMAD, NYMPH, OCTOPUS, OF, OGRE, OOZE, OR, ORB, ORC, ORGG, OUPHE, OX, OYSTER,
-	PANGOLIN, PARATROOPER, PEGASUS, PENGUIN, PENTAVITE, PEST, PHELDDAGRIF, PHENOMENON, PHOENIX, PHYREXIA, PILOT,
-	PINCHER, PIRATE, PLAINS, PLANE, PLANT, POWER, PRAETOR, PRISM, PROCESSOR, PROPER, PYRULEA, RABBIT, RABIAH, RACCOON,
-	RAL, RAT, RATH, RAVNICA, REALM, REBEL, REFLECTION, REGATHA, RHINO, RIGGER, ROGUE, ROWAN, SABLE, SAGA, SAHEELI,
-	SALAMANDER, SAMURAI, SAMUT, SAND, SAPROLING, SARKHAN, SATYR, SCARECROW, SCARIEST, SCHEME, SCIENTIST, SCION,
-	SCORPION, SCOUT, SEE, SEGOVIA, SERF, SERPENT, SERRA, SHADE, SHADOWMOOR, SHAMAN, SHANDALAR, SHAPESHIFTER, SHEEP,
-	SHIP, SHRINE, SIREN, SKELETON, SLITH, SLIVER, SLUG, SNAKE, SOLDIER, SOLTARI, SORIN, SPAWN, SPECTER, SPELLSHAPER,
-	SPHINX, SPIDER, SPIKE, SPIRIT, SPLINTER, SPONGE, SPY, SQUID, SQUIRREL, STARFISH, SURRAKAR, SURVIVOR, SWAMP, TAMIYO,
-	TEFERI, TETRAVITE, TEZZERET, THALAKOS, THOPTER, THRULL, TIBALT, TOWER, TOWNSFOLK, TRAP, TREEFOLK, TRIBAL, TRILOBITE,
-	TRISKELAVITE, TROLL, TURTLE, U2019S, UGIN, ULGROTHA, UNICORN, URZA, VALLA, VAMPIRE, VAMPYRE, VANGUARD, VEDALKEN,
-	VEHICLE, VENSER, VIASHINO, VILLAIN, VIVIEN, VOLVER, VRASKA, VRYN, WAITER, WALL, WARRIOR, WEIRD, WEREWOLF, WHALE,
-	WILDFIRE, WILL, WINDGRACE, WIZARD, WOLF, WOLVERINE, WOMBAT, WORKER, WORM, WRAITH, WRESTLER, WURM, XENAGOS, XEREX,
-	YANGGU, YANLING, YETI, ZENDIKAR, ZOMBIE, ZUBERA;
-	public static ArrayList<String> errorTypes = new ArrayList<String>();
+	Advisor, Aetherborn, Ajani, Alara, Ally, Aminatou, And, Angel, Angrath, Anteater, Antelope, Ape, Arcane, Archer,
+	archon, Arkhos, Arlinn, Artificer, Ashiok, Assassin, Assembly, Assemblyworker, Atog, Aura, Aurochs, Avatar, Azgol,
+	azra, Badger, Barbarian, Basilisk, Bat, Bear, Beast, Beaver, Beeble, Belenon, Berserker, Bird, Blinkmoth, Boar,
+	bolas, Brainiac, Bringer, Brushwagg, Bureaucrat, Camarid, Camel, Caribou, Carrier, Cartouche, Cat, Centaur,
+	cephalid, Chandra, Chicken, Child, Chimera, Citizen, Clamfolk, Cleric, Cockatrice, Conspiracy, Construct,
+	contraption, Cow, Coward, Crab, Crocodile, Curse, Cyborg, Cyclops, Dack, Daretti, Dauthi, Deer, Demon, Desert,
+	deserter, Designer, Devil, Dinosaur, Djinn, Dominaria, Domri, Donkey, Dovin, Dragon, Drake, Dreadnought, Drone,
+	druid, Dryad, Dwarf, Eaturecray, Efreet, Egg, Elder, Eldrazi, Elemental, Elephant, Elf, Elk, Elspeth, Elves,
+	equilor, Equipment, Ergamon, Estrid, Etiquette, Ever, Eye, Fabacin, Faerie, Ferret, Fish, Flagbearer, Forest,
+	fortification, Fox, Freyalise, Frog, Fungus, Gamer, Gargoyle, Garruk, Gate, Germ, Giant, Gideon, Gnome, Goat,
+	goblin, God, Golem, Gorgon, Graveborn, Gremlin, Griffin, Gus, Hag, Harpy, Hatificer, Head, Hellion, Hero, Hippo,
+	hippogriff, Homarid, Homunculus, Hormarid, Horror, Horse, Host, Hound, Huatli, Human, Hydra, Hyena, Igpay, Illusion,
+	imp, Incarnation, Innistrad, Insect, Iquatana, Ir, Island, Jace, Jackal, Jaya, Jellyfish, Juggernaut, Kaldheim,
+	kamigawa, Kangaroo, Karn, Karsus, Kavu, Kaya, Kephalai, Killbot, Kinshala, Kiora, Kirin, Kithkin, Knight, Kobold,
+	kolbahan, Kor, Koth, Kraken, Kyneth, Lady, Lair, Lamia, Lammasu, Leech, Legend, Leviathan, Lhurgoyf, Licid, Liliana,
+	lizard, Lobster, Locus, Lorwyn, Luvion, Manticore, Masticore, Meditation, Mercadia, Mercenary, Merfolk, Metathran,
+	mime, Mine, Minion, Minotaur, Mirrodin, Moag, Mole, Monger, Mongoose, Mongseng, Monk, Monkey, Moonfolk, Mountain,
+	mummy, Muraganda, Mutant, Myr, Mystic, Naga, Nahiri, Narset, Nautilus, Nephilim, New, Nightmare, Nightstalker,
+	ninja, Nissa, Nixilis, Noggle, Nomad, Nymph, Octopus, Of, Ogre, Ooze, Or, Orb, Orc, Orgg, Ouphe, Ox, Oyster,
+	pangolin, Paratrooper, Pegasus, Penguin, Pentavite, Pest, Phelddagrif, Phenomenon, Phoenix, Phyrexia, Pilot,
+	pincher, Pirate, Plains, Plane, Plant, Power, Praetor, Prism, Processor, Proper, Pyrulea, Rabbit, Rabiah, Raccoon,
+	ral, Rat, Rath, Ravnica, Realm, Rebel, Reflection, Regatha, Rhino, Rigger, Rogue, Rowan, Sable, Saga, Saheeli,
+	salamander, Samurai, Samut, Sand, Saproling, Sarkhan, Satyr, Scarecrow, Scariest, Scheme, Scientist, Scion,
+	scorpion, Scout, See, Segovia, Serf, Serpent, Serra, Shade, Shadowmoor, Shaman, Shandalar, Shapeshifter, Sheep,
+	ship, Shrine, Siren, Skeleton, Slith, Sliver, Slug, Snake, Soldier, Soltari, Sorin, Spawn, Specter, Spellshaper,
+	sphinx, Spider, Spike, Spirit, Splinter, Sponge, Spy, Squid, Squirrel, Starfish, Surrakar, Survivor, Swamp, Tamiyo,
+	teferi, Tetravite, Tezzeret, Thalakos, Thopter, Thrull, Tibalt, Tower, Townsfolk, Trap, Treefolk, Tribal, Trilobite,
+	triskelavite, Troll, Turtle, U2019s, Ugin, Ulgrotha, Unicorn, Urza, Valla, Vampire, Vampyre, Vanguard, Vedalken,
+	vehicle, Venser, Viashino, Villain, Vivien, Volver, Vraska, Vryn, Waiter, Wall, Warrior, Weird, Werewolf, Whale,
+	wildfire, Will, Windgrace, Wizard, Wolf, Wolverine, Wombat, Worker, Worm, Wraith, Wrestler, Wurm, Xenagos, Xerex,
+	yanggu, Yanling, Yeti, Zendikar, Zombie, Zubera, Cephalid, Imp, Goblin, Druid, Lizard, Scorpion, s, Vehicle, Sphinx,
+	Azra, Archon, Ninja, Hippogriff, Teferi, Bolas, Ral, Salamander, Pangolin, Treasure, Fortification, Yanggu, Autobot,
+	Equilor, Kamigawa, Wildfire, Dungeon, Master, Servo, Rukh, Mime, Kolbahan, Reveler, of, The, Biggest, Baddest,
+	Nastiest, Mummy, Ship, and, or, Contraption;
+	public static ArrayList<String> errorSubTypes = new ArrayList<String>();
 	public static ArrayList<SubType> parseString(String string) {
 		ArrayList<String> stringArrayList = new ArrayList<>(Arrays.asList(string.trim().split("\\W+")));
 		ArrayList<SubType> subTypes = new ArrayList<>();
@@ -44,8 +47,8 @@ public enum SubType {
 				try {
 					subTypes.add(valueOf(strings));
 				} catch (Exception e) {
-					if (!errorTypes.contains(strings))
-						errorTypes.add(strings);
+					if (!errorSubTypes.contains(strings))
+						errorSubTypes.add(strings);
 				}
 		}
 		return subTypes;

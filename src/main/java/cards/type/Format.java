@@ -17,7 +17,7 @@ public enum Format {
 	future,
 	standard,;
 	
-	public static ArrayList<String> errorTypes = new ArrayList<String>();
+	public static ArrayList<String> errorFormatTypes = new ArrayList<String>();
 	public static ArrayList<Format> parseString(String string) {
 		ArrayList<String> stringArrayList = new ArrayList<>(Arrays.asList(string.trim().split("\\W+")));
 		ArrayList<Format> formats = new ArrayList<>();
@@ -30,8 +30,8 @@ public enum Format {
 						formats.add(valueOf(strings));
 					}
 				} catch (Exception e) {
-					if (!errorTypes.contains(strings))
-						errorTypes.add(strings);
+					if (!errorFormatTypes.contains(strings))
+						errorFormatTypes.add(strings);
 				}
 		}
 		return formats;
