@@ -29,7 +29,6 @@ public class Jason extends DeckEditor {
 	public static ArrayList<CardSet> sets;
 	public static CardDictonary dictonary;
 	public static ArrayList<String> cardColumnNames, columnNames;
-
 	public static void readFileForSets(String jsonname) {
 		ArrayList<CardSet> listOfSets = new ArrayList<>();
 		dictonary = new CardDictonary();
@@ -140,7 +139,6 @@ public class Jason extends DeckEditor {
 							card.setSuperType(getTypesFromValue(entry.getValue().getAsJsonArray()));
 							break;
 					}
-					
 				}
 			}
 			dictonary.add(card);
@@ -148,7 +146,7 @@ public class Jason extends DeckEditor {
 		}
 		return cards;
 	}
-	private static ArrayList<SuperType> getTypesFromValue(JsonArray array){
+	private static ArrayList<SuperType> getTypesFromValue(JsonArray array) {
 		Iterator<JsonElement> it = array.iterator();
 		ArrayList<SuperType> list = new ArrayList<>();
 		while (it.hasNext()) {
@@ -156,7 +154,7 @@ public class Jason extends DeckEditor {
 		}
 		return list;
 	}
-	private static ArrayList<SubType> getSubTypesFromValue(JsonArray array){
+	private static ArrayList<SubType> getSubTypesFromValue(JsonArray array) {
 		Iterator<JsonElement> it = array.iterator();
 		ArrayList<SubType> list = new ArrayList<>();
 		while (it.hasNext()) {
@@ -164,7 +162,7 @@ public class Jason extends DeckEditor {
 		}
 		return list;
 	}
-	private static ArrayList<Color> getColorFromValue(JsonArray array){
+	private static ArrayList<Color> getColorFromValue(JsonArray array) {
 		Iterator<JsonElement> it = array.iterator();
 		ArrayList<Color> list = new ArrayList<>();
 		while (it.hasNext()) {
@@ -172,13 +170,12 @@ public class Jason extends DeckEditor {
 		}
 		return list;
 	}
-	private static ArrayList<Format> getFormatFromValue(JsonObject jsonObject){
+	private static ArrayList<Format> getFormatFromValue(JsonObject jsonObject) {
 		ArrayList<Format> list = new ArrayList<>();
 		Set<Entry<String, JsonElement>> set = jsonObject.entrySet();
 		for (Entry<String, JsonElement> entry : set) {
 			list.addAll(Format.parseString(entry.getKey()));
 		}
 		return list;
-		
 	}
 }

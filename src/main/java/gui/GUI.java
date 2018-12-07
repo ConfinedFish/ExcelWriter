@@ -25,7 +25,6 @@ public class GUI extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				SetTableGUI setGUI = new SetTableGUI();
-				setGUI.setSize(new Dimension(500, 600));
 				setGUI.setVisible(true);
 			}
 		});
@@ -36,8 +35,7 @@ public class GUI extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ArrayList<Card> c = Jason.dictonary.getList();
-				CardTableGUI cardGUI = new CardTableGUI(c);
-				cardGUI.setSize(new Dimension(500, 600));
+				CardTableGUI cardGUI = new CardTableGUI("All Cards", c);
 				cardGUI.setVisible(true);
 			}
 		});

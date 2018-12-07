@@ -9,6 +9,7 @@ import main.java.cards.type.Format;
 import main.java.cards.type.SubType;
 import main.java.cards.type.SuperType;
 import main.java.gui.GUI;
+import main.java.json.Jason;
 
 public class DeckEditor {
 	public static void main(String[] args) {
@@ -17,6 +18,7 @@ public class DeckEditor {
 	public void run() {
 		GUI.createAndShowGUI();
 		printErrorTypes();
+		println("Removed " + Jason.dictonary.removeDoup() + " duplicates");
 	}
 	private void printErrorTypes(){
 		ArrayList<String> error = Format.errorFormatTypes;

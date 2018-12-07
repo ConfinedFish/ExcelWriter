@@ -1,5 +1,6 @@
 package main.java.gui;
 
+import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -10,12 +11,20 @@ import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.RowFilter;
 import javax.swing.UIManager;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 import main.java.cards.Card;
 import main.java.json.Jason;
@@ -23,9 +32,11 @@ import main.java.json.Jason;
 public class CardTableGUI extends JFrame {
 	private static final long serialVersionUID = -8543861956071891649L;
 	@SuppressWarnings("unchecked")
-	public CardTableGUI(Object set) {
-		super("cards");
+	public CardTableGUI(String title, Object set) {
+		super(title);
+		
 		drawTable(set instanceof ArrayList ? (ArrayList<Card>) set : new ArrayList<>());
+		setSize(new Dimension(1050, 600));
 	}
 	private void drawTable(ArrayList<Card> cards) {
 		Object[] colnames = Jason.cardColumnNames.toArray();
@@ -45,6 +56,38 @@ public class CardTableGUI extends JFrame {
 		JTable table = new JTable(model);
 		model.setColumnIdentifiers(colnames);
 		table.setModel(model);
+		TableRowSorter<TableModel> rowSorter = new TableRowSorter<>(model);
+		JTextField jtfFilter = new JTextField(50);
+		table.setRowSorter(rowSorter);
+		JPanel panel = new JPanel(new BorderLayout());
+		panel.add(new JLabel("Search:"), BorderLayout.WEST);
+		panel.add(jtfFilter, BorderLayout.CENTER);
+		setLayout(new BorderLayout());
+		add(panel, BorderLayout.SOUTH);
+		add(new JScrollPane(table), BorderLayout.CENTER);
+		jtfFilter.getDocument().addDocumentListener(new DocumentListener() {
+			@Override
+			public void insertUpdate(DocumentEvent e) {
+				String text = jtfFilter.getText();
+				if (text.trim().length() == 0) {
+					rowSorter.setRowFilter(null);
+				} else {
+					rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
+				}
+			}
+			@Override
+			public void removeUpdate(DocumentEvent e) {
+				String text = jtfFilter.getText();
+				if (text.trim().length() == 0) {
+					rowSorter.setRowFilter(null);
+				} else {
+					rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
+				}
+			}
+			@Override
+			public void changedUpdate(DocumentEvent arg0) {
+			}
+		});
 		for (int i = 0; i < cards.size(); i++) {
 			Object[] data = { cards.get(i).getColorIdentity(), cards.get(i).getCMC(), cards.get(i).getLegalities(),
 					cards.get(i).getManaCost(), cards.get(i).getName(), cards.get(i).getDesc(), cards.get(i).getPower(),
