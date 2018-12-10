@@ -17,8 +17,8 @@ public class DeckEditor {
 	}
 	public void run() {
 		GUI.createAndShowGUI();
-		printErrorTypes();
 		println("Removed " + Jason.dictonary.removeDoup() + " duplicates");
+		printErrorTypes();
 	}
 	private void printErrorTypes(){
 		ArrayList<String> error = Format.errorFormatTypes;
