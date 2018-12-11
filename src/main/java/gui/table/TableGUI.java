@@ -66,7 +66,7 @@ public class TableGUI extends JFrame {
 			}
 		});
 	}
-	void resizeTable(JTable table) {
+	JTable resizeTable(JTable table) {
 		final TableColumnModel columnModel = table.getColumnModel();
 		for (int column = 0; column < table.getColumnCount(); column++) {
 			int width = 30;
@@ -76,10 +76,11 @@ public class TableGUI extends JFrame {
 				width = Math.max(comp.getPreferredSize().width + 10, width);
 			}
 			if (width > 300)
-				width = 300;
+				width = 150;
 			columnModel.getColumn(column).setPreferredWidth(width);
 		}
 		table.setRowHeight(20);
+		return table;
 	}
 	class ButtonRenderer extends JButton implements TableCellRenderer {
 		private static final long serialVersionUID = 1L;

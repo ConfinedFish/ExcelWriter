@@ -5,7 +5,10 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
@@ -18,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import main.java.cards.Card;
 import main.java.cards.CardDictonary;
 import main.java.cards.CardSet;
+import main.java.cards.ColNameComparator;
 import main.java.cards.type.Color;
 import main.java.cards.type.Format;
 import main.java.cards.type.SubType;
@@ -74,6 +78,7 @@ public class Jason extends DeckEditor {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		DeckEditor.println(cardColumnNames.toString());
 		println("Finished loading from JSON");
 		sets = listOfSets;
 	}
@@ -87,11 +92,18 @@ public class Jason extends DeckEditor {
 	}
 	private static void getCardColumns() {
 		cardColumnNames = new ArrayList<>();
+		List<String> listOfSorted = Arrays.asList("name", "convertedManaCost", "manaCost", "originalText", "type", "power",
+				"toughness", "supertypes", "subtypes", "rarity", "legalities", "printings", "colorIdentity");
 		ArrayList<Field> fields = new ArrayList<>(Arrays.asList(Card.class.getDeclaredFields()));
 		for (Field f : fields) {
 			cardColumnNames.add(f.getName());
 		}
-		Collections.sort(cardColumnNames);
+		Map<String, Integer> mapOfColName = new HashMap<String, Integer>();
+		for (int i = 0; i < listOfSorted.size(); i++) {
+			String colName = listOfSorted.get(i);
+			mapOfColName.put(colName, i);
+		}
+		Collections.sort(cardColumnNames, new ColNameComparator(mapOfColName));
 	}
 	private static ArrayList<Card> readCards(JsonArray element) {
 		cards = new ArrayList<>();
@@ -103,13 +115,13 @@ public class Jason extends DeckEditor {
 				for (Entry<String, JsonElement> entry : set) {
 					switch (entry.getKey().toString()) {
 						case "originalText":
-							card.setDesc(entry.getValue().toString().replaceAll("\"", ""));
+							card.setOriginalText(entry.getValue().toString().replaceAll("\"", ""));
 							break;
 						case "name":
 							card.setName(entry.getValue().toString().replaceAll("\"", ""));
 							break;
 						case "convertedManaCost":
-							card.setCmc(entry.getValue().getAsDouble());
+							card.setConvertedManaCost(entry.getValue().getAsDouble());
 							break;
 						case "manaCost":
 							card.setManaCost(entry.getValue().toString().replaceAll("\"", ""));
@@ -130,13 +142,13 @@ public class Jason extends DeckEditor {
 							card.setPower(entry.getValue().toString().replaceAll("\"", ""));
 							break;
 						case "subtypes":
-							card.setSubtype(getSubTypesFromValue(entry.getValue().getAsJsonArray()));
+							card.setSubtypes(getSubTypesFromValue(entry.getValue().getAsJsonArray()));
 							break;
 						case "toughness":
 							card.setToughness(entry.getValue().toString().replaceAll("\"", ""));
 							break;
 						case "types":
-							card.setSuperType(getTypesFromValue(entry.getValue().getAsJsonArray()));
+							card.setSupertypes(getTypesFromValue(entry.getValue().getAsJsonArray()));
 							break;
 					}
 				}

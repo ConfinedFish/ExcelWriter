@@ -15,7 +15,6 @@ import org.apache.poi.ss.usermodel.Workbook;
 
 import main.java.cards.Card;
 import main.java.cards.CardDictonary;
-import main.java.cards.type.SuperType;
 import main.java.deckeditor.DeckEditor;
 
 public class ExcelMain {
@@ -37,18 +36,18 @@ public class ExcelMain {
 		int rowNum = 1;
 		DeckEditor.println("Started building excel workbook");
 		for (Card c : library) {
-			Row row = sheet.createRow(rowNum++);
-			row.createCell(0).setCellValue(c.getName());
-			row.createCell(1).setCellValue(c.getDesc());
-			row.createCell(2).setCellValue(c.getManaCost());
-			row.createCell(3).setCellValue(stringBuilder(c.getSuperType()));
-			row.createCell(4).setCellValue(stringBuilder(c.getSubtype()));
-			row.createCell(5).setCellValue(stringBuilder(c.getColorIdentity()));
-			row.createCell(6).setCellValue(c.getPower() == null ? "" : c.getPower().toString());
-			row.createCell(7).setCellValue(c.getToughness() == null ? "" : c.getToughness().toString());
-			row.createCell(8).setCellValue(c.getSuperType().contains(SuperType.Land) ? "" : c.getCMC().toString());
-			if (rowNum % 1000 == 0 || rowNum == library.size())
-				DeckEditor.println(Math.round((double) rowNum / (double) library.size() * 100) + "%");
+//			Row row = sheet.createRow(rowNum++);
+//			row.createCell(0).setCellValue(c.getName());
+//			row.createCell(1).setCellValue(c.getDesc());
+//			row.createCell(2).setCellValue(c.getManaCost());
+//			row.createCell(3).setCellValue(stringBuilder(c.getSupertype()));
+//			row.createCell(4).setCellValue(stringBuilder(c.getSubtype()));
+//			row.createCell(5).setCellValue(stringBuilder(c.getColoridentity()));
+//			row.createCell(6).setCellValue(c.getPower() == null ? "" : c.getPower().toString());
+//			row.createCell(7).setCellValue(c.getToughness() == null ? "" : c.getToughness().toString());
+//			row.createCell(8).setCellValue(c.getSupertype().contains(SuperType.Land) ? "" : c.getCMC().toString());
+//			if (rowNum % 1000 == 0 || rowNum == library.size())
+//				DeckEditor.println(Math.round((double) rowNum / (double) library.size() * 100) + "%");
 		}
 		DeckEditor.println("Finished building excel workbook");
 		try {

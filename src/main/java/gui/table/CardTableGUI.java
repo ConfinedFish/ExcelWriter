@@ -3,8 +3,6 @@ package main.java.gui.table;
 import java.awt.Dimension;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 
 import javax.swing.JCheckBox;
 import javax.swing.JScrollPane;
@@ -23,8 +21,8 @@ public class CardTableGUI extends TableGUI {
 		setSize(new Dimension(1050, 600));
 	}
 	private void drawTable(ArrayList<Card> cards) {
-		Object[] colnames = Jason.cardColumnNames.toArray();
-		DefaultTableModel model = new DefaultTableModel(colnames, 0) {
+		ArrayList<String> colnames = Jason.cardColumnNames;
+		DefaultTableModel model = new DefaultTableModel(colnames.toArray(), 0) {
 			private static final long serialVersionUID = -6550280855835102010L;
 			@Override
 			public boolean isCellEditable(int row, int col) {
@@ -43,23 +41,15 @@ public class CardTableGUI extends TableGUI {
 			}
 		};
 		JTable table = new JTable(model);
-		model.setColumnIdentifiers(colnames);
+		model.setColumnIdentifiers(colnames.toArray());
 		table.setModel(model);
 		applySearch(table);
 		try {
 			for (int i = 0; i < cards.size(); i++) {
-				ArrayList<Method> methods = new ArrayList<>(Arrays.asList(Card.class.getMethods()));
-				ArrayList<String> methodNames = new ArrayList<>();
+				ArrayList<Method> methods = new ArrayList<>();
 				ArrayList<Object> values = new ArrayList<>();
-				for (Method meth : methods) {
-					if (meth.getName().startsWith("get") && !meth.getName().equals("getClass")) {
-						methodNames.add(meth.getName());
-					}
-				}
-				Collections.sort(methodNames);
-				methods.clear();
-				for (String name : methodNames) {
-					methods.add(Card.class.getMethod(name));
+				for (String name : colnames) {
+					methods.add(Card.class.getMethod("get" + name.substring(0, 1).toUpperCase() + name.substring(1)));
 				}
 				for (Method meth : methods) {
 					values.add(meth.invoke(cards.get(i)));
@@ -77,7 +67,7 @@ public class CardTableGUI extends TableGUI {
 				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		setSize(new Dimension(500, 600));
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-		resizeTable(table);
+		table = resizeTable(table);
 		add(scrollPane);
 	}
 }
