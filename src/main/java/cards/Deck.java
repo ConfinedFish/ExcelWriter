@@ -1,15 +1,51 @@
 package main.java.cards;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
+
+import org.apache.commons.compress.archivers.dump.InvalidFormatException;
+import org.apache.commons.io.FilenameUtils;
+
+import main.java.deckeditor.DeckEditor;
+import main.java.json.Jason;
 
 public class Deck implements Iterable<ArrayList<Card>> {
 	private ArrayList<ArrayList<Card>> list;
 	private int deckSize;
-	Deck() {
+	public Deck() {
 		list = new ArrayList<>();
 		deckSize = 0;
 	}
+	
+	public static Deck loadDeckFromFile(File file) throws InvalidFormatException, FileNotFoundException {
+		Deck deck = new Deck();
+		if(!FilenameUtils.getExtension(file.getName()).equalsIgnoreCase("dec")) {
+			throw new InvalidFormatException();
+		}
+		Scanner scanner = new Scanner(file);
+		scanner.useDelimiter(" ");
+		int numCard = 0;
+		String cardName = "";
+		while(scanner.hasNext()) {
+			if (scanner.hasNextInt()) {
+				numCard = scanner.nextInt();
+			}else {
+				cardName = scanner.nextLine().replaceFirst(" ", "");
+			}
+			int loc = Jason.dictonary.findCard(cardName);
+			if (loc == -1) {
+				DeckEditor.println("Card not found " + cardName);
+			} else {
+				deck.addCards(Jason.dictonary.get(Jason.dictonary.findCard(cardName)), numCard);
+			}
+		}
+		scanner.close();
+		return deck;
+	}
+	
 	public int getDeckSize() {
 		return deckSize;
 	}

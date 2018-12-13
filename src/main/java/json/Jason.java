@@ -33,6 +33,7 @@ public class Jason extends DeckEditor {
 	public static ArrayList<CardSet> sets;
 	public static CardDictonary dictonary;
 	public static ArrayList<String> cardColumnNames, columnNames;
+
 	public static void readFileForSets(String jsonname) {
 		ArrayList<CardSet> listOfSets = new ArrayList<>();
 		dictonary = new CardDictonary();
@@ -49,28 +50,28 @@ public class Jason extends DeckEditor {
 				Set<Entry<String, JsonElement>> map = element.entrySet();
 				for (Entry<String, JsonElement> value : map) {
 					switch (value.getKey().toString()) {
-						case "name":
-							set.setName(value.getValue().toString().replaceAll("\"", ""));
-							break;
-						case "code":
-							set.setCode(value.getValue().toString().replaceAll("\"", ""));
-							break;
-						case "totalSetSize":
-							set.setTotalSetSize(value.getValue().getAsInt());
-							break;
-						case "releaseDate":
-							set.setReleaseDate(value.getValue().toString().replaceAll("\"", ""));
-							break;
-						case "type":
-							set.setType(value.getValue().toString().replaceAll("\"", ""));
-							break;
-						case "block":
-							set.setBlock(value.getValue().toString().replaceAll("\"", ""));
-							break;
-						case "cards":
-							getCardColumns();
-							set.setCards(readCards(value.getValue().getAsJsonArray()));
-							break;
+					case "name":
+						set.setName(value.getValue().toString().replaceAll("\"", ""));
+						break;
+					case "code":
+						set.setCode(value.getValue().toString().replaceAll("\"", ""));
+						break;
+					case "totalSetSize":
+						set.setTotalSetSize(value.getValue().getAsInt());
+						break;
+					case "releaseDate":
+						set.setReleaseDate(value.getValue().toString().replaceAll("\"", ""));
+						break;
+					case "type":
+						set.setType(value.getValue().toString().replaceAll("\"", ""));
+						break;
+					case "block":
+						set.setBlock(value.getValue().toString().replaceAll("\"", ""));
+						break;
+					case "cards":
+						getCardColumns();
+						set.setCards(readCards(value.getValue().getAsJsonArray()));
+						break;
 					}
 				}
 				listOfSets.add(set);
@@ -78,22 +79,30 @@ public class Jason extends DeckEditor {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		DeckEditor.println(cardColumnNames.toString());
 		println("Finished loading from JSON");
 		sets = listOfSets;
 	}
+
 	private static void getColumns() {
 		columnNames = new ArrayList<>();
+		List<String> listOfSorted = Arrays.asList("name", "code", "totalSetSize", "cards", "releaseDate", "type", "block");
 		ArrayList<Field> fields = new ArrayList<>(Arrays.asList(CardSet.class.getDeclaredFields()));
 		for (Field f : fields) {
 			columnNames.add(f.getName());
 		}
-		Collections.sort(columnNames);
+		Map<String, Integer> mapOfColName = new HashMap<String, Integer>();
+		for (int i = 0; i < listOfSorted.size(); i++) {
+			String colName = listOfSorted.get(i);
+			mapOfColName.put(colName, i);
+		}
+		Collections.sort(columnNames, new ColNameComparator(mapOfColName));
 	}
+
 	private static void getCardColumns() {
 		cardColumnNames = new ArrayList<>();
-		List<String> listOfSorted = Arrays.asList("name", "convertedManaCost", "manaCost", "originalText", "type", "power",
-				"toughness", "supertypes", "subtypes", "rarity", "legalities", "printings", "colorIdentity");
+		List<String> listOfSorted = Arrays.asList("name", "convertedManaCost", "manaCost", "originalText", "type",
+				"power", "toughness", "supertypes", "subtypes", "rarity", "legalities", "printings", "colorIdentity",
+				"artist", "borderColor", "UUID", "isReserved");
 		ArrayList<Field> fields = new ArrayList<>(Arrays.asList(Card.class.getDeclaredFields()));
 		for (Field f : fields) {
 			cardColumnNames.add(f.getName());
@@ -105,6 +114,7 @@ public class Jason extends DeckEditor {
 		}
 		Collections.sort(cardColumnNames, new ColNameComparator(mapOfColName));
 	}
+
 	private static ArrayList<Card> readCards(JsonArray element) {
 		cards = new ArrayList<>();
 		for (JsonElement obj : element) {
@@ -119,6 +129,18 @@ public class Jason extends DeckEditor {
 							break;
 						case "name":
 							card.setName(entry.getValue().toString().replaceAll("\"", ""));
+							break;
+						case "artist":
+							card.setArtist(entry.getValue().toString().replaceAll("\"", ""));
+							break;
+						case "borderColor":
+							card.setBorderColor(entry.getValue().toString().replaceAll("\"", ""));
+							break;
+						case "UUID":
+							card.setUUID(entry.getValue().toString().replaceAll("\"", ""));
+							break;
+						case "isReserved":
+							card.setIsReserved(entry.getValue().getAsBoolean());
 							break;
 						case "convertedManaCost":
 							card.setConvertedManaCost(entry.getValue().getAsDouble());
@@ -158,6 +180,7 @@ public class Jason extends DeckEditor {
 		}
 		return cards;
 	}
+
 	private static ArrayList<SuperType> getTypesFromValue(JsonArray array) {
 		Iterator<JsonElement> it = array.iterator();
 		ArrayList<SuperType> list = new ArrayList<>();
@@ -166,6 +189,7 @@ public class Jason extends DeckEditor {
 		}
 		return list;
 	}
+
 	private static ArrayList<SubType> getSubTypesFromValue(JsonArray array) {
 		Iterator<JsonElement> it = array.iterator();
 		ArrayList<SubType> list = new ArrayList<>();
@@ -174,6 +198,7 @@ public class Jason extends DeckEditor {
 		}
 		return list;
 	}
+
 	private static ArrayList<Color> getColorFromValue(JsonArray array) {
 		Iterator<JsonElement> it = array.iterator();
 		ArrayList<Color> list = new ArrayList<>();
@@ -182,6 +207,7 @@ public class Jason extends DeckEditor {
 		}
 		return list;
 	}
+
 	private static ArrayList<Format> getFormatFromValue(JsonObject jsonObject) {
 		ArrayList<Format> list = new ArrayList<>();
 		Set<Entry<String, JsonElement>> set = jsonObject.entrySet();

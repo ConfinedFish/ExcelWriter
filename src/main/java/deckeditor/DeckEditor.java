@@ -16,7 +16,9 @@ public class DeckEditor {
 		new DeckEditor().run();
 	}
 	public void run() {
-		GUI.createAndShowGUI();
+		Jason.readFileForSets("AllSets.json");
+//		GUI.createAndShowGUI();
+		new GUI();
 		println("Removed " + Jason.dictonary.removeDoup() + " duplicates");
 		printErrorTypes();
 	}

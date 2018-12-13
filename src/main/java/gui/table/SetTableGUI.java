@@ -3,8 +3,6 @@ package main.java.gui.table;
 import java.awt.Dimension;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 
 import javax.swing.JCheckBox;
 import javax.swing.JScrollPane;
@@ -23,8 +21,8 @@ public class SetTableGUI extends TableGUI {
 	}
 	private void drawTable() {
 		ArrayList<CardSet> sets = Jason.sets;
-		Object[] colnames = Jason.columnNames.toArray();
-		DefaultTableModel model = new DefaultTableModel(colnames, 0) {
+		ArrayList<String> colnames = Jason.columnNames;
+		DefaultTableModel model = new DefaultTableModel(colnames.toArray(), 0) {
 			private static final long serialVersionUID = 4914153800432984346L;
 			@Override
 			public boolean isCellEditable(int row, int col) {
@@ -42,31 +40,23 @@ public class SetTableGUI extends TableGUI {
 			}
 		};
 		JTable table = new JTable(model);
-		model.setColumnIdentifiers(colnames);
+		model.setColumnIdentifiers(colnames.toArray());
 		table.setModel(model);
 		applySearch(table);
-		for (int i = 0; i < sets.size(); i++) {
-			try {
-				ArrayList<Method> methods = new ArrayList<>(Arrays.asList(CardSet.class.getMethods()));
-				ArrayList<String> methodNames = new ArrayList<>();
+		try {
+			for (int i = 0; i < sets.size(); i++) {
+				ArrayList<Method> methods = new ArrayList<>();
 				ArrayList<Object> values = new ArrayList<>();
-				for (Method meth : methods) {
-					if (meth.getName().startsWith("get") && !meth.getName().equals("getClass")) {
-						methodNames.add(meth.getName());
-					}
-				}
-				Collections.sort(methodNames);
-				methods.clear();
-				for (String name : methodNames) {
-					methods.add(CardSet.class.getMethod(name));
+				for (String name : colnames) {
+					methods.add(CardSet.class.getMethod("get" + name.substring(0, 1).toUpperCase() + name.substring(1)));
 				}
 				for (Method meth : methods) {
 					values.add(meth.invoke(sets.get(i)));
 				}
 				model.addRow(values.toArray());
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		resizeTable(table);

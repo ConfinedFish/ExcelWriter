@@ -29,9 +29,11 @@ import main.java.cards.Card;
 
 public class TableGUI extends JFrame {
 	private static final long serialVersionUID = 6779133700049319554L;
+
 	public TableGUI(String name) {
 		super(name);
 	}
+
 	void applySearch(JTable table) {
 		TableRowSorter<TableModel> rowSorter = new TableRowSorter<>(table.getModel());
 		JTextField jtfFilter = new JTextField(50);
@@ -52,6 +54,7 @@ public class TableGUI extends JFrame {
 					rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
 				}
 			}
+
 			@Override
 			public void removeUpdate(DocumentEvent e) {
 				String text = jtfFilter.getText();
@@ -61,34 +64,39 @@ public class TableGUI extends JFrame {
 					rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
 				}
 			}
+
 			@Override
 			public void changedUpdate(DocumentEvent arg0) {
 			}
 		});
 	}
+
 	JTable resizeTable(JTable table) {
 		final TableColumnModel columnModel = table.getColumnModel();
 		for (int column = 0; column < table.getColumnCount(); column++) {
-			int width = 30;
+			int width = 15;
 			for (int row = 0; row < table.getRowCount(); row++) {
 				TableCellRenderer renderer = table.getCellRenderer(row, column);
 				Component comp = table.prepareRenderer(renderer, row, column);
 				width = Math.max(comp.getPreferredSize().width + 10, width);
 			}
-			if (width > 300)
+			if (width > 150)
 				width = 150;
 			columnModel.getColumn(column).setPreferredWidth(width);
 		}
 		table.setRowHeight(20);
 		return table;
 	}
+
 	class ButtonRenderer extends JButton implements TableCellRenderer {
 		private static final long serialVersionUID = 1L;
 		private String name;
+
 		public ButtonRenderer(String name) {
 			setOpaque(true);
 			this.name = name;
 		}
+
 		public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus,
 				int row, int column) {
 			if (isSelected) {
@@ -102,12 +110,14 @@ public class TableGUI extends JFrame {
 			return this;
 		}
 	}
+
 	class SetButtonEditor extends DefaultCellEditor {
 		private static final long serialVersionUID = 1L;
 		protected JButton button;
 		private boolean isPushed;
 		private Object value;
 		private String set;
+
 		public SetButtonEditor(JCheckBox checkBox) {
 			super(checkBox);
 			button = new JButton();
@@ -118,6 +128,7 @@ public class TableGUI extends JFrame {
 				}
 			});
 		}
+
 		public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row,
 				int column) {
 			if (isSelected) {
@@ -137,6 +148,7 @@ public class TableGUI extends JFrame {
 			isPushed = true;
 			return button;
 		}
+
 		@SuppressWarnings("unchecked")
 		public Object getCellEditorValue() {
 			ArrayList<Card> cards = new ArrayList<>();
@@ -150,19 +162,23 @@ public class TableGUI extends JFrame {
 			isPushed = false;
 			return cards;
 		}
+
 		public boolean stopCellEditing() {
 			isPushed = false;
 			return super.stopCellEditing();
 		}
+
 		protected void fireEditingStopped() {
 			super.fireEditingStopped();
 		}
 	}
+
 	class CardButtonEditor extends DefaultCellEditor {
 		private static final long serialVersionUID = 1L;
 		protected JButton button;
 		private boolean isPushed;
 		private Object value;
+
 		public CardButtonEditor(JCheckBox checkBox) {
 			super(checkBox);
 			button = new JButton();
@@ -173,6 +189,7 @@ public class TableGUI extends JFrame {
 				}
 			});
 		}
+
 		public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row,
 				int column) {
 			if (isSelected) {
@@ -186,6 +203,7 @@ public class TableGUI extends JFrame {
 			isPushed = true;
 			return button;
 		}
+
 		public Object getCellEditorValue() {
 			ArrayList<Card> cards = new ArrayList<>();
 			if (isPushed) {
@@ -205,10 +223,12 @@ public class TableGUI extends JFrame {
 			isPushed = false;
 			return cards;
 		}
+
 		public boolean stopCellEditing() {
 			isPushed = false;
 			return super.stopCellEditing();
 		}
+
 		protected void fireEditingStopped() {
 			super.fireEditingStopped();
 		}
