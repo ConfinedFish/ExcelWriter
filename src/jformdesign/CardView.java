@@ -1,3 +1,4 @@
+package jformdesign;
 import javax.swing.*;
 import net.miginfocom.swing.*;
 /*

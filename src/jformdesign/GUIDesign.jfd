@@ -4,14 +4,14 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {space :::p, par l {comp contents:::::x, comp stats::l:::x, seq l {comp deckInfo:::::p, space :0:10:x}}, space :::p}}"
+			"$horizontalGroup": "par l {seq {space :::p, par l {comp contents:::::x, seq l {par l:::p {comp deckInfo:::::x, comp stats:::::x}, space :0:45:x}}, space :::p}}"
 			"$verticalGroup": "par l {seq l {comp deckInfo:::p:160:p, space :::x, comp stats:::p::p, space :::p, comp contents:::p::p, space :::p}}"
 		} ) {
 			name: "this"
 			"title": "Deck Editor"
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq {space :::p, par l {comp deckFormat::l:p::p, comp label1::l:p::p}, space u:::p, par l {comp deckFormatField:::p:187:p, seq {comp deckNameField:::p:323:p, space :p:40:p, comp deckDescription:::p::p}}, space :::p, comp scrollPane1:::p:500:p, space ::56:x}}"
-				"$verticalGroup": "par l {seq {par l {comp scrollPane1::t:p:102:p, seq t {par b {comp label1::b:p::p, comp deckNameField::b:p::p, comp deckDescription::b:p::p}, space :::p, par l {comp deckFormat:::p::p, comp deckFormatField:::p::p}}}, space :::x}}"
+				"$horizontalGroup": "par l {seq {space :::p, par l {comp label1:::p::p, comp deckFormat::l:p::p}, space :p:22:p, par l {comp deckFormatField:::p:187:p, seq {comp deckNameField:::p:323:p, space :p:40:p, comp deckDescription:::p::p}}, space :::p, comp scrollPane1:::p:500:p, space ::56:x}}"
+				"$verticalGroup": "par l {seq {par l {seq {par l {par b {comp deckNameField::b:p::p, comp deckDescription::b:p::p}, comp label1::l:p::p}, space :::p, par l {comp deckFormatField:::p::p, comp deckFormat::l:p::p}}, comp scrollPane1:::p:102:p}, space :::x}}"
 			} ) {
 				name: "deckInfo"
 				"border": new javax.swing.border.TitledBorder( "Deck" )
@@ -41,7 +41,7 @@ new FormModel {
 				} )
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq {space :::p, par l {par t {par l {comp showCards:::p:200:p, comp showSets::l:p:200:p}, comp addLands:::p:200:p}, comp showStats::l:p:200:p}, space s:::p, comp scrollPane2::::1085:x, space :::p}}"
+				"$horizontalGroup": "par l {seq {space :::p, par l {par t {par l {comp showCards:::p:200:p, comp showSets::l:p:200:p}, comp addLands:::p:200:p}, comp showStats::l:p:200:p}, space s:::p, comp scrollPane2:::p:1065:p, space ::42:x}}"
 				"$verticalGroup": "par l {seq l {space :::p, par l {comp scrollPane2:::p:334:p, seq {comp showCards:::p::p, space :::p, comp showSets:::p::p, space :::p, comp addLands:::p::p, space :::p, comp showStats:::p::p}}, space ::211:x}}"
 			} ) {
 				name: "contents"
@@ -70,7 +70,7 @@ new FormModel {
 				} )
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq l {space :::p, comp cardnum:::p::p, space :::p, comp cardNumberField:::p::p, space ::1084:x}}"
+				"$horizontalGroup": "par l {seq l {space :::p, comp cardnum:::p::p, space :::p, comp cardNumberField:::p::p, space ::1060:x}}"
 				"$verticalGroup": "par l {seq l {par b {comp cardnum::b:p::p, comp cardNumberField::b:p::p}, space :0:60:x}}"
 			} ) {
 				name: "stats"

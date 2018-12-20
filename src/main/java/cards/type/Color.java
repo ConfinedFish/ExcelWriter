@@ -5,9 +5,12 @@ import java.util.Arrays;
 
 public enum Color {
 	U("BLUE"), B("BLACK"), G("GREEN"), R("RED"), W("WHITE"), C("COLORLESS");
-	String mame;
+	String name;
 	Color(String name) {
-		this.mame = name;
+		this.name = name;
+	}
+	public String getName(){
+		return name;
 	}
 	public static ArrayList<String> errorColors = new ArrayList<>();
 	public static ArrayList<Color> parseString(String string) {

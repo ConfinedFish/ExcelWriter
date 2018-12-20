@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import main.java.cards.type.Color;
 import main.java.cards.type.Format;
+import main.java.cards.type.Rarity;
 import main.java.cards.type.SubType;
 import main.java.cards.type.SuperType;
 import main.java.gui.GUI;
@@ -17,13 +18,21 @@ public class DeckEditor {
 	}
 	public void run() {
 		Jason.readFileForSets("AllSets.json");
-//		GUI.createAndShowGUI();
 		new GUI();
 		println("Removed " + Jason.dictonary.removeDoup() + " duplicates");
 		printErrorTypes();
 	}
 	private void printErrorTypes(){
 		ArrayList<String> error = Format.errorFormatTypes;
+		if (error.size() != 0) {
+			StringBuilder build = new StringBuilder();
+			build.append("Error in subtype types: ").append("\n");
+			for (String f : error) {
+				build.append(f).append("\n");;
+			}
+			println(build.toString());
+		}
+		error = Rarity.errorRarity;
 		if (error.size() != 0) {
 			StringBuilder build = new StringBuilder();
 			build.append("Error in subtype types: ").append("\n");

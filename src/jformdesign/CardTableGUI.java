@@ -2,7 +2,7 @@
  * Created by JFormDesigner on Wed Dec 12 18:06:46 PST 2018
  */
 
-package main.java.gui;
+package jformdesign;
 
 import java.awt.*;
 import javax.swing.*;

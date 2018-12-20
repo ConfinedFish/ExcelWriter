@@ -3,8 +3,6 @@ package main.java.gui;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 import javax.swing.GroupLayout;
@@ -29,12 +27,10 @@ import javax.swing.border.TitledBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 
 import main.java.cards.Card;
 import main.java.cards.Deck;
 import main.java.cards.type.Format;
-import main.java.deckeditor.DeckEditor;
 import main.java.gui.table.CardTableGUI;
 import main.java.gui.table.SetTableGUI;
 import main.java.json.Jason;
@@ -60,8 +56,6 @@ public class GUI extends JFrame{
 	private JComboBox<Format> deckFormatField;
 	private JLabel deckDescription;
 	private JScrollPane scrollPane1;
-	private JTextArea pathDescription;
-	private JLabel pathLabel;
 	private JTextArea DeckDescriptionField;
 	private JPanel contents;
 	private JScrollPane scrollPane2;
@@ -74,6 +68,7 @@ public class GUI extends JFrame{
 	private JPanel stats;
 	private JLabel cardnum;
 	private JLabel cardNumberField;
+	private JButton showSets;
 
 	public GUI() {
 		try {
@@ -109,7 +104,7 @@ public class GUI extends JFrame{
 		deckNameField = new JTextField();
 		deckFormat = new JLabel();
 		deckFormatField = new JComboBox<Format>(Format.class.getEnumConstants());
-		Format format = (Format) deckFormatField.getSelectedItem();
+//		Format format = (Format) deckFormatField.getSelectedItem();
 		deckFormatField.setSelectedIndex(-1);
 		deckDescription = new JLabel();
 		scrollPane1 = new JScrollPane();
@@ -121,11 +116,10 @@ public class GUI extends JFrame{
 		removeCards = new JButton();
 		addLands = new JButton();
 		showStats = new JButton();
-		pathLabel = new JLabel();
-		pathDescription = new JTextArea();
 		stats = new JPanel();
 		cardnum = new JLabel();
 		cardNumberField = new JLabel();
+		showSets = new JButton();
 		// ======== this ========
 		setTitle("Deck Editor");
 		Container contentPane = getContentPane();
@@ -241,7 +235,7 @@ public class GUI extends JFrame{
 		// ======== deckInfo ========
 		{
 			deckInfo.setBorder(new TitledBorder("Deck"));
-			// ---- label1 ----
+			
 			label1.setText("Name:");
 
 			// ---- deckFormat ----
@@ -251,54 +245,42 @@ public class GUI extends JFrame{
 			deckDescription.setText("Description(optional): ");
 
 			// ======== scrollPane1 ========
-			scrollPane1.setViewportView(DeckDescriptionField);
-
-			// ---- label2 ----
-			pathLabel.setText("Path: ");
-
-			// ---- label3 ----
-			pathDescription.setText("pathPlaceholder");
-			pathDescription.setEditable(false);
+			{
+				scrollPane1.setViewportView(DeckDescriptionField);
+			}
 
 			GroupLayout deckInfoLayout = new GroupLayout(deckInfo);
 			deckInfo.setLayout(deckInfoLayout);
 			deckInfoLayout.setHorizontalGroup(deckInfoLayout.createParallelGroup().addGroup(deckInfoLayout
 					.createSequentialGroup().addContainerGap()
-					.addGroup(deckInfoLayout.createParallelGroup().addGroup(deckInfoLayout.createSequentialGroup()
-							.addGroup(
-									deckInfoLayout.createParallelGroup().addComponent(deckFormat).addComponent(label1))
-							.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-							.addGroup(deckInfoLayout.createParallelGroup()
-									.addComponent(deckFormatField, GroupLayout.PREFERRED_SIZE, 187,
+					.addGroup(deckInfoLayout.createParallelGroup().addComponent(label1).addComponent(deckFormat))
+					.addGap(22, 22, 22)
+					.addGroup(deckInfoLayout.createParallelGroup()
+							.addComponent(deckFormatField, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
+							.addGroup(deckInfoLayout.createSequentialGroup()
+									.addComponent(deckNameField, GroupLayout.PREFERRED_SIZE, 323,
 											GroupLayout.PREFERRED_SIZE)
-									.addGroup(deckInfoLayout.createSequentialGroup()
-											.addComponent(deckNameField, GroupLayout.PREFERRED_SIZE, 323,
-													GroupLayout.PREFERRED_SIZE)
-											.addGap(40, 40, 40).addComponent(deckDescription))))
-							.addGroup(deckInfoLayout.createSequentialGroup().addComponent(pathLabel)
-									.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-									.addComponent(pathDescription, GroupLayout.PREFERRED_SIZE, 388,
-											GroupLayout.PREFERRED_SIZE)))
+									.addGap(40, 40, 40).addComponent(deckDescription)))
 					.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-					.addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 613, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(404, Short.MAX_VALUE)));
-			deckInfoLayout.setVerticalGroup(deckInfoLayout.createParallelGroup()
-					.addGroup(deckInfoLayout.createSequentialGroup().addContainerGap()
-							.addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE).addContainerGap())
-					.addGroup(deckInfoLayout.createSequentialGroup()
-							.addGroup(deckInfoLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-									.addComponent(label1)
-									.addComponent(deckNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-											GroupLayout.PREFERRED_SIZE)
-									.addComponent(deckDescription))
-							.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-							.addGroup(deckInfoLayout.createParallelGroup().addComponent(deckFormat).addComponent(
-									deckFormatField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-									GroupLayout.PREFERRED_SIZE))
-							.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE,
-									Short.MAX_VALUE)
-							.addGroup(deckInfoLayout.createParallelGroup().addComponent(pathLabel)
-									.addComponent(pathDescription))));
+					.addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 500, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(56, Short.MAX_VALUE)));
+			deckInfoLayout.setVerticalGroup(deckInfoLayout.createParallelGroup().addGroup(deckInfoLayout
+					.createSequentialGroup()
+					.addGroup(deckInfoLayout.createParallelGroup()
+							.addGroup(deckInfoLayout.createSequentialGroup()
+									.addGroup(deckInfoLayout.createParallelGroup()
+											.addGroup(deckInfoLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+													.addComponent(deckNameField, GroupLayout.PREFERRED_SIZE,
+															GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+													.addComponent(deckDescription))
+											.addComponent(label1))
+									.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+									.addGroup(deckInfoLayout.createParallelGroup()
+											.addComponent(deckFormatField, GroupLayout.PREFERRED_SIZE,
+													GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+											.addComponent(deckFormat)))
+							.addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 		}
 		// ======== contents ========
 		{
@@ -312,7 +294,13 @@ public class GUI extends JFrame{
 			}
 			// ---- showCards ----
 			showCards.setText("Add Card(s)");
-
+			showCards.addActionListener(new ActionListener(){
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					new FilterCards("Filter Cards");
+				}
+			});
 			// ---- showSets ----
 			removeCards.setText("Remove Card(s)");
 
@@ -322,43 +310,30 @@ public class GUI extends JFrame{
 			// ---- showStats ----
 			showStats.setText("View Stats");
 
-			GroupLayout deckInfoLayout = new GroupLayout(deckInfo);
-			deckInfo.setLayout(deckInfoLayout);
-			deckInfoLayout.setHorizontalGroup(deckInfoLayout.createParallelGroup().addGroup(deckInfoLayout
+			GroupLayout contentsLayout = new GroupLayout(contents);
+			contents.setLayout(contentsLayout);
+			contentsLayout.setHorizontalGroup(contentsLayout.createParallelGroup().addGroup(contentsLayout
 					.createSequentialGroup().addContainerGap()
-					.addGroup(deckInfoLayout.createParallelGroup().addGroup(deckInfoLayout.createSequentialGroup()
-							.addGroup(
-									deckInfoLayout.createParallelGroup().addComponent(deckFormat).addComponent(label1))
-							.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-							.addGroup(deckInfoLayout.createParallelGroup()
-									.addComponent(deckFormatField, GroupLayout.PREFERRED_SIZE, 187,
+					.addGroup(contentsLayout.createParallelGroup().addGroup(contentsLayout
+							.createParallelGroup(GroupLayout.Alignment.TRAILING)
+							.addGroup(contentsLayout.createParallelGroup()
+									.addComponent(showCards, GroupLayout.PREFERRED_SIZE, 200,
 											GroupLayout.PREFERRED_SIZE)
-									.addGroup(deckInfoLayout.createSequentialGroup()
-											.addComponent(deckNameField, GroupLayout.PREFERRED_SIZE, 323,
-													GroupLayout.PREFERRED_SIZE)
-											.addGap(40, 40, 40).addComponent(deckDescription)))
-							.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-							.addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 500, GroupLayout.PREFERRED_SIZE))
-							.addGroup(deckInfoLayout.createSequentialGroup().addComponent(pathLabel)
-									.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-									.addComponent(pathDescription, GroupLayout.PREFERRED_SIZE, 388,
-											GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-			deckInfoLayout.setVerticalGroup(deckInfoLayout.createParallelGroup()
-					.addGroup(deckInfoLayout.createSequentialGroup().addGroup(deckInfoLayout.createParallelGroup()
-							.addGroup(deckInfoLayout.createSequentialGroup().addGroup(deckInfoLayout
-									.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(label1)
-									.addComponent(deckNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-											GroupLayout.PREFERRED_SIZE)
-									.addComponent(deckDescription))
-									.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-									.addGroup(deckInfoLayout.createParallelGroup().addComponent(deckFormat)
-											.addComponent(deckFormatField, GroupLayout.PREFERRED_SIZE,
-													GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-									.addGap(0, 11, Short.MAX_VALUE))
-							.addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))
-							.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addGroup(deckInfoLayout
-									.createParallelGroup().addComponent(pathLabel).addComponent(pathDescription))));
+									.addComponent(showSets, GroupLayout.PREFERRED_SIZE, 200,
+											GroupLayout.PREFERRED_SIZE))
+							.addComponent(addLands, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE))
+							.addComponent(showStats, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE))
+					.addGap(18, 18, 18).addComponent(scrollPane2, GroupLayout.DEFAULT_SIZE, 1085, Short.MAX_VALUE)
+					.addContainerGap()));
+			contentsLayout.setVerticalGroup(contentsLayout.createParallelGroup().addGroup(contentsLayout
+					.createSequentialGroup().addContainerGap()
+					.addGroup(contentsLayout.createParallelGroup()
+							.addComponent(scrollPane2, GroupLayout.PREFERRED_SIZE, 334, GroupLayout.PREFERRED_SIZE)
+							.addGroup(contentsLayout.createSequentialGroup().addComponent(showCards)
+									.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(showSets)
+									.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(addLands)
+									.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(showStats)))
+					.addContainerGap(211, Short.MAX_VALUE)));
 		}
 
 		// ======== contents ========
@@ -414,44 +389,57 @@ public class GUI extends JFrame{
 		{
 			stats.setBorder(new TitledBorder("Stats"));
 
-			// ---- cardnum ----
+			//---- cardnum ----
 			cardnum.setText("Cards:");
 
-			// ---- cardNumberField ----
+			//---- cardNumberField ----
 			cardNumberField.setText("0");
 
 			GroupLayout statsLayout = new GroupLayout(stats);
 			stats.setLayout(statsLayout);
-			statsLayout.setHorizontalGroup(statsLayout.createParallelGroup()
-					.addGroup(statsLayout.createSequentialGroup().addContainerGap().addComponent(cardnum)
-							.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(cardNumberField)
-							.addContainerGap(1084, Short.MAX_VALUE)));
-			statsLayout.setVerticalGroup(statsLayout.createParallelGroup()
+			statsLayout.setHorizontalGroup(
+				statsLayout.createParallelGroup()
 					.addGroup(statsLayout.createSequentialGroup()
-							.addGroup(statsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-									.addComponent(cardnum).addComponent(cardNumberField))
-							.addGap(0, 60, Short.MAX_VALUE)));
+						.addContainerGap()
+						.addComponent(cardnum)
+						.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+						.addComponent(cardNumberField)
+						.addContainerGap(1060, Short.MAX_VALUE))
+			);
+			statsLayout.setVerticalGroup(
+				statsLayout.createParallelGroup()
+					.addGroup(statsLayout.createSequentialGroup()
+						.addGroup(statsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+							.addComponent(cardnum)
+							.addComponent(cardNumberField))
+						.addGap(0, 60, Short.MAX_VALUE))
+			);
 		}
 		GroupLayout contentPaneLayout = new GroupLayout(contentPane);
 		contentPane.setLayout(contentPaneLayout);
-		contentPaneLayout.setHorizontalGroup(contentPaneLayout.createParallelGroup().addGroup(contentPaneLayout
-				.createSequentialGroup().addContainerGap()
-				.addGroup(contentPaneLayout.createParallelGroup()
+		contentPaneLayout.setHorizontalGroup(
+			contentPaneLayout.createParallelGroup()
+				.addGroup(contentPaneLayout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(contentPaneLayout.createParallelGroup()
 						.addComponent(contents, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(stats, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addGroup(contentPaneLayout.createSequentialGroup()
-								.addComponent(deckInfo, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
-								.addGap(0, 10, Short.MAX_VALUE)))
-				.addContainerGap()));
-		contentPaneLayout.setVerticalGroup(contentPaneLayout.createParallelGroup().addGroup(contentPaneLayout
-				.createSequentialGroup()
-				.addComponent(deckInfo, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE)
-				.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-				.addComponent(stats, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-				.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(contents,
-						GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-				.addContainerGap()));
+							.addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+								.addComponent(deckInfo, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(stats, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+							.addGap(0, 45, Short.MAX_VALUE)))
+					.addContainerGap())
+		);
+		contentPaneLayout.setVerticalGroup(
+			contentPaneLayout.createParallelGroup()
+				.addGroup(contentPaneLayout.createSequentialGroup()
+					.addComponent(deckInfo, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(stats, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+					.addComponent(contents, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+		);
 
 		pack();
 		setLocationRelativeTo(getOwner());

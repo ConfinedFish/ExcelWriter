@@ -10,7 +10,6 @@ import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -18,6 +17,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.RowFilter;
 import javax.swing.UIManager;
+import javax.swing.border.TitledBorder;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.TableCellRenderer;
@@ -26,8 +26,9 @@ import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 
 import main.java.cards.Card;
+import main.java.gui.FilterCards;
 
-public class TableGUI extends JFrame {
+public class TableGUI extends JFrame{
 	private static final long serialVersionUID = 6779133700049319554L;
 
 	public TableGUI(String name) {
@@ -36,15 +37,25 @@ public class TableGUI extends JFrame {
 
 	void applySearch(JTable table) {
 		TableRowSorter<TableModel> rowSorter = new TableRowSorter<>(table.getModel());
-		JTextField jtfFilter = new JTextField(50);
+		JTextField jtfFilter = new JTextField(20);
+
 		table.setRowSorter(rowSorter);
 		JPanel panel = new JPanel(new BorderLayout());
-		panel.add(new JLabel("Search:"), BorderLayout.WEST);
-		panel.add(jtfFilter, BorderLayout.CENTER);
+		panel.setBorder(new TitledBorder("Search:"));
+		panel.add(jtfFilter, BorderLayout.WEST);
+		JButton button = new JButton("Filter");
+		button.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new FilterCards("Filter Cards");
+			}
+		});
+		panel.add(button, BorderLayout.EAST);
 		setLayout(new BorderLayout());
 		add(panel, BorderLayout.SOUTH);
 		add(new JScrollPane(table), BorderLayout.CENTER);
-		jtfFilter.getDocument().addDocumentListener(new DocumentListener() {
+		jtfFilter.getDocument().addDocumentListener(new DocumentListener(){
 			@Override
 			public void insertUpdate(DocumentEvent e) {
 				String text = jtfFilter.getText();
@@ -88,7 +99,7 @@ public class TableGUI extends JFrame {
 		return table;
 	}
 
-	class ButtonRenderer extends JButton implements TableCellRenderer {
+	class ButtonRenderer extends JButton implements TableCellRenderer{
 		private static final long serialVersionUID = 1L;
 		private String name;
 
@@ -111,7 +122,7 @@ public class TableGUI extends JFrame {
 		}
 	}
 
-	class SetButtonEditor extends DefaultCellEditor {
+	class SetButtonEditor extends DefaultCellEditor{
 		private static final long serialVersionUID = 1L;
 		protected JButton button;
 		private boolean isPushed;
@@ -122,7 +133,7 @@ public class TableGUI extends JFrame {
 			super(checkBox);
 			button = new JButton();
 			button.setOpaque(true);
-			button.addActionListener(new ActionListener() {
+			button.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e) {
 					fireEditingStopped();
 				}
@@ -173,7 +184,7 @@ public class TableGUI extends JFrame {
 		}
 	}
 
-	class CardButtonEditor extends DefaultCellEditor {
+	class CardButtonEditor extends DefaultCellEditor{
 		private static final long serialVersionUID = 1L;
 		protected JButton button;
 		private boolean isPushed;
@@ -183,7 +194,7 @@ public class TableGUI extends JFrame {
 			super(checkBox);
 			button = new JButton();
 			button.setOpaque(true);
-			button.addActionListener(new ActionListener() {
+			button.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e) {
 					fireEditingStopped();
 				}

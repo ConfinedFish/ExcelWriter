@@ -4,15 +4,17 @@ import java.util.ArrayList;
 
 import main.java.cards.type.Color;
 import main.java.cards.type.Format;
+import main.java.cards.type.Rarity;
 import main.java.cards.type.SubType;
 import main.java.cards.type.SuperType;
 
 public class Card {
-	private String name, originalText, manaCost, printings, rarity, artist, borderColor, UUID;
+	private String name, originalText, manaCost, printings, artist, borderColor, UUID;
 	private ArrayList<Format> legalities;
 	private ArrayList<SuperType> supertypes;
 	private ArrayList<SubType> subtypes;
 	private ArrayList<Color> colorIdentity;
+	private Rarity rarity;
 	private String power, toughness;
 	private Double convertedManaCost;
 	private Boolean isReserved;
@@ -68,10 +70,6 @@ public class Card {
 		return printings;
 	}
 
-	public String getRarity() {
-		return rarity;
-	}
-
 	public ArrayList<Format> getLegalities() {
 		return legalities;
 	}
@@ -116,10 +114,6 @@ public class Card {
 		this.printings = printings;
 	}
 
-	public void setRarity(String rarity) {
-		this.rarity = rarity;
-	}
-
 	public void setLegalities(ArrayList<Format> legalities) {
 		this.legalities = legalities;
 	}
@@ -146,5 +140,13 @@ public class Card {
 
 	public void setConvertedManaCost(Double convertedManaCost) {
 		this.convertedManaCost = convertedManaCost;
+	}
+
+	public Rarity getRarity() {
+		return rarity;
+	}
+
+	public void setRarity(Rarity rarity) {
+		this.rarity = rarity;
 	}
 }

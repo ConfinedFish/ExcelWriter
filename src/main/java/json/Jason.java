@@ -24,11 +24,12 @@ import main.java.cards.CardSet;
 import main.java.cards.ColNameComparator;
 import main.java.cards.type.Color;
 import main.java.cards.type.Format;
+import main.java.cards.type.Rarity;
 import main.java.cards.type.SubType;
 import main.java.cards.type.SuperType;
 import main.java.deckeditor.DeckEditor;
 
-public class Jason extends DeckEditor {
+public class Jason extends DeckEditor{
 	public static ArrayList<Card> cards;
 	public static ArrayList<CardSet> sets;
 	public static CardDictonary dictonary;
@@ -50,28 +51,28 @@ public class Jason extends DeckEditor {
 				Set<Entry<String, JsonElement>> map = element.entrySet();
 				for (Entry<String, JsonElement> value : map) {
 					switch (value.getKey().toString()) {
-					case "name":
-						set.setName(value.getValue().toString().replaceAll("\"", ""));
-						break;
-					case "code":
-						set.setCode(value.getValue().toString().replaceAll("\"", ""));
-						break;
-					case "totalSetSize":
-						set.setTotalSetSize(value.getValue().getAsInt());
-						break;
-					case "releaseDate":
-						set.setReleaseDate(value.getValue().toString().replaceAll("\"", ""));
-						break;
-					case "type":
-						set.setType(value.getValue().toString().replaceAll("\"", ""));
-						break;
-					case "block":
-						set.setBlock(value.getValue().toString().replaceAll("\"", ""));
-						break;
-					case "cards":
-						getCardColumns();
-						set.setCards(readCards(value.getValue().getAsJsonArray()));
-						break;
+						case "name":
+							set.setName(value.getValue().toString().replaceAll("\"", ""));
+							break;
+						case "code":
+							set.setCode(value.getValue().toString().replaceAll("\"", ""));
+							break;
+						case "totalSetSize":
+							set.setTotalSetSize(value.getValue().getAsInt());
+							break;
+						case "releaseDate":
+							set.setReleaseDate(value.getValue().toString().replaceAll("\"", ""));
+							break;
+						case "type":
+							set.setType(value.getValue().toString().replaceAll("\"", ""));
+							break;
+						case "block":
+							set.setBlock(value.getValue().toString().replaceAll("\"", ""));
+							break;
+						case "cards":
+							getCardColumns();
+							set.setCards(readCards(value.getValue().getAsJsonArray()));
+							break;
 					}
 				}
 				listOfSets.add(set);
@@ -85,7 +86,8 @@ public class Jason extends DeckEditor {
 
 	private static void getColumns() {
 		columnNames = new ArrayList<>();
-		List<String> listOfSorted = Arrays.asList("name", "code", "totalSetSize", "cards", "releaseDate", "type", "block");
+		List<String> listOfSorted = Arrays.asList("name", "code", "totalSetSize", "cards", "releaseDate", "type",
+				"block");
 		ArrayList<Field> fields = new ArrayList<>(Arrays.asList(CardSet.class.getDeclaredFields()));
 		for (Field f : fields) {
 			columnNames.add(f.getName());
@@ -155,7 +157,7 @@ public class Jason extends DeckEditor {
 							card.setPrintings(entry.getValue().toString().replaceAll("\"", ""));
 							break;
 						case "rarity":
-							card.setRarity(entry.getValue().toString().replaceAll("\"", ""));
+							card.setRarity(Rarity.valueOf(entry.getValue().toString().replaceAll("\"", "").replaceAll("timeshifted ", "")));
 							break;
 						case "colorIdentity":
 							card.setColorIdentity(getColorFromValue(entry.getValue().getAsJsonArray()));
