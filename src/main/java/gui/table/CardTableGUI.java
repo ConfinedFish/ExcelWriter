@@ -7,22 +7,23 @@ import java.util.ArrayList;
 import javax.swing.JCheckBox;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.table.DefaultTableModel;
 
 import main.java.cards.Card;
 import main.java.json.Jason;
 
-public class CardTableGUI extends TableGUI {
+public class CardTableGUI extends TableGUI{
 	private static final long serialVersionUID = -8543861956071891649L;
 	@SuppressWarnings("unchecked")
-	public CardTableGUI(String title, Object set) {
+	public CardTableGUI(String title, Object data) {
 		super(title);
-		drawTable(set instanceof ArrayList ? (ArrayList<Card>) set : new ArrayList<>());
+		drawTable(data instanceof ArrayList ? (ArrayList<Card>) data : new ArrayList<>());
 		setSize(new Dimension(1050, 600));
 	}
 	private void drawTable(ArrayList<Card> cards) {
 		ArrayList<String> colnames = Jason.cardColumnNames;
-		DefaultTableModel model = new DefaultTableModel(colnames.toArray(), 0) {
+		DefaultTableModel model = new DefaultTableModel(colnames.toArray(), 0){
 			private static final long serialVersionUID = -6550280855835102010L;
 			@Override
 			public boolean isCellEditable(int row, int col) {
@@ -63,8 +64,8 @@ public class CardTableGUI extends TableGUI {
 		table.getColumn("legalities").setCellEditor(new CardButtonEditor(new JCheckBox()));
 		table.getColumn("subtypes").setCellRenderer(new ButtonRenderer("subtypes"));
 		table.getColumn("subtypes").setCellEditor(new CardButtonEditor(new JCheckBox()));
-		JScrollPane scrollPane = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
-				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		JScrollPane scrollPane = new JScrollPane(table, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
+				ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		setSize(new Dimension(500, 600));
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		table = resizeTable(table);

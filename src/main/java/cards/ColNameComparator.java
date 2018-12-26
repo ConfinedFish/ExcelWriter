@@ -3,10 +3,10 @@ package main.java.cards;
 import java.util.Comparator;
 import java.util.Map;
 
-public class ColNameComparator implements Comparator<String> {
+public class ColNameComparator implements Comparator<String>{
 	private Map<String, Integer> sortorder;
 	public ColNameComparator(Map<String, Integer> sortOrder) {
-		this.sortorder = sortOrder;
+		sortorder = sortOrder;
 	}
 	@Override
 	public int compare(String name1, String name2) {

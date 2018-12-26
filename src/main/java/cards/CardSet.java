@@ -2,30 +2,15 @@ package main.java.cards;
 
 import java.util.ArrayList;
 
-public class CardSet {
-	String name;
-	int totalSetSize;
-	String code;
-	String releaseDate;
-	String type;
+public class CardSet{
 	String block;
 	ArrayList<Card> cards;
-	public CardSet() {	}
-	
-	public String getName() {
-		return name;
-	}
-	public int getTotalSetSize() {
-		return totalSetSize;
-	}
-	public String getCode() {
-		return code;
-	}
-	public String getReleaseDate() {
-		return releaseDate;
-	}
-	public String getType() {
-		return type;
+	String code;
+	String name;
+	String releaseDate;
+	int totalSetSize;
+	String type;
+	public CardSet() {
 	}
 	public String getBlock() {
 		return block;
@@ -33,20 +18,20 @@ public class CardSet {
 	public ArrayList<Card> getCards() {
 		return cards;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public String getCode() {
+		return code;
 	}
-	public void setTotalSetSize(int totalSetSize) {
-		this.totalSetSize = totalSetSize;
+	public String getName() {
+		return name;
 	}
-	public void setCode(String code) {
-		this.code = code;
+	public String getReleaseDate() {
+		return releaseDate;
 	}
-	public void setReleaseDate(String releaseDate) {
-		this.releaseDate = releaseDate;
+	public int getTotalSetSize() {
+		return totalSetSize;
 	}
-	public void setType(String type) {
-		this.type = type;
+	public String getType() {
+		return type;
 	}
 	public void setBlock(String block) {
 		this.block = block;
@@ -54,5 +39,19 @@ public class CardSet {
 	public void setCards(ArrayList<Card> cards) {
 		this.cards = cards;
 	}
-	
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+	public void setTotalSetSize(int totalSetSize) {
+		this.totalSetSize = totalSetSize;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 }

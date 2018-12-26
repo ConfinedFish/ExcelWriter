@@ -4,14 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public enum Color {
-	U("BLUE"), B("BLACK"), G("GREEN"), R("RED"), W("WHITE"), C("COLORLESS");
-	String name;
-	Color(String name) {
-		this.name = name;
-	}
-	public String getName(){
-		return name;
-	}
+	B("BLACK"), C("COLORLESS"), G("GREEN"), R("RED"), U("BLUE"), W("WHITE");
 	public static ArrayList<String> errorColors = new ArrayList<>();
 	public static ArrayList<Color> parseString(String string) {
 		ArrayList<String> tokens = new ArrayList<>(Arrays.asList(string.trim().split("\\W+")));
@@ -26,5 +19,12 @@ public enum Color {
 				}
 		}
 		return colors;
+	}
+	String name;
+	Color(String name) {
+		this.name = name;
+	}
+	public String getName() {
+		return name;
 	}
 }

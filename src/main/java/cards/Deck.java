@@ -12,27 +12,34 @@ import org.apache.commons.io.FilenameUtils;
 import main.java.deckeditor.DeckEditor;
 import main.java.json.Jason;
 
-public class Deck implements Iterable<ArrayList<Card>> {
-	private ArrayList<ArrayList<Card>> list;
-	private int deckSize;
-	public Deck() {
-		list = new ArrayList<>();
-		deckSize = 0;
+public class Deck implements Iterable<ArrayList<Card>>{
+	public class DeckIterator implements Iterator<ArrayList<Card>>{
+		int counter;
+		DeckIterator() {
+			counter = 0;
+		}
+		@Override
+		public boolean hasNext() {
+			return counter < list.size();
+		}
+		@Override
+		public ArrayList<Card> next() {
+			return list.get(counter++);
+		}
 	}
-	
 	public static Deck loadDeckFromFile(File file) throws InvalidFormatException, FileNotFoundException {
 		Deck deck = new Deck();
-		if(!FilenameUtils.getExtension(file.getName()).equalsIgnoreCase("dec")) {
+		if (!FilenameUtils.getExtension(file.getName()).equalsIgnoreCase("dec")) {
 			throw new InvalidFormatException();
 		}
 		Scanner scanner = new Scanner(file);
 		scanner.useDelimiter(" ");
 		int numCard = 0;
 		String cardName = "";
-		while(scanner.hasNext()) {
+		while (scanner.hasNext()) {
 			if (scanner.hasNextInt()) {
 				numCard = scanner.nextInt();
-			}else {
+			} else {
 				cardName = scanner.nextLine().replaceFirst(" ", "");
 			}
 			int loc = Jason.dictonary.findCard(cardName);
@@ -45,15 +52,11 @@ public class Deck implements Iterable<ArrayList<Card>> {
 		scanner.close();
 		return deck;
 	}
-	
-	public int getDeckSize() {
-		return deckSize;
-	}
-	public int getSize() {
-		return list.size();
-	}
-	public Card get(int k) {
-		return list.get(k).get(0);
+	private int deckSize;
+	private ArrayList<ArrayList<Card>> list;
+	public Deck() {
+		list = new ArrayList<>();
+		deckSize = 0;
 	}
 	public void addCard(Card card) {
 		ArrayList<Card> cards = new ArrayList<>();
@@ -68,11 +71,7 @@ public class Deck implements Iterable<ArrayList<Card>> {
 		list.add(cards);
 		deckSize += amount;
 	}
-	public int findCard(String name) {
-		for (int i = 0; i < list.size(); i++)
-			if (list.get(i).get(0).getName().equals(name))
-				return i;
-		return -1;
+	public void addCards(Deck deck) {
 	}
 	public int findCard(Card card) {
 		for (int i = 0; i < list.size(); i++)
@@ -80,31 +79,31 @@ public class Deck implements Iterable<ArrayList<Card>> {
 				return i;
 		return -1;
 	}
-	public void addCards(Deck deck) {
+	public int findCard(String name) {
+		for (int i = 0; i < list.size(); i++)
+			if (list.get(i).get(0).getName().equals(name))
+				return i;
+		return -1;
 	}
+	public Card get(int k) {
+		return list.get(k).get(0);
+	}
+	public int getDeckSize() {
+		return deckSize;
+	}
+	public int getSize() {
+		return list.size();
+	}
+	@Override
+	public Iterator<ArrayList<Card>> iterator() {
+		return new DeckIterator();
+	}
+	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		for (ArrayList<Card> cards : list)
 			for (Card card : cards)
 				builder.append(card.getName()).append("\n");
 		return builder.toString();
-	}
-	@Override
-	public Iterator<ArrayList<Card>> iterator() {
-		return new DeckIterator();
-	}
-	public class DeckIterator implements Iterator<ArrayList<Card>> {
-		int counter;
-		DeckIterator() {
-			counter = 0;
-		}
-		@Override
-		public boolean hasNext() {
-			return counter < list.size();
-		}
-		@Override
-		public ArrayList<Card> next() {
-			return list.get(counter++);
-		}
 	}
 }

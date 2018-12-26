@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public enum SuperType {
-	Artifact, Creature, Enchantment, Instant, Land, Planeswalker, Sorcery, Token, Scheme, Tribal, Conspiracy, Card,
-	Plane, Phenomenon, Summon, Vanguard, Elite, Hero, Scariest, You, ll, Ever, See, Eaturecray, instant,;
+	Artifact, Card, Conspiracy, Creature, Elite, Enchantment, Hero, Instant, Land, Phenomenon, Plane, Planeswalker,
+	Scheme, Sorcery, Summon, Token, Tribal, Vanguard;
 	public static ArrayList<String> errorTypes = new ArrayList<>();
 	public static ArrayList<SuperType> parseString(String string) {
 		ArrayList<String> tokens = new ArrayList<>(Arrays.asList(string.trim().split("\\W+")));

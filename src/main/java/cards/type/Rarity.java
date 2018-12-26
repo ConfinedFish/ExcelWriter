@@ -4,10 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public enum Rarity {
-	common,
-	uncommon,
-	rare,
-	mythic;
+	common, mythic, rare, uncommon;
 	public static ArrayList<String> errorRarity = new ArrayList<>();
 	public static ArrayList<Rarity> parseString(String string) {
 		ArrayList<String> tokens = new ArrayList<>(Arrays.asList(string.trim().split("\\W+")));

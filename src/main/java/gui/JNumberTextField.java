@@ -6,19 +6,6 @@ import javax.swing.JTextField;
 
 public class JNumberTextField extends JTextField{
 	private static final long serialVersionUID = 1L;
-
-	@Override
-	public void processKeyEvent(KeyEvent ev) {
-		if (Character.isDigit(ev.getKeyChar()) || getText().length() >= 2 || ev.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-			if (getText().length() >= 2 && !(ev.getKeyCode() == KeyEvent.VK_BACK_SPACE)) {
-				ev.consume();
-			} else {
-				super.processKeyEvent(ev);
-			}
-		}
-		ev.consume();
-		return;
-	}
 	/**
 	 * As the user is not even able to enter a dot ("."), only integers (whole
 	 * numbers) may be entered.
@@ -30,5 +17,18 @@ public class JNumberTextField extends JTextField{
 			result = Long.valueOf(text);
 		}
 		return result;
+	}
+	@Override
+	public void processKeyEvent(KeyEvent ev) {
+		if (Character.isDigit(ev.getKeyChar()) || getText().length() >= 2
+				|| ev.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+			if (getText().length() >= 2 && !(ev.getKeyCode() == KeyEvent.VK_BACK_SPACE)) {
+				ev.consume();
+			} else {
+				super.processKeyEvent(ev);
+			}
+		}
+		ev.consume();
+		return;
 	}
 }

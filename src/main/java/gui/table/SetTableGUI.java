@@ -7,12 +7,13 @@ import java.util.ArrayList;
 import javax.swing.JCheckBox;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.table.DefaultTableModel;
 
 import main.java.cards.CardSet;
 import main.java.json.Jason;
 
-public class SetTableGUI extends TableGUI {
+public class SetTableGUI extends TableGUI{
 	private static final long serialVersionUID = 2294119736240909555L;
 	public SetTableGUI() {
 		super("List of All Sets");
@@ -22,7 +23,7 @@ public class SetTableGUI extends TableGUI {
 	private void drawTable() {
 		ArrayList<CardSet> sets = Jason.sets;
 		ArrayList<String> colnames = Jason.columnNames;
-		DefaultTableModel model = new DefaultTableModel(colnames.toArray(), 0) {
+		DefaultTableModel model = new DefaultTableModel(colnames.toArray(), 0){
 			private static final long serialVersionUID = 4914153800432984346L;
 			@Override
 			public boolean isCellEditable(int row, int col) {
@@ -48,7 +49,8 @@ public class SetTableGUI extends TableGUI {
 				ArrayList<Method> methods = new ArrayList<>();
 				ArrayList<Object> values = new ArrayList<>();
 				for (String name : colnames) {
-					methods.add(CardSet.class.getMethod("get" + name.substring(0, 1).toUpperCase() + name.substring(1)));
+					methods.add(
+							CardSet.class.getMethod("get" + name.substring(0, 1).toUpperCase() + name.substring(1)));
 				}
 				for (Method meth : methods) {
 					values.add(meth.invoke(sets.get(i)));
@@ -62,9 +64,8 @@ public class SetTableGUI extends TableGUI {
 		resizeTable(table);
 		table.getColumn("cards").setCellRenderer(new ButtonRenderer("cards"));
 		table.getColumn("cards").setCellEditor(new SetButtonEditor(new JCheckBox()));
-		JScrollPane scrollPane = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
-				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		JScrollPane scrollPane = new JScrollPane(table, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
+				ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		add(scrollPane);
 	}
-	
 }

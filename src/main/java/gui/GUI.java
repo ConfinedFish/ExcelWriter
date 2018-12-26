@@ -37,39 +37,38 @@ import main.java.json.Jason;
 
 public class GUI extends JFrame{
 	private static final long serialVersionUID = -1066050764201645094L;
-	private JMenuBar menuBar1;
-	private JMenu file;
-	private JMenuItem open;
-	private JMenuItem close;
-	private JMenuItem save;
-	private JMenuItem saveas;
-	private JMenuItem importDeck;
-	private JMenuItem export;
-	private JMenuItem quit;
-	private JMenu cardDatabase;
-	private JMenuItem cards;
-	private JMenuItem sets;
-	private JPanel deckInfo;
-	private JLabel label1;
-	private JTextField deckNameField;
-	private JLabel deckFormat;
-	private JComboBox<Format> deckFormatField;
-	private JLabel deckDescription;
-	private JScrollPane scrollPane1;
-	private JTextArea DeckDescriptionField;
-	private JPanel contents;
-	private JScrollPane scrollPane2;
-	private JTable deckTable;
-	private JButton showCards;
-	private JButton removeCards;
 	private JButton addLands;
-	private JButton showStats;
-	private Deck deck;
-	private JPanel stats;
+	private JMenu cardDatabase;
 	private JLabel cardnum;
 	private JLabel cardNumberField;
+	private JMenuItem cards;
+	private JMenuItem close;
+	private JPanel contents;
+	private Deck deck;
+	private JLabel deckDescription;
+	private JTextArea DeckDescriptionField;
+	private JLabel deckFormat;
+	private JComboBox<Format> deckFormatField;
+	private JPanel deckInfo;
+	private JTextField deckNameField;
+	private JTable deckTable;
+	private JMenuItem export;
+	private JMenu file;
+	private JMenuItem importDeck;
+	private JLabel label1;
+	private JMenuBar menuBar1;
+	private JMenuItem open;
+	private JMenuItem quit;
+	private JButton removeCards;
+	private JMenuItem save;
+	private JMenuItem saveas;
+	private JScrollPane scrollPane1;
+	private JScrollPane scrollPane2;
+	private JMenuItem sets;
+	private JButton showCards;
 	private JButton showSets;
-
+	private JButton showStats;
+	private JPanel stats;
 	public GUI() {
 		try {
 			for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
@@ -85,7 +84,34 @@ public class GUI extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 	}
-
+	private JTable drawTable(JTable table) {
+		ArrayList<String> colnames = new ArrayList<>();
+		colnames.add("name");
+		colnames.add("number");
+		DefaultTableModel model = new DefaultTableModel();
+		model.setColumnIdentifiers(colnames.toArray());
+		if (deck != null) {
+			try {
+				for (ArrayList<Card> listofCards : deck) {
+					ArrayList<Object> values = new ArrayList<>();
+					values.add(listofCards.get(0).getName());
+					values.add(listofCards.size());
+					model.addRow(values.toArray());
+					model.fireTableDataChanged();
+				}
+				table.setModel(model);
+				model.fireTableDataChanged();
+				int size = 0;
+				for (int i = 0; i < model.getRowCount(); i++) {
+					size += Integer.parseInt(table.getValueAt(i, 2) + "");
+				}
+				cardNumberField.setText(String.valueOf(size));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return table;
+	}
 	private void initComponents() {
 		menuBar1 = new JMenuBar();
 		file = new JMenu();
@@ -103,8 +129,8 @@ public class GUI extends JFrame{
 		label1 = new JLabel();
 		deckNameField = new JTextField();
 		deckFormat = new JLabel();
-		deckFormatField = new JComboBox<Format>(Format.class.getEnumConstants());
-//		Format format = (Format) deckFormatField.getSelectedItem();
+		deckFormatField = new JComboBox<>(Format.class.getEnumConstants());
+		// Format format = (Format) deckFormatField.getSelectedItem();
 		deckFormatField.setSelectedIndex(-1);
 		deckDescription = new JLabel();
 		scrollPane1 = new JScrollPane();
@@ -123,21 +149,17 @@ public class GUI extends JFrame{
 		// ======== this ========
 		setTitle("Deck Editor");
 		Container contentPane = getContentPane();
-
 		// ======== menuBar1 ========
 		{
-
 			// ======== file ========
 			{
 				file.setText("File");
-
 				// ---- open ----
 				open.setText("open");
 				open.setToolTipText("open a deck file");
 				JFileChooser chooser = new JFileChooser();
 				FileNameExtensionFilter filter = new FileNameExtensionFilter("*.dec", "dec");
 				chooser.setFileFilter(filter);
-
 				open.addActionListener(new ActionListener(){
 					@Override
 					public void actionPerformed(ActionEvent e) {
@@ -145,7 +167,7 @@ public class GUI extends JFrame{
 						if (returnVal == JFileChooser.APPROVE_OPTION) {
 							try {
 								deck = Deck.loadDeckFromFile(chooser.getSelectedFile());
-								AbstractTableModel model = ((AbstractTableModel) deckTable.getModel());
+								AbstractTableModel model = (AbstractTableModel) deckTable.getModel();
 								model.fireTableDataChanged();
 								deckTable = drawTable(deckTable);
 								cardNumberField.setText(String.valueOf(deck.getDeckSize()));
@@ -154,40 +176,31 @@ public class GUI extends JFrame{
 								JOptionPane.showMessageDialog(new JFrame(), e1);
 								e1.printStackTrace();
 							}
-
 						}
 					}
 				});
 				file.add(open);
-
 				// ---- close ----
 				close.setText("close");
 				file.add(close);
-
 				// ---- save ----
 				save.setText("save");
 				file.add(save);
-
 				saveas.setText("save as");
 				saveas.addActionListener(new ActionListener(){
-
 					@Override
 					public void actionPerformed(ActionEvent e) {
-
 					}
 				});
 				file.add(saveas);
 				file.addSeparator();
-
 				// ---- importDeck ----
 				importDeck.setText("import");
 				file.add(importDeck);
-
 				// ---- export ----
 				export.setText("export");
 				file.add(export);
 				file.addSeparator();
-
 				// ---- quit ----
 				quit.setText("quit");
 				quit.addActionListener(new ActionListener(){
@@ -199,11 +212,9 @@ public class GUI extends JFrame{
 				file.add(quit);
 			}
 			menuBar1.add(file);
-
 			// ======== cardDatabase ========
 			{
 				cardDatabase.setText("Card Database");
-
 				// ---- cards ----
 				cards.setText("show all cards");
 				cards.addActionListener(new ActionListener(){
@@ -215,11 +226,9 @@ public class GUI extends JFrame{
 					}
 				});
 				cardDatabase.add(cards);
-
 				// ---- sets ----
 				sets.setText("show all sets");
 				sets.addActionListener(new ActionListener(){
-
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						SetTableGUI setGUI = new SetTableGUI();
@@ -231,24 +240,18 @@ public class GUI extends JFrame{
 			menuBar1.add(cardDatabase);
 		}
 		setJMenuBar(menuBar1);
-
 		// ======== deckInfo ========
 		{
 			deckInfo.setBorder(new TitledBorder("Deck"));
-			
 			label1.setText("Name:");
-
 			// ---- deckFormat ----
 			deckFormat.setText("Format:");
-
 			// ---- deckDescription ----
 			deckDescription.setText("Description(optional): ");
-
 			// ======== scrollPane1 ========
 			{
 				scrollPane1.setViewportView(DeckDescriptionField);
 			}
-
 			GroupLayout deckInfoLayout = new GroupLayout(deckInfo);
 			deckInfo.setLayout(deckInfoLayout);
 			deckInfoLayout.setHorizontalGroup(deckInfoLayout.createParallelGroup().addGroup(deckInfoLayout
@@ -284,18 +287,14 @@ public class GUI extends JFrame{
 		}
 		// ======== contents ========
 		{
-
 			// ======== scrollPane2 ========
 			{
-
 				// ---- deckTable ----
 				scrollPane2.setViewportView(deckTable);
-
 			}
 			// ---- showCards ----
 			showCards.setText("Add Card(s)");
 			showCards.addActionListener(new ActionListener(){
-				
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					new FilterCards("Filter Cards");
@@ -303,13 +302,10 @@ public class GUI extends JFrame{
 			});
 			// ---- showSets ----
 			removeCards.setText("Remove Card(s)");
-
 			// ---- addLands ----
 			addLands.setText("Add Land");
-
 			// ---- showStats ----
 			showStats.setText("View Stats");
-
 			GroupLayout contentsLayout = new GroupLayout(contents);
 			contents.setLayout(contentsLayout);
 			contentsLayout.setHorizontalGroup(contentsLayout.createParallelGroup().addGroup(contentsLayout
@@ -335,31 +331,23 @@ public class GUI extends JFrame{
 									.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(showStats)))
 					.addContainerGap(211, Short.MAX_VALUE)));
 		}
-
 		// ======== contents ========
 		{
-
 			// ======== scrollPane2 ========
 			{
-
 				// ---- deckTable ----
 				deckTable.setAutoResizeMode(JTable.AUTO_RESIZE_NEXT_COLUMN);
 				scrollPane2.setViewportView(deckTable);
 				deckTable = drawTable(deckTable);
 			}
-
 			// ---- showCards ----
 			showCards.setText("Add Card(s)");
-
 			// ---- showSets ----
 			removeCards.setText("Remove Card(s)");
-
 			// ---- addLands ----
 			addLands.setText("Add Land");
-
 			// ---- showStats ----
 			showStats.setText("View Stats");
-
 			GroupLayout contentsLayout = new GroupLayout(contents);
 			contents.setLayout(contentsLayout);
 			contentsLayout.setHorizontalGroup(contentsLayout.createParallelGroup().addGroup(contentsLayout
@@ -388,89 +376,45 @@ public class GUI extends JFrame{
 		// ======== stats ========
 		{
 			stats.setBorder(new TitledBorder("Stats"));
-
-			//---- cardnum ----
+			// ---- cardnum ----
 			cardnum.setText("Cards:");
-
-			//---- cardNumberField ----
+			// ---- cardNumberField ----
 			cardNumberField.setText("0");
-
 			GroupLayout statsLayout = new GroupLayout(stats);
 			stats.setLayout(statsLayout);
-			statsLayout.setHorizontalGroup(
-				statsLayout.createParallelGroup()
+			statsLayout.setHorizontalGroup(statsLayout.createParallelGroup()
+					.addGroup(statsLayout.createSequentialGroup().addContainerGap().addComponent(cardnum)
+							.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(cardNumberField)
+							.addContainerGap(1060, Short.MAX_VALUE)));
+			statsLayout.setVerticalGroup(statsLayout.createParallelGroup()
 					.addGroup(statsLayout.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(cardnum)
-						.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(cardNumberField)
-						.addContainerGap(1060, Short.MAX_VALUE))
-			);
-			statsLayout.setVerticalGroup(
-				statsLayout.createParallelGroup()
-					.addGroup(statsLayout.createSequentialGroup()
-						.addGroup(statsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-							.addComponent(cardnum)
-							.addComponent(cardNumberField))
-						.addGap(0, 60, Short.MAX_VALUE))
-			);
+							.addGroup(statsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+									.addComponent(cardnum).addComponent(cardNumberField))
+							.addGap(0, 60, Short.MAX_VALUE)));
 		}
 		GroupLayout contentPaneLayout = new GroupLayout(contentPane);
 		contentPane.setLayout(contentPaneLayout);
-		contentPaneLayout.setHorizontalGroup(
-			contentPaneLayout.createParallelGroup()
-				.addGroup(contentPaneLayout.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(contentPaneLayout.createParallelGroup()
+		contentPaneLayout.setHorizontalGroup(contentPaneLayout.createParallelGroup().addGroup(contentPaneLayout
+				.createSequentialGroup().addContainerGap()
+				.addGroup(contentPaneLayout.createParallelGroup()
 						.addComponent(contents, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addGroup(contentPaneLayout.createSequentialGroup()
-							.addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-								.addComponent(deckInfo, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(stats, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-							.addGap(0, 45, Short.MAX_VALUE)))
-					.addContainerGap())
-		);
-		contentPaneLayout.setVerticalGroup(
-			contentPaneLayout.createParallelGroup()
-				.addGroup(contentPaneLayout.createSequentialGroup()
-					.addComponent(deckInfo, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(stats, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-					.addComponent(contents, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap())
-		);
-
+								.addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+										.addComponent(deckInfo, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)
+										.addComponent(stats, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE))
+								.addGap(0, 45, Short.MAX_VALUE)))
+				.addContainerGap()));
+		contentPaneLayout.setVerticalGroup(contentPaneLayout.createParallelGroup().addGroup(contentPaneLayout
+				.createSequentialGroup()
+				.addComponent(deckInfo, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+				.addComponent(stats, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(contents,
+						GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+				.addContainerGap()));
 		pack();
 		setLocationRelativeTo(getOwner());
-	}
-
-	private JTable drawTable(JTable table) {
-		ArrayList<String> colnames = new ArrayList<>();
-		colnames.add("name");
-		colnames.add("number");
-		DefaultTableModel model = new DefaultTableModel();
-		model.setColumnIdentifiers(colnames.toArray());
-		if (deck != null) {
-			try {
-				for (ArrayList<Card> listofCards : deck) {
-					ArrayList<Object> values = new ArrayList<>();
-					values.add(listofCards.get(0).getName());
-					values.add(listofCards.size());
-					model.addRow(values.toArray());
-					model.fireTableDataChanged();
-				}
-				table.setModel(model);
-				model.fireTableDataChanged();
-				int size = 0;
-				for (int i = 0; i < model.getRowCount(); i++) {
-					size += Integer.parseInt(table.getValueAt(i, 2) + "");
-				}
-				cardNumberField.setText(String.valueOf(size));
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		return table;
 	}
 }
