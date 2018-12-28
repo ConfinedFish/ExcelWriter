@@ -3,28 +3,18 @@
  */
 package jformdesign;
 
-import java.awt.Container;
-
-import javax.swing.GroupLayout;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * @author Alex Zeigler
  */
-public class CardTableGUI extends JFrame{
+class CardTableGUI extends JFrame{
 	/**
 	 *
 	 */
 	private static final long serialVersionUID = -3561313244463911808L;
-	private JTable cardTable;
-	// JFormDesigner - End of variables declaration //GEN-END:variables
-	// JFormDesigner - Variables declaration - DO NOT MODIFY //GEN-BEGIN:variables
-	// Generated using JFormDesigner Evaluation license - Alex Zeigler
-	private JPanel panel1;
-	private JScrollPane scrollPane1;
+	
 	public CardTableGUI() {
 		initComponents();
 	}
@@ -32,9 +22,12 @@ public class CardTableGUI extends JFrame{
 		// JFormDesigner - Component initialization - DO NOT MODIFY
 		// //GEN-BEGIN:initComponents
 		// Generated using JFormDesigner Evaluation license - Alex Zeigler
-		panel1 = new JPanel();
-		scrollPane1 = new JScrollPane();
-		cardTable = new JTable();
+		// JFormDesigner - End of variables declaration //GEN-END:variables
+		// JFormDesigner - Variables declaration - DO NOT MODIFY //GEN-BEGIN:variables
+		// Generated using JFormDesigner Evaluation license - Alex Zeigler
+		JPanel panel1 = new JPanel();
+		JScrollPane scrollPane1 = new JScrollPane();
+		JTable cardTable = new JTable();
 		// ======== this ========
 		Container contentPane = getContentPane();
 		// ======== panel1 ========
@@ -48,12 +41,9 @@ public class CardTableGUI extends JFrame{
 									javax.swing.border.TitledBorder.BOTTOM,
 									new java.awt.Font("Dialog", java.awt.Font.BOLD, 12), java.awt.Color.red),
 							panel1.getBorder()));
-			panel1.addPropertyChangeListener(new java.beans.PropertyChangeListener(){
-				@Override
-				public void propertyChange(java.beans.PropertyChangeEvent e) {
-					if ("border".equals(e.getPropertyName()))
-						throw new RuntimeException();
-				}
+			panel1.addPropertyChangeListener(e -> {
+				if ("border".equals(e.getPropertyName()))
+					throw new RuntimeException();
 			});
 			// ======== scrollPane1 ========
 			{

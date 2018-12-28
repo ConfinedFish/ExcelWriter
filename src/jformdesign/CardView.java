@@ -1,16 +1,17 @@
 package jformdesign;
 
-import javax.swing.JPanel;
+import net.miginfocom.swing.MigLayout;
+
+import javax.swing.*;
 
 /*
  * Created by JFormDesigner on Wed Dec 12 01:07:11 PST 2018
  */
-import net.miginfocom.swing.MigLayout;
 
 /**
  * @author Alex Zeigler
  */
-public class CardView extends JPanel{
+class CardView extends JPanel{
 	/**
 	 *
 	 */
@@ -28,12 +29,9 @@ public class CardView extends JPanel{
 				new javax.swing.border.EmptyBorder(0, 0, 0, 0), "JFormDesigner Evaluation",
 				javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.BOTTOM,
 				new java.awt.Font("Dialog", java.awt.Font.BOLD, 12), java.awt.Color.red), getBorder()));
-		addPropertyChangeListener(new java.beans.PropertyChangeListener(){
-			@Override
-			public void propertyChange(java.beans.PropertyChangeEvent e) {
-				if ("border".equals(e.getPropertyName()))
-					throw new RuntimeException();
-			}
+		addPropertyChangeListener(e -> {
+			if ("border".equals(e.getPropertyName()))
+				throw new RuntimeException();
 		});
 		setLayout(new MigLayout("hidemode 3",
 				// columns
