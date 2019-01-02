@@ -2,46 +2,66 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="217604fe-9bfb-49cc-b6c1-ad1106669f87" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/XML/XMLParse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_virtuald_curvesapi_1_04.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_compress_1_18.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_4_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_4_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_4_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_3_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/table/ItalicsRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExcelWriter.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Set.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Set.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/XML/XMLParse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XML/XMLParse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cards/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cards/CardComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/CardComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cards/CardDictonary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/CardDictonary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cards/CardSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/CardSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cards/ColNameComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/ColNameComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cards/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cards/type/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/type/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cards/type/Format.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/type/Format.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cards/type/Rarity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/type/Rarity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cards/type/SubType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/type/SubType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cards/type/SuperType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/type/SuperType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/deckeditor/DeckEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/deckeditor/DeckEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/DocumentSizeFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/DocumentSizeFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/FilterCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/FilterCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/JNumberTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/JNumberTextField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/table/CardTableGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/table/CardTableGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/table/SetTableGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/table/SetTableGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/table/TableGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/table/TableGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jformdesign/CardTableGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jformdesign/CardTableGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jformdesign/CardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jformdesign/CardView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cards/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cards/CardComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/CardComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cards/CardDictonary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/CardDictonary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cards/CardSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/CardSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cards/ColNameComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/ColNameComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cards/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cards/type/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/type/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cards/type/Format.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/type/Format.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cards/type/Rarity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cards/type/SubType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/type/SubType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cards/type/SuperType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cards/type/SuperType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/deckeditor/DeckEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/deckeditor/DeckEditor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/DocumentSizeFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/DocumentSizeFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/FilterCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/FilterCards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/JNumberTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/JNumberTextField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/table/CardTableGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/table/CardTableGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/table/SetTableGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/table/SetTableGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/table/TableGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/table/TableGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/json/Jason.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/json/Jason.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/json/Jason.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/json/Jason.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/XML/XMLParse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/XML/XMLParse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cards/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cards/Card.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cards/CardDictonary$CardDictonaryIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cards/CardDictonary$CardDictonaryIterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cards/CardDictonary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cards/CardDictonary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cards/CardSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cards/CardSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cards/ColNameComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cards/ColNameComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cards/Deck$DeckIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cards/Deck$DeckIterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cards/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cards/Deck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cards/type/Color.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cards/type/Color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cards/type/Format.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cards/type/Format.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cards/type/Rarity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cards/type/Rarity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cards/type/SubType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cards/type/SubType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cards/type/SuperType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cards/type/SuperType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/deckeditor/DeckEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/deckeditor/DeckEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/DocumentSizeFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/DocumentSizeFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/FilterCards.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/FilterCards.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/JNumberTextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/JNumberTextField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/table/CardButtonEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/table/CardButtonEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/table/CardTableGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/table/CardTableGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/table/CardTableGUI$FilterAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/table/CardTableGUI$FilterAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/table/CardTableGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/table/CardTableGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/table/SetButtonEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/table/SetButtonEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/table/SetTableGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/table/SetTableGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/table/SetTableGUI$FilterAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/table/SetTableGUI$FilterAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/table/SetTableGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/table/SetTableGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/table/TableGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/table/TableGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/table/TableGUI$ButtonRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/table/TableGUI$ButtonRenderer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/table/TableGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/table/TableGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/jformdesign/CardTableGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jformdesign/CardTableGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/jformdesign/CardView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jformdesign/CardView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/json/Jason.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/json/Jason.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,72 +77,48 @@
     <session id="-1378452690">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.18" value="2" />
           <entry key="project.open.time.19" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.24" value="1" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="73" />
+          <entry key="JAVA" value="85" />
           <entry key="Properties" value="1" />
-          <entry key="XML" value="4" />
+          <entry key="XML" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6111" />
+          <entry key="JAVA" value="17600" />
           <entry key="Properties" value="3" />
-          <entry key="XML" value="1" />
+          <entry key="XML" value="6" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.89254385">
+    <splitter split-orientation="horizontal" split-proportion="0.88990825">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/cards/type/SuperType.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/cards/type/SubType.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="24" column="115" lean-forward="true" selection-start-line="24" selection-start-column="115" selection-end-line="24" selection-end-column="115" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/cards/CardDictonary.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="264">
-                  <caret line="79" column="8" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
+                <state relative-caret-position="901">
+                  <caret line="58" column="42" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/cards/type/Rarity.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="20" />
                 </state>
               </provider>
             </entry>
@@ -130,8 +126,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/gui/FilterCards.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="190">
-                  <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+                <state relative-caret-position="221">
+                  <caret line="27" column="65" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -142,11 +138,29 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/XML/XMLParse.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="321">
-                  <caret line="64" column="17" lean-forward="true" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+                <state relative-caret-position="1496">
+                  <caret line="110" column="9" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/pom.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="323">
+                  <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$MAVEN_REPOSITORY$/io/magicthegathering/javasdk/0.0.12/javasdk-0.0.12.pom">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="197">
+                  <caret line="123" column="24" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="24" />
                 </state>
               </provider>
             </entry>
@@ -155,7 +169,7 @@
             <entry file="file://$PROJECT_DIR$/src/cards/CardSet.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="153">
-                  <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+                  <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
                 </state>
               </provider>
             </entry>
@@ -163,8 +177,20 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/deckeditor/DeckEditor.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="434">
-                  <caret line="60" column="15" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
+                <state relative-caret-position="306">
+                  <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/gui/table/CardTableGUI.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="187">
+                  <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -175,12 +201,99 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/cards/Card.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+                <state relative-caret-position="85">
+                  <caret line="9" column="29" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="29" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/gui/table/TableGUI.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="3757">
+                  <caret line="232" column="5" selection-start-line="232" selection-start-column="5" selection-end-line="232" selection-end-column="5" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/gui/table/ItalicsRenderer.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="595">
+                  <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/gui/table/SetTableGUI.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="136">
+                  <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/gui/GUI.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="190">
+                  <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/cards/type/Color.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="357">
+                  <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/cards/type/Rarity.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="51">
+                  <caret line="3" column="59" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/cards/type/SubType.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="7565">
+                  <caret line="446" column="51" selection-start-line="446" selection-start-column="51" selection-end-line="446" selection-end-column="51" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/cards/type/SuperType.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="629">
+                  <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -207,6 +320,9 @@
       <find>filter</find>
       <find>Jason</find>
       <find>13278</find>
+      <find>plant</find>
+      <find>legendary</find>
+      <find>supert</find>
     </findStrings>
     <replaceStrings>
       <replace>dict</replace>
@@ -228,26 +344,29 @@
         <option value="$PROJECT_DIR$/src/main/java/cards/Deck.java" />
         <option value="$PROJECT_DIR$/src/main/java/cards/CardDictonary.java" />
         <option value="$PROJECT_DIR$/src/main/java/deckeditor/DeckEditor.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/gui/FilterCards.java" />
         <option value="$PROJECT_DIR$/src/cards/Deck.java" />
         <option value="$PROJECT_DIR$/src/cards/type/Format.java" />
-        <option value="$PROJECT_DIR$/src/gui/table/TableGUI.java" />
         <option value="$PROJECT_DIR$/src/gui/JNumberTextField.java" />
-        <option value="$PROJECT_DIR$/src/gui/table/CardTableGUI.java" />
-        <option value="$PROJECT_DIR$/src/gui/GUI.java" />
-        <option value="$PROJECT_DIR$/src/gui/table/SetTableGUI.java" />
         <option value="$APPLICATION_CONFIG_DIR$/idea.properties" />
         <option value="$PROJECT_DIR$/Set.xml" />
-        <option value="$PROJECT_DIR$/src/deckeditor/DeckEditor.java" />
-        <option value="$PROJECT_DIR$/src/cards/CardDictonary.java" />
-        <option value="$PROJECT_DIR$/src/cards/type/SuperType.java" />
-        <option value="$PROJECT_DIR$/src/gui/FilterCards.java" />
         <option value="$PROJECT_DIR$/src/json/Jason.java" />
-        <option value="$PROJECT_DIR$/src/cards/Card.java" />
         <option value="$PROJECT_DIR$/src/cards/CardSet.java" />
-        <option value="$PROJECT_DIR$/src/XML/XMLParse.java" />
+        <option value="$PROJECT_DIR$/src/gui/FilterCards.java" />
+        <option value="$PROJECT_DIR$/src/cards/type/SuperType.java" />
+        <option value="$PROJECT_DIR$/src/gui/table/TableGUI.java" />
+        <option value="$PROJECT_DIR$/src/gui/table/ItalicsRenderer.java" />
+        <option value="$PROJECT_DIR$/src/cards/type/SubType.java" />
         <option value="$PROJECT_DIR$/src/cards/type/Rarity.java" />
+        <option value="$PROJECT_DIR$/src/cards/type/Color.java" />
+        <option value="$PROJECT_DIR$/src/cards/Card.java" />
+        <option value="$PROJECT_DIR$/src/XML/XMLParse.java" />
+        <option value="$PROJECT_DIR$/src/cards/CardDictonary.java" />
+        <option value="$PROJECT_DIR$/src/gui/table/SetTableGUI.java" />
+        <option value="$PROJECT_DIR$/src/deckeditor/DeckEditor.java" />
+        <option value="$PROJECT_DIR$/src/gui/GUI.java" />
+        <option value="$PROJECT_DIR$/src/gui/table/CardTableGUI.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -264,10 +383,26 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="ExcelWriter" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="width" value="1942" />
     <option name="height" value="2092" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state />
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -275,6 +410,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -333,19 +469,21 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545957427597" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546310293982" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -397,18 +535,26 @@
       <workItem from="1545804824125" duration="15203000" />
       <workItem from="1545871489832" duration="6456000" />
       <workItem from="1545877997407" duration="5804000" />
-      <workItem from="1545951845945" duration="4903000" />
+      <workItem from="1545951845945" duration="10687000" />
+      <workItem from="1545963248116" duration="9953000" />
+      <workItem from="1545973661817" duration="3866000" />
+      <workItem from="1546024665256" duration="9816000" />
+      <workItem from="1546049043470" duration="767000" />
+      <workItem from="1546303218337" duration="5189000" />
+      <workItem from="1546308521808" duration="602000" />
+      <workItem from="1546309178814" duration="280000" />
+      <workItem from="1546309510301" duration="746000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32366000" />
+    <option name="totallyTimeSpent" value="69369000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-5" y="0" width="971" height="1046" extended-state="0" />
+    <frame x="-6" y="-6" width="1933" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.5290252" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20533334" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -416,8 +562,39 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32896176" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33224043" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49973333" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection Results" order="8" weight="0.329718" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.329718" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5002667" side_tool="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3286334" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.2496" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" visible="true" weight="0.3296" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.20106667" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -427,7 +604,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.329718" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.329718" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3286334" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.2496" />
@@ -437,36 +614,6 @@
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Designer" order="0" />
-      <window_info id="UI Designer" order="1" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.2496" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.329718" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="4" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Database" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,20 +623,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="772">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cards/ColNameComparator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -497,9 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -527,40 +661,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cards/type/Color.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/table/TableGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/JNumberTextField.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/table/CardTableGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="65" column="8" lean-forward="true" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -585,94 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Set.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="286474" column="14" lean-forward="true" selection-start-line="286474" selection-start-column="14" selection-end-line="286474" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2074">
-          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/table/SetTableGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cards/type/SubType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="24" column="115" lean-forward="true" selection-start-line="24" selection-start-column="115" selection-end-line="24" selection-end-column="115" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cards/type/SuperType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/FilterCards.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/json/Jason.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="96" lean-forward="true" selection-start-line="96" selection-start-column="2" selection-end-line="144" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cards/CardSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cards/Card.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/deckeditor/DeckEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="60" column="15" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cards/Deck.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
@@ -683,10 +699,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/json/Jason.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Set.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4870058">
+          <caret line="286474" column="14" lean-forward="true" selection-start-line="286474" selection-start-column="14" selection-end-line="286474" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cards/CardDictonary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="79" column="8" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
+        <state relative-caret-position="901">
+          <caret line="58" column="42" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/FilterCards.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="27" column="65" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -695,24 +738,196 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/XML/XMLParse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="64" column="17" lean-forward="true" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+        <state relative-caret-position="1496">
+          <caret line="110" column="9" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/cards/CardSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/deckeditor/DeckEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/table/CardTableGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cards/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/table/TableGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3757">
+          <caret line="232" column="5" selection-start-line="232" selection-start-column="5" selection-end-line="232" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/table/ItalicsRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/table/SetTableGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cards/type/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cards/type/Rarity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="20" />
+        <state relative-caret-position="51">
+          <caret line="3" column="59" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cards/type/SubType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7565">
+          <caret line="446" column="51" selection-start-line="446" selection-start-column="51" selection-end-line="446" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cards/type/SuperType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/io/magicthegathering/javasdk/0.0.12/javasdk-0.0.12.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="123" column="24" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>ExcelWriter</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>11</last-edited>
@@ -725,6 +940,21 @@
           </splitter-proportions>
         </settings>
       </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.github.virtuald:curvesapi:1.04</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
     </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="$PROJECT_DIR$" />
   </component>
 </project>

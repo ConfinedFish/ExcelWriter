@@ -8,30 +8,39 @@ public class CardSet{
 	private String name;
 	private String releaseDate;
 	private boolean isPromo;
-	public CardSet() {
+	
+	public CardSet(){
 	}
-	public ArrayList<Card> getCards() {
+	
+	public ArrayList<Card> getCards(){
 		return cards;
 	}
-	public String getCode() {
-		return code;
-	}
-	public String getName() {
-		return name;
-	}
-	public String getReleaseDate() {
-		return releaseDate;
-	}
-	public void setCards(ArrayList<Card> cards) {
+	
+	public void setCards(ArrayList<Card> cards){
 		this.cards = cards;
 	}
-	public void setCode(String code) {
+	
+	public String getCode(){
+		return code;
+	}
+	
+	public void setCode(String code){
 		this.code = code;
 	}
-	public void setName(String name) {
+	
+	public String getName(){
+		return name;
+	}
+	
+	public void setName(String name){
 		this.name = name;
 	}
-	public void setReleaseDate(String releaseDate) {
+	
+	public String getReleaseDate(){
+		return releaseDate;
+	}
+	
+	public void setReleaseDate(String releaseDate){
 		this.releaseDate = releaseDate;
 	}
 	

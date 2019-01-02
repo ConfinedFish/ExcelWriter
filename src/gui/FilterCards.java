@@ -122,9 +122,9 @@ public class FilterCards extends JDialog{
 			cards.addAll(dict.findAll(nameFilter, filterFormat));
 			DeckEditor.println("NameFilter");
 			
-			nameFilter.forEach(c-> DeckEditor.print(c.getName() + ", "));
+			nameFilter.forEach(c -> DeckEditor.print(c.getName() + ", "));
 			DeckEditor.println("FilterFormat");
-			filterFormat.forEach(c-> DeckEditor.print(c.getName() + ", "));
+			filterFormat.forEach(c -> DeckEditor.print(c.getName() + ", "));
 			if (cards.size() != 0){
 				CardTableGUI gui = new CardTableGUI("Filter Cards : " + dict.size() + " results",
 						dict.getDictonary());
@@ -230,7 +230,8 @@ public class FilterCards extends JDialog{
 										.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 		formatPanel.setBorder(new TitledBorder("Format"));
 		formatPanel.setLayout(
-				new MigLayout("insets 0,hidemode 3", "[fill]" + "[fill]", "[fill]" + "[]" + "[]" + "[]" + "[]" + "[]"));
+				new MigLayout("insets 0,hidemode 3", "[fill]" + "[fill]", "[fill]" + "[]" + "[]" + "[]" + "[]" +
+						"[]"));
 		commander.setText("Commander");
 		commander.setName("commander");
 		formatPanel.add(commander, "cell 0 0");
@@ -299,7 +300,8 @@ public class FilterCards extends JDialog{
 										.addComponent(setsPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 												GroupLayout.PREFERRED_SIZE)
 										.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(formatPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										.addComponent(formatPanel, GroupLayout.PREFERRED_SIZE,
+												GroupLayout.DEFAULT_SIZE,
 												GroupLayout.PREFERRED_SIZE)))
 						.addGap(11, 11, Short.MAX_VALUE)));
 		setSize(620, 620);

@@ -8,12 +8,14 @@ import java.awt.*;
 class DocumentSizeFilter extends DocumentFilter{
 	private final boolean DEBUG = false;
 	private final int maxCharacters;
-	public DocumentSizeFilter(int maxChars) {
+	
+	public DocumentSizeFilter(int maxChars){
 		maxCharacters = maxChars;
 	}
+	
 	@Override
-	public void insertString(FilterBypass fb, int offs, String str, AttributeSet a) throws BadLocationException {
-		if (DEBUG) {
+	public void insertString(FilterBypass fb, int offs, String str, AttributeSet a) throws BadLocationException{
+		if (DEBUG){
 			System.out.println("in DocumentSizeFilter's insertString method");
 		}
 		// This rejects the entire insertion if it would make
@@ -25,9 +27,10 @@ class DocumentSizeFilter extends DocumentFilter{
 		else
 			Toolkit.getDefaultToolkit().beep();
 	}
+	
 	@Override
-	public void replace(FilterBypass fb, int offs, int length, String str, AttributeSet a) throws BadLocationException {
-		if (DEBUG) {
+	public void replace(FilterBypass fb, int offs, int length, String str, AttributeSet a) throws BadLocationException{
+		if (DEBUG){
 			System.out.println("in DocumentSizeFilter's replace method");
 		}
 		// This rejects the entire replacement if it would make

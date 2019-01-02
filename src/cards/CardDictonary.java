@@ -9,38 +9,18 @@ import java.util.HashSet;
 import java.util.Iterator;
 
 public class CardDictonary implements Iterable<Card>{
-	private ArrayList<Card> dictonary;
-	
-	class CardDictonaryIterator implements Iterator<Card>{
-		int counter;
-		
-		CardDictonaryIterator(){
-			counter = 0;
-		}
-		
-		@Override
-		public boolean hasNext(){
-			return counter < dictonary.size();
-		}
-		
-		@Override
-		public Card next(){
-			return dictonary.get(counter++);
-		}
-	}
-	
 	private final CardDictonary insance;
-	
-	public CardDictonary getInstance(){
-		return insance;
-	}
-	
+	private ArrayList<Card> dictonary;
 	private int size;
 	
 	public CardDictonary(){
 		insance = this;
 		dictonary = new ArrayList<>();
 		size = 0;
+	}
+	
+	public CardDictonary getInstance(){
+		return insance;
 	}
 	
 	public void add(Card card){
@@ -76,7 +56,6 @@ public class CardDictonary implements Iterable<Card>{
 				accumulator.retainAll(varList);
 			}
 		}
-		DeckEditor.println("Accumulator");
 		accumulator.forEach((c) -> DeckEditor.print(c.getName() + ", "));
 		return accumulator;
 	}
@@ -106,7 +85,8 @@ public class CardDictonary implements Iterable<Card>{
 		HashSet<String> set = new HashSet<>(names);
 		names.clear();
 		names.addAll(set);
-		ArrayList<String> basicLands = new ArrayList<>(Arrays.asList("Forest", "Plains", "Swamp", "Island", "Mountain", "Wastes"));
+		ArrayList<String> basicLands =
+				new ArrayList<>(Arrays.asList("Forest", "Plains", "Swamp", "Island", "Mountain", "Wastes"));
 		for (Card c : dictonary){
 			if (basicLands.contains(c.getName())){
 				names.remove(c.getName());
@@ -131,5 +111,23 @@ public class CardDictonary implements Iterable<Card>{
 		for (Card card : dictonary)
 			builder.append(card.getName()).append("\n");
 		return builder.toString();
+	}
+	
+	class CardDictonaryIterator implements Iterator<Card>{
+		int counter;
+		
+		CardDictonaryIterator(){
+			counter = 0;
+		}
+		
+		@Override
+		public boolean hasNext(){
+			return counter < dictonary.size();
+		}
+		
+		@Override
+		public Card next(){
+			return dictonary.get(counter++);
+		}
 	}
 }

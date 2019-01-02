@@ -1,72 +1,78 @@
 package gui;
 
 
-import cards.Card;
 import cards.Deck;
 import cards.type.Format;
+import deckeditor.DeckEditor;
 import gui.table.CardTableGUI;
 import gui.table.SetTableGUI;
-import json.Jason;
+import io.magicthegathering.javasdk.api.CardAPI;
+import io.magicthegathering.javasdk.resource.Card;
 
 import javax.swing.*;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.border.TitledBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.util.ArrayList;
+import java.util.List;
 
 public class GUI extends JFrame{
 	private static final long serialVersionUID = -1066050764201645094L;
 	private JLabel cardNumberField;
 	private Deck deck;
 	private JTable deckTable;
+	private CardTableGUI cardGUI;
+	private SetTableGUI setGUI;
+	private List<Card> c = CardAPI.getAllCards();
 	
-	public GUI() {
-		try {
-			for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-				if ("Metal".equals(info.getName())) {
+	public GUI(){
+		try{
+			for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()){
+				if ("Metal".equals(info.getName())){
 					UIManager.setLookAndFeel(info.getClassName());
 					break;
 				}
 			}
-		} catch (Exception e1) {
+		} catch (Exception e1){
 			e1.printStackTrace();
 		}
+		DeckEditor.println("Loading GUI...");
 		initComponents();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 	}
-	private JTable drawTable(JTable table) {
-		ArrayList<String> colnames = new ArrayList<>();
-		colnames.add("name");
-		colnames.add("number");
-		DefaultTableModel model = new DefaultTableModel();
-		model.setColumnIdentifiers(colnames.toArray());
-		if (deck != null) {
-			try {
-				for (ArrayList<Card> listofCards : deck) {
-					ArrayList<Object> values = new ArrayList<>();
-					values.add(listofCards.get(0).getName());
-					values.add(listofCards.size());
-					model.addRow(values.toArray());
-					model.fireTableDataChanged();
-				}
-				table.setModel(model);
-				model.fireTableDataChanged();
-				int size = 0;
-				for (int i = 0; i < model.getRowCount(); i++) {
-					size += Integer.parseInt(table.getValueAt(i, 2) + "");
-				}
-				cardNumberField.setText(String.valueOf(size));
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		return table;
-	}
-	private void initComponents() {
+
+//	private JTable drawTable(JTable table){
+//		ArrayList<String> colnames = new ArrayList<>();
+//		colnames.add("name");
+//		colnames.add("number");
+//		DefaultTableModel model = new DefaultTableModel();
+//		model.setColumnIdentifiers(colnames.toArray());
+//		if (deck != null){
+//			try{
+//				for (List<Card> listofCards : deck){
+//					ArrayList<Object> values = new ArrayList<>();
+//					values.add(listofCards.get(0).getName());
+//					values.add(listofCards.size());
+//					model.addRow(values.toArray());
+//					model.fireTableDataChanged();
+//				}
+//				table.setModel(model);
+//				model.fireTableDataChanged();
+//				int size = 0;
+//				for (int i = 0; i < model.getRowCount(); i++){
+//					size += Integer.parseInt(table.getValueAt(i, 2) + "");
+//				}
+//				cardNumberField.setText(String.valueOf(size));
+//			} catch (Exception e){
+//				e.printStackTrace();
+//			}
+//		}
+//		return table;
+//	}
+	
+	private void initComponents(){
 		JMenuBar menuBar1 = new JMenuBar();
 		JMenu file = new JMenu();
 		JMenuItem open = new JMenuItem();
@@ -116,15 +122,15 @@ public class GUI extends JFrame{
 				chooser.setFileFilter(filter);
 				open.addActionListener(e -> {
 					int returnVal = chooser.showOpenDialog(null);
-					if (returnVal == JFileChooser.APPROVE_OPTION) {
-						try {
+					if (returnVal == JFileChooser.APPROVE_OPTION){
+						try{
 							deck = Deck.loadDeckFromFile(chooser.getSelectedFile());
 							AbstractTableModel model = (AbstractTableModel) deckTable.getModel();
 							model.fireTableDataChanged();
-							deckTable = drawTable(deckTable);
+//							deckTable = drawTable(deckTable);
 							cardNumberField.setText(String.valueOf(deck.getDeckSize()));
 							// TODO find out why there are doups
-						} catch (Exception e1) {
+						} catch (Exception e1){
 							JOptionPane.showMessageDialog(new JFrame(), e1);
 							e1.printStackTrace();
 						}
@@ -161,15 +167,16 @@ public class GUI extends JFrame{
 				// ---- cards ----
 				cards.setText("show all cards");
 				cards.addActionListener(e -> {
-					ArrayList<Card> c = Jason.dictonary.getDictonary();
-					CardTableGUI cardGUI = new CardTableGUI("All Cards", c);
+					DeckEditor.println("Loading Card Database...");
+					
+					cardGUI = new CardTableGUI("All Cards", c);
 					cardGUI.setVisible(true);
 				});
 				cardDatabase.add(cards);
 				// ---- sets ----
 				sets.setText("show all sets");
 				sets.addActionListener(e -> {
-					SetTableGUI setGUI = new SetTableGUI();
+					setGUI = new SetTableGUI("All Sets");
 					setGUI.setVisible(true);
 				});
 				cardDatabase.add(sets);
@@ -270,7 +277,7 @@ public class GUI extends JFrame{
 				// ---- deckTable ----
 				deckTable.setAutoResizeMode(JTable.AUTO_RESIZE_NEXT_COLUMN);
 				scrollPane2.setViewportView(deckTable);
-				deckTable = drawTable(deckTable);
+//				deckTable = drawTable(deckTable);
 			}
 			// ---- showCards ----
 			showCards.setText("Add Card(s)");

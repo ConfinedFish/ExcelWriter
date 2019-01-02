@@ -16,10 +16,12 @@ class CardView extends JPanel{
 	 *
 	 */
 	private static final long serialVersionUID = 4341407364947051367L;
-	public CardView() {
+
+	public CardView(){
 		initComponents();
 	}
-	private void initComponents() {
+
+	private void initComponents(){
 		// JFormDesigner - Component initialization - DO NOT MODIFY
 		// //GEN-BEGIN:initComponents
 		// Generated using JFormDesigner Evaluation license - Alex Zeigler

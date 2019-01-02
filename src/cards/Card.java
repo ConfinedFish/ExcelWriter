@@ -2,50 +2,49 @@ package cards;
 
 import cards.type.*;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 public class Card{
-	private Boolean isReserved;
+	private Boolean legendary;
 	private String name;
 	private String ability;
 	private String manaCost;
-	private String printings;
 	private String artist;
 	private String flavorText;
-	private String generatedMana;
-	private Integer power;
-	private Integer toughness;
-	private Integer loyelty;
-	private Integer number;
-	private Integer convertedManaCost;
+	private String power;
+	private String toughness;
+	private String number;
+	private String loyalty;
+	private String convertedManaCost;
+	private String typeString;
 	private Rarity rarity;
-	private ArrayList<SubType> subtypes;
+	private ArrayList<Color> generatedMana;
+	private ArrayList<SubType> subTypes;
+	private ArrayList<SuperType> superTypes;
 	private ArrayList<Format> legalities;
 	private ArrayList<Color> colorIdentity;
+	private ArrayList<Color> color;
+	private CardSet set;
 	
-	
-	public ArrayList<Color> getColorIdentity(){
-		return colorIdentity;
+	public Card(){
 	}
 	
-	public void setColorIdentity(ArrayList<Color> colorIdentity){
-		this.colorIdentity = colorIdentity;
+	public String getType(){
+		return typeString;
 	}
 	
-	public Boolean getReserved(){
-		return isReserved;
+	public void setType(String typeString){
+		this.typeString = typeString;
 	}
 	
-	public void setReserved(Boolean reserved){
-		isReserved = reserved;
+	public Boolean getLegendary(){
+		return legendary;
 	}
 	
-	public ArrayList<Format> getLegalities(){
-		return legalities;
-	}
-	
-	public void setLegalities(ArrayList<Format> legalities){
-		this.legalities = legalities;
+	public void setLegendary(Boolean legendary){
+		this.legendary = legendary;
 	}
 	
 	public String getName(){
@@ -72,99 +71,12 @@ public class Card{
 		this.manaCost = manaCost;
 	}
 	
-	public String getPrintings(){
-		return printings;
-	}
-	
-	public void setPrintings(String printings){
-		this.printings = printings;
-	}
-	
 	public String getArtist(){
 		return artist;
 	}
 	
 	public void setArtist(String artist){
 		this.artist = artist;
-	}
-	
-	public Integer getPower(){
-		return power;
-	}
-	
-	public void setPower(Integer power){
-		this.power = power;
-	}
-	
-	public Integer getToughness(){
-		return toughness;
-	}
-	
-	public void setToughness(Integer toughness){
-		this.toughness = toughness;
-	}
-	
-	public Integer getLoyelty(){
-		return loyelty;
-	}
-	
-	public void setLoyelty(Integer loyelty){
-		this.loyelty = loyelty;
-	}
-	
-	public Integer getNumber(){
-		return number;
-	}
-	
-	public void setNumber(Integer number){
-		this.number = number;
-	}
-	
-	public Rarity getRarity(){
-		return rarity;
-	}
-	
-	public void setRarity(Rarity rarity){
-		this.rarity = rarity;
-	}
-	
-	public ArrayList<SubType> getSubtypes(){
-		return subtypes;
-	}
-	
-	public void setSubtypes(ArrayList<SubType> subtypes){
-		this.subtypes = subtypes;
-	}
-	
-	public ArrayList<SuperType> getSupertypes(){
-		return supertypes;
-	}
-	
-	public void setSupertypes(ArrayList<SuperType> supertypes){
-		this.supertypes = supertypes;
-	}
-	
-	public CardSet getSet(){
-		return set;
-	}
-	
-	public void setSet(CardSet set){
-		this.set = set;
-	}
-	
-	private ArrayList<SuperType> supertypes;
-	
-	private CardSet set;
-	
-	public Card(){
-	}
-	
-	public String getGeneratedMana(){
-		return generatedMana;
-	}
-	
-	public void setGeneratedMana(String generatedMana){
-		this.generatedMana = generatedMana;
 	}
 	
 	public String getFlavorText(){
@@ -175,11 +87,135 @@ public class Card{
 		this.flavorText = flavorText;
 	}
 	
-	public Integer getConvertedManaCost(){
+	public String getPower(){
+		return power;
+	}
+	
+	public void setPower(String power){
+		this.power = power;
+	}
+	
+	public String getToughness(){
+		return toughness;
+	}
+	
+	public void setToughness(String toughness){
+		this.toughness = toughness;
+	}
+	
+	public String getNumber(){
+		return number;
+	}
+	
+	public void setNumber(String number){
+		this.number = number;
+	}
+	
+	public String getLoyalty(){
+		return loyalty;
+	}
+	
+	public void setLoyalty(String loyalty){
+		this.loyalty = loyalty;
+	}
+	
+	public String getConvertedManaCost(){
 		return convertedManaCost;
 	}
 	
-	public void setConvertedManaCost(Integer convertedManaCost){
+	public void setConvertedManaCost(String convertedManaCost){
 		this.convertedManaCost = convertedManaCost;
+	}
+	
+	public Rarity getRarity(){
+		return rarity;
+	}
+	
+	public void setRarity(Rarity rarity){
+		this.rarity = rarity;
+	}
+	
+	public ArrayList<Color> getGeneratedMana(){
+		return generatedMana;
+	}
+	
+	public void setGeneratedMana(ArrayList<Color> generatedMana){
+		this.generatedMana = generatedMana;
+	}
+	
+	public ArrayList<SubType> getSubTypes(){
+		return subTypes;
+	}
+	
+	public void setSubTypes(ArrayList<SubType> subTypes){
+		this.subTypes = subTypes;
+	}
+	
+	public ArrayList<SuperType> getSuperTypes(){
+		return superTypes;
+	}
+	
+	public void setSuperTypes(ArrayList<SuperType> superTypes){
+		this.superTypes = superTypes;
+	}
+	
+	public ArrayList<Format> getLegalities(){
+		return legalities;
+	}
+	
+	public void setLegalities(ArrayList<Format> legalities){
+		this.legalities = legalities;
+	}
+	
+	public ArrayList<Color> getColorIdentity(){
+		return colorIdentity;
+	}
+	
+	public void setColorIdentity(ArrayList<Color> colorIdentity){
+		this.colorIdentity = colorIdentity;
+	}
+	
+	public ArrayList<Color> getColor(){
+		return color;
+	}
+	
+	public void setColor(ArrayList<Color> color){
+		this.color = color;
+	}
+	
+	public CardSet getSet(){
+		return set;
+	}
+	
+	public void setSet(CardSet set){
+		this.set = set;
+	}
+	//TODO make this better
+	public String toString(){
+		StringBuilder builder = new StringBuilder();
+		ArrayList<String> colnames = new ArrayList<>();
+		Method[] meths = Card.class.getDeclaredMethods();
+		for (Method meth : meths)
+			colnames.add(meth.getName());
+		ArrayList<Method> methods = new ArrayList<>();
+		ArrayList<Object> values = new ArrayList<>();
+		for (String name : colnames){
+			try{
+				if (name.startsWith("get") || name.startsWith("is"))
+					methods.add(Card.class.getMethod(name));
+			} catch (NoSuchMethodException e){
+				e.printStackTrace();
+			}
+		}
+		builder.append("\n");
+		for (Method meth : methods){
+			try{
+				builder.append("\t").append(meth.getName()).append(" : ")
+						.append(meth.invoke(this).toString() == null ? "null" : meth.invoke(this).toString() + "\n");
+			} catch (IllegalAccessException | NullPointerException | InvocationTargetException e){
+//				e.printStackTrace();
+			}
+		}
+		return builder.toString();
 	}
 }

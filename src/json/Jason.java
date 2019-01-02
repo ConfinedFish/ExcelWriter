@@ -4,7 +4,10 @@ import cards.Card;
 import cards.CardDictonary;
 import cards.CardSet;
 import cards.ColNameComparator;
-import cards.type.*;
+import cards.type.Color;
+import cards.type.Format;
+import cards.type.SubType;
+import cards.type.SuperType;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -22,78 +25,85 @@ public class Jason extends DeckEditor{
 	public static CardDictonary dictonary;
 	public static ArrayList<CardSet> sets;
 	public static HashMap<Format, ArrayList<Card>> formats;
-	private static void getCardColumns() {
+	
+	private static void getCardColumns(){
 		cardColumnNames = new ArrayList<>();
 		List<String> listOfSorted = Arrays.asList("name", "convertedManaCost", "manaCost", "originalText", "type",
 				"power", "toughness", "supertypes", "subtypes", "rarity", "legalities", "printings", "colorIdentity",
 				"artist", "borderColor", "UUID", "isReserved");
 		ArrayList<Field> fields = new ArrayList<>(Arrays.asList(Card.class.getDeclaredFields()));
-		for (Field f : fields) {
+		for (Field f : fields){
 			cardColumnNames.add(f.getName());
 		}
 		Map<String, Integer> mapOfColName = new HashMap<>();
-		for (int i = 0; i < listOfSorted.size(); i++) {
+		for (int i = 0; i < listOfSorted.size(); i++){
 			String colName = listOfSorted.get(i);
 			mapOfColName.put(colName, i);
 		}
 		cardColumnNames.sort(new ColNameComparator(mapOfColName));
 	}
-	private static ArrayList<Color> getColorFromValue(JsonArray array) {
+	
+	private static ArrayList<Color> getColorFromValue(JsonArray array){
 		Iterator<JsonElement> it = array.iterator();
 		ArrayList<Color> list = new ArrayList<>();
-		while (it.hasNext()) {
+		while (it.hasNext()){
 			list.addAll(Color.parseString(it.next().toString()));
 		}
 		return list;
 	}
-	private static void getColumns() {
+	
+	private static void getColumns(){
 		columnNames = new ArrayList<>();
 		List<String> listOfSorted =
 				Arrays.asList("name", "code", "totalSetSize", "cards", "releaseDate", "type", "block");
 		ArrayList<Field> fields = new ArrayList<>(Arrays.asList(CardSet.class.getDeclaredFields()));
-		for (Field f : fields) {
+		for (Field f : fields){
 			columnNames.add(f.getName());
 		}
 		Map<String, Integer> mapOfColName = new HashMap<>();
-		for (int i = 0; i < listOfSorted.size(); i++) {
+		for (int i = 0; i < listOfSorted.size(); i++){
 			String colName = listOfSorted.get(i);
 			mapOfColName.put(colName, i);
 		}
 		columnNames.sort(new ColNameComparator(mapOfColName));
 	}
-	private static ArrayList<Format> getFormatFromValue(JsonObject jsonObject) {
+	
+	private static ArrayList<Format> getFormatFromValue(JsonObject jsonObject){
 		ArrayList<Format> list = new ArrayList<>();
 		Set<Entry<String, JsonElement>> set = jsonObject.entrySet();
-		for (Entry<String, JsonElement> entry : set) {
+		for (Entry<String, JsonElement> entry : set){
 			list.addAll(Format.parseString(entry.getKey()));
 		}
 		return list;
 	}
-	private static ArrayList<SubType> getSubTypesFromValue(JsonArray array) {
+	
+	private static ArrayList<SubType> getSubTypesFromValue(JsonArray array){
 		Iterator<JsonElement> it = array.iterator();
 		ArrayList<SubType> list = new ArrayList<>();
-		while (it.hasNext()) {
+		while (it.hasNext()){
 			list.addAll(SubType.parseString(it.next().toString()));
 		}
 		return list;
 	}
-	private static ArrayList<SuperType> getTypesFromValue(JsonArray array) {
+	
+	private static ArrayList<SuperType> getTypesFromValue(JsonArray array){
 		Iterator<JsonElement> it = array.iterator();
 		ArrayList<SuperType> list = new ArrayList<>();
-		while (it.hasNext()) {
+		while (it.hasNext()){
 			list.addAll(SuperType.parseString(it.next().toString()));
 		}
 		return list;
 	}
-	private static ArrayList<Card> readCards(JsonArray element) {
+	
+	private static ArrayList<Card> readCards(JsonArray element){
 		ArrayList<Card> cards = new ArrayList<>();
-		for (JsonElement obj : element) {
+		for (JsonElement obj : element){
 			Card card = new Card();
-			if (obj.isJsonObject()) {
+			if (obj.isJsonObject()){
 				JsonObject jsonObj = (JsonObject) obj;
 				Set<Entry<String, JsonElement>> set = jsonObj.entrySet();
-				for (Entry<String, JsonElement> entry : set) {
-					switch (entry.getKey()) {
+				for (Entry<String, JsonElement> entry : set){
+					switch (entry.getKey()){
 //						case "originalText":
 //							card.setOriginalText(entry.getValue().toString().replaceAll("\"", ""));
 //							break;
@@ -141,7 +151,7 @@ public class Jason extends DeckEditor{
 //							card.setToughness(entry.getValue().toString().replaceAll("\"", ""));
 //							break;
 //						case "types":
-//							card.setSupertypes(getTypesFromValue(entry.getValue().getAsJsonArray()));
+//							card.getSuperTypes(getTypesFromValue(entry.getValue().getAsJsonArray()));
 //							break;
 					}
 				}
@@ -152,6 +162,7 @@ public class Jason extends DeckEditor{
 		
 		return cards;
 	}
+	
 	private static void findFormatsWithCards(){
 		formats = new HashMap<>();
 		for (Card card : dictonary)
@@ -165,13 +176,14 @@ public class Jason extends DeckEditor{
 					formats.put(format, cards);
 				}
 			}
-			
-			
+		
+		
 	}
-	public static void readFileForSets(String jsonname) {
+	
+	public static void readFileForSets(String jsonname){
 		ArrayList<CardSet> listOfSets = new ArrayList<>();
 		dictonary = new CardDictonary();
-		try {
+		try{
 			println("Started loading from JSON");
 			JsonParser parser = new JsonParser();
 			JsonReader reader = new JsonReader(new FileReader(jsonname));
@@ -179,12 +191,12 @@ public class Jason extends DeckEditor{
 			getCardColumns();
 			getColumns();
 			Set<Entry<String, JsonElement>> outerMap = str.entrySet();
-			for (Entry<String, JsonElement> entry : outerMap) {
+			for (Entry<String, JsonElement> entry : outerMap){
 				CardSet set = new CardSet();
 				JsonObject element = (JsonObject) entry.getValue();
 				Set<Entry<String, JsonElement>> map = element.entrySet();
-				for (Entry<String, JsonElement> value : map) {
-					switch (value.getKey()) {
+				for (Entry<String, JsonElement> value : map){
+					switch (value.getKey()){
 //						case "name":
 //							set.setName(value.getValue().toString().replaceAll("\"", ""));
 //							break;
@@ -210,7 +222,7 @@ public class Jason extends DeckEditor{
 				}
 				listOfSets.add(set);
 			}
-		} catch (Exception e) {
+		} catch (Exception e){
 			e.printStackTrace();
 		}
 		findFormatsWithCards();

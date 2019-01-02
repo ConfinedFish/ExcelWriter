@@ -15,10 +15,11 @@ class CardTableGUI extends JFrame{
 	 */
 	private static final long serialVersionUID = -3561313244463911808L;
 	
-	public CardTableGUI() {
+	public CardTableGUI(){
 		initComponents();
 	}
-	private void initComponents() {
+
+	private void initComponents(){
 		// JFormDesigner - Component initialization - DO NOT MODIFY
 		// //GEN-BEGIN:initComponents
 		// Generated using JFormDesigner Evaluation license - Alex Zeigler
