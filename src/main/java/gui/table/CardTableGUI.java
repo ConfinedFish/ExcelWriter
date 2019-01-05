@@ -2,24 +2,25 @@ package gui.table;
 
 import XML.XMLParse;
 import cards.Card;
-import cards.CardSet;
 import deckeditor.DeckEditor;
 import deckeditor.Level;
 import gui.FilterCards;
+import gui.table.datamodel.CardDataModel;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
-import java.awt.datatransfer.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.Transferable;
+import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -39,25 +40,11 @@ public class CardTableGUI extends TableGUI {
 	private void drawTable(ArrayList<Card> cards) {
 		ArrayList<String> colnames = new ArrayList<>(Arrays.asList("Name", "Type", "Set", "Ability", "Flavor Text", "Symbols",
 				"Converted Mana Cost", "Power", "Toughness", "Loyalty", "Rarity", "Color", "Color Identity"));
-		DefaultTableModel model = new DefaultTableModel(colnames.toArray(), 0) {
-			private static final long serialVersionUID = -6550280855835102010L;
-
-			@Override
-			public boolean isCellEditable(int row, int col) {
-				return false;
-			}
-
-			@Override
-			public Class getColumnClass(int column) {
-				return Object.class;
-			}
-		};
+		CardDataModel model = new CardDataModel(colnames.toArray(), 0, cards);
 		JTable table = new JTable(model);
 		model.setColumnIdentifiers(colnames.toArray());
 		table.setModel(model);
-		DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
-		renderer.setHorizontalAlignment(JLabel.LEFT);
-		table.setDefaultRenderer(Object.class, renderer);
+
 		TableRowSorter<TableModel> rowSorter = new TableRowSorter<>(table.getModel());
 		rowSorter.setComparator(model.findColumn("Converted Mana Cost"), new Comparator<Integer>() {
 			@Override
@@ -65,34 +52,6 @@ public class CardTableGUI extends TableGUI {
 				return o1.compareTo(o2);
 			}
 		});
-		try {
-			for (Card card : cards) {
-				ArrayList<Method> methods = new ArrayList<>();
-				ArrayList<Object> values = new ArrayList<>();
-				for (String name : colnames) {
-					name = name.replaceAll(" ", "");
-					if (name.startsWith("is")) {
-						methods.add(Card.class.getMethod(name));
-
-					} else {
-						methods.add(
-								Card.class.getMethod("get" + name.substring(0, 1).toUpperCase() + name.substring(1)));
-					}
-				}
-				for (Method meth : methods) {
-					if (meth.getName().equalsIgnoreCase("getset")){
-						CardSet set = (CardSet)meth.invoke(card);
-						values.add(set.getCode());
-					}
-					else{
-						values.add(meth.invoke(card));
-					}
-				}
-				model.addRow(values.toArray());
-			}
-		} catch (Exception e) {
-			DeckEditor.printException("GUITableModel", e);
-		}
 		final JPopupMenu pm = new JPopupMenu();
 		pm.add(new CopyAction(table));
 		table.addMouseListener(new MouseAdapter() {
@@ -126,7 +85,9 @@ public class CardTableGUI extends TableGUI {
 			}
 
 		});
-
+		DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
+		renderer.setHorizontalAlignment(JLabel.LEFT);
+		table.setDefaultRenderer(Object.class, renderer);
 		table.setRowSorter(rowSorter);
 		applySearch(table, new FilterAction(), rowSorter);
 		JScrollPane scrollPane = new JScrollPane(table, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
@@ -193,6 +154,5 @@ public class CardTableGUI extends TableGUI {
 			}
 			return cellValue;
 		}
-
 	}
 }
