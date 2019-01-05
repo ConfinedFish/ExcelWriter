@@ -1,0 +1,50 @@
+	private void writeXML() {
+		Document dom;
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+		try {
+			// use factory to get an instance of document builder
+			DocumentBuilder db = dbf.newDocumentBuilder();
+			// create instance of DOM
+			dom = db.newDocument();
+			Element rootEle = dom.createElement("cardDataBase");
+			Element setRootEle = dom.createElement("sets");
+			Element cardRootEle = dom.createElement("cards");
+			rootEle.appendChild(createElement(dom, CardSet.class, setRootEle, getSetArrayList()));
+			rootEle.appendChild(createElement(dom, Card.class, cardRootEle, getCardArrayList()));
+			dom.appendChild(rootEle);
+			Transformer tr = TransformerFactory.newInstance().newTransformer();
+			tr.setOutputProperty(OutputKeys.INDENT, "yes");
+			tr.setOutputProperty(OutputKeys.METHOD, "xml");
+			tr.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+			tr.transform(new DOMSource(dom), new StreamResult(new FileOutputStream("Cards&Sets.xml")));
+		} catch (Exception e) {
+			DeckEditor.printException(pathToFile, e);
+		}
+	}
+
+	private Element createElement(Document dom, Class<?> clazz, Element parent, ArrayList<?> list) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+		Method[] clazzMethods = clazz.getMethods();
+		ArrayList<Method> clazzGetterMethods = new ArrayList<>();
+		Element clazzElement;
+			for (Object obj : list) {
+				clazzElement = dom.createElement("set");
+				for (Method meth : clazzMethods) {
+					if (meth.getName().startsWith("is"))
+						clazzGetterMethods.add(clazz.getMethod(meth.getName()));
+					else if (meth.getName().startsWith("get")) {
+						clazzGetterMethods.add(clazz.getMethod(meth.getName()));
+					}
+				}
+				Set<Method> getterMethods = new HashSet<>(clazzGetterMethods);
+				for (Method meth : getterMethods) {
+					Element valueNameEle = dom.createElement(meth.getName().replaceAll("get", "").toLowerCase());
+					if (!meth.getReturnType().equals(ArrayList.class) && !meth.getName().equalsIgnoreCase("getClass") && meth.invoke(obj) != null) {
+						Node valueEle = dom.createCDATASection(meth.invoke(obj).toString());
+						valueNameEle.appendChild(valueEle);
+						clazzElement.appendChild(valueNameEle);
+					}
+				}
+				parent.appendChild(clazzElement);
+			}
+		return parent;
+	}

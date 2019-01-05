@@ -35,6 +35,11 @@
 			<artifactId>commons-collections4</artifactId>
 			<version>4.2</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.8.1</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
@@ -58,11 +63,6 @@
 			<groupId>com.miglayout</groupId>
 			<artifactId>miglayout</artifactId>
 			<version>3.7.4</version>
-		</dependency>
-		<dependency>
-			<groupId>io.magicthegathering</groupId>
-			<artifactId>javasdk</artifactId>
-			<version>0.0.12</version>
 		</dependency>
 
 	</dependencies>
