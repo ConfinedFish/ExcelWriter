@@ -2,45 +2,35 @@ package cards;
 
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class CardDictonary implements Iterable<Card> {
-	private final CardDictonary insance;
 	private ArrayList<Card> dictonary;
 	private ArrayList<CardSet> cardSets;
+	private ArrayList<Card> tokens;
+	private ArrayList<Card> lands;
 
 	public CardDictonary() {
-		insance = this;
 		dictonary = new ArrayList<>();
 		cardSets = new ArrayList<>();
-	}
-
-	public CardDictonary getInstance() {
-		return insance;
+		tokens = new ArrayList<>();
+		lands = new ArrayList<>();
 	}
 
 	public void add(Card card) {
 		dictonary.add(card);
 	}
-
-	public boolean contains(Card c) {
-		return dictonary.stream().anyMatch(o -> o.getName().equals(c.getName()));
+	
+	public Card findCard(String cardname){
+		return dictonary.stream().filter(card -> cardname.equalsIgnoreCase(card.getName())).findFirst().orElse(null);
+	}
+	public int findCard(Card card) {
+		return Collections.binarySearch(getDictonary(), card, new CardComparator());
 	}
 
-	int findCard(String cardName) {
-		for (int i = 0; i < dictonary.size(); i++)
-			if (dictonary.get(i).getName().contains(cardName))
-				return i;
-		return -1;
-	}
-
-	public ArrayList<Card> findCards(String searchName) {
-		ArrayList<Card> cardsContainingText = new ArrayList<>();
-		for (Card c : dictonary)
-			if (c.getName().toLowerCase().contains(searchName.toLowerCase()))
-				cardsContainingText.add(c);
-		return cardsContainingText;
+	public void sort() {
+		getDictonary().sort(new CardComparator());
 	}
 
 	@SafeVarargs
@@ -76,32 +66,6 @@ public class CardDictonary implements Iterable<Card> {
 		return new CardDictonaryIterator();
 	}
 
-	public void remove(Card card) {
-		dictonary.remove(card);
-	}
-
-	//TODO find out why this isnt working
-	public int removeDoup() {
-		ArrayList<Card> listofDoups = getDictonary();
-		HashSet<Card> set = new HashSet<>(listofDoups);
-		listofDoups.clear();
-		listofDoups.addAll(set);
-//		ArrayList<String> basicLands =
-//				new ArrayList<>(Arrays.asList("Forest", "Plains", "Swamp", "Island", "Mountain", "Wastes"));
-//		for (Card c : dictonary) {
-//			if (basicLands.contains(c.getName())) {
-//				names.remove(c.getName());
-//			}
-//			if (names.contains(c.getName())) {
-//				listOfNonDoups.add(c);
-//				names.remove(c.getName());
-//			}
-//		}
-		int listbefore = dictonary.size();
-		dictonary = listofDoups;
-		return listbefore - listofDoups.size();
-	}
-
 	public int size() {
 		return dictonary.size();
 	}
@@ -120,6 +84,14 @@ public class CardDictonary implements Iterable<Card> {
 
 	public void setCardSets(ArrayList<CardSet> cardSets) {
 		this.cardSets = cardSets;
+	}
+
+	public ArrayList<Card> getTokens() {
+		return tokens;
+	}
+
+	public ArrayList<Card> getLands() {
+		return lands;
 	}
 
 	class CardDictonaryIterator implements Iterator<Card> {

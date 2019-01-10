@@ -2,8 +2,9 @@ package gui.table;
 
 
 import XML.XMLParse;
+import cards.Card;
 import cards.CardSet;
-import deckeditor.DeckEditor;
+import gui.CardView;
 import gui.table.actions.CopyAction;
 import gui.table.actions.FilterAction;
 
@@ -19,16 +20,18 @@ import java.awt.event.MouseEvent;
 
 public class TableGUI extends JFrame{
 	private static XMLParse xmlParse;
-	
+	private TableGUI instance;
 	public static XMLParse getXmlParse(){
 		return xmlParse;
 	}
 	
 	private static final long serialVersionUID = 6779133700049319554L;
-	
-	TableGUI(String title, XMLParse xmlParse){
+
+	public TableGUI(String title, XMLParse xmlParse){
 		super(title);
 		TableGUI.xmlParse = xmlParse;
+		instance = this;
+		pack();
 	}
 	
 	void configTable(JTable table, TableRowSorter<TableModel> rowSorter, TableGUI tableGUI){
@@ -88,26 +91,21 @@ public class TableGUI extends JFrame{
 				int row = table.getSelectedRow();
 				int col = table.getSelectedColumn();
 				if (e.getClickCount() == 2 && table.getSelectedRow() != -1){
-					if (table.getModel().getColumnName(table.getSelectedColumn()).equalsIgnoreCase("set")){
-						CardSet set = xmlParse.getDictonary().findSet(table.getValueAt(row, col).toString());
-						try{
-							JOptionPane.showMessageDialog(new JFrame(),
-									set.getName() + "\n" + set.getCode() + "\n" + set.getDate());
-						} catch (Exception e1){
-							DeckEditor.printException(table.getValueAt(row, col).toString(), e1);
-						}
-					} else{
-						JOptionPane.showMessageDialog(new JFrame(),
-								table.getValueAt(row, col).toString().replaceAll("; ", "\n"));
+					if ((table.getValueAt(row, table.getColumn("Name").getModelIndex())) != null){
+						Card card = xmlParse.getDictonary().findCard(table.getValueAt(row, table.getColumn("Name").getModelIndex()).toString());
+						CardView cardView = new CardView(card);
+						cardView.setVisible(true);
+						cardView.setLocationRelativeTo(instance);
 					}
 				}
 				if (e.getClickCount() == 1 && table.getSelectedRow() != -1){
-					if (table.getModel().getColumnName(table.getSelectedColumn()).equalsIgnoreCase("cards")){
+					if (table.getModel().getColumnName(col).equalsIgnoreCase("cards")){
 						CardSet set =
 								xmlParse.getDictonary().findSet(table.getValueAt(row,
 										table.getColumn("Code").getModelIndex()).toString());
 						CardTableGUI gui = new CardTableGUI(set.getName(), set.getCards(), xmlParse);
 						gui.setVisible(true);
+						gui.setLocationRelativeTo(instance);
 					}
 				}
 			}

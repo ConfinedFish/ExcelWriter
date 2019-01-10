@@ -6,6 +6,13 @@
     </constraints>
     <properties/>
     <border type="none"/>
-    <children/>
+    <children>
+      <component id="908ad" class="javax.swing.JTextField" binding="rw">
+        <constraints/>
+        <properties>
+          <text value="Test"/>
+        </properties>
+      </component>
+    </children>
   </grid>
 </form>

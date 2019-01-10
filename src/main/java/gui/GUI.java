@@ -25,16 +25,13 @@ public class GUI extends JFrame{
 	private JLabel cardNumberField;
 	private Deck deck;
 	private JTable deckTable;
-	private CardTableGUI cardGUI;
-	private SetTableGUI setGUI;
 	private XMLParse xmlParse;
 	private ArrayList<Card> c;
-	FilterCards filterCards;
-	
+
 	public GUI(XMLParse xmlParse){
 		try{
 			for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()){
-				if ("Metal".equals(info.getName())){
+				if ("Nimbus".equals(info.getName())){
 					UIManager.setLookAndFeel(info.getClassName());
 					break;
 				}
@@ -44,7 +41,6 @@ public class GUI extends JFrame{
 		}
 		this.xmlParse = xmlParse;
 		c = xmlParse.getCardArrayList();
-		filterCards = new FilterCards(xmlParse);
 		DeckEditor.println("Loading GUI...", Level.INFO);
 		initComponents();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -130,15 +126,15 @@ public class GUI extends JFrame{
 				chooser.setFileFilter(filter);
 				open.addActionListener(e -> {
 					int returnVal = chooser.showOpenDialog(null);
-					if (returnVal == JFileChooser.APPROVE_OPTION){
-						try{
+					if (returnVal == JFileChooser.APPROVE_OPTION) {
+						try {
 							deck = Deck.loadDeckFromFile(chooser.getSelectedFile());
 							AbstractTableModel model = (AbstractTableModel) deckTable.getModel();
 							model.fireTableDataChanged();
 							deckTable = drawTable(deckTable);
 							cardNumberField.setText(String.valueOf(deck.getDeckSize()));
 							// TODO find out why there are doups
-						} catch (Exception e1){
+						} catch (Exception e1) {
 							JOptionPane.showMessageDialog(new JFrame(), e1);
 							e1.printStackTrace();
 						}
@@ -176,7 +172,7 @@ public class GUI extends JFrame{
 				cards.setText("show all cards");
 				cards.addActionListener(e -> {
 					DeckEditor.println("Loading Card Database", Level.INFO);
-					cardGUI = new CardTableGUI("All Cards : " + c.size(), c, xmlParse);
+					CardTableGUI cardGUI = new CardTableGUI("All Cards : " + c.size(), c, xmlParse);
 					cardGUI.setVisible(true);
 					cardGUI.setLocationRelativeTo(cards);
 				});
@@ -184,7 +180,7 @@ public class GUI extends JFrame{
 				// ---- sets ----
 				sets.setText("show all sets");
 				sets.addActionListener(e -> {
-					setGUI = new SetTableGUI("All Sets", xmlParse);
+					SetTableGUI setGUI = new SetTableGUI("All Sets", xmlParse);
 					setGUI.setVisible(true);
 					setGUI.setLocationRelativeTo(sets);
 				});
@@ -247,11 +243,21 @@ public class GUI extends JFrame{
 			}
 			// ---- showCards ----
 			showCards.setText("Add Card(s)");
-			showCards.addActionListener(e -> filterCards.setVisible(true));
+			showCards.addActionListener(e -> {
+				FilterCards filterCards = new FilterCards(xmlParse);
+				filterCards.setVisible(true);
+				filterCards.setLocationRelativeTo(this);
+			});
 			// ---- showSets ----
 			removeCards.setText("Remove Card(s)");
 			// ---- addLands ----
 			addLands.setText("Add Land");
+			addLands.addActionListener(e -> {
+				DeckEditor.println("Loading Card Database", Level.INFO);
+				CardTableGUI landGUI = new CardTableGUI("Land Cards : " + xmlParse.getDictonary().getLands().size(), xmlParse.getDictonary().getLands(), xmlParse);
+				landGUI.setVisible(true);
+				landGUI.setLocationRelativeTo(cards);
+			});
 			// ---- showStats ----
 			showStats.setText("View Stats");
 			GroupLayout contentsLayout = new GroupLayout(contents);

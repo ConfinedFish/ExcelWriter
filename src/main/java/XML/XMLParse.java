@@ -100,7 +100,13 @@ public class XMLParse {
 			NodeList cardNodeList =
 					(NodeList) xpath.evaluate("mtg_carddatabase/cards/card", document, XPathConstants.NODESET);
 			for (int i = 0; i < cardNodeList.getLength(); i++) {
-				dictonary.add(getCardData(cardNodeList.item(i)));
+				Card card = getCardData(cardNodeList.item(i));
+				if (card.getType().contains("Basic Land"))
+					dictonary.getLands().add(card);
+				else if (card.getName().contains("Token") || card.getType().contains("Token") || card.getType().contains("Emblem"))
+					dictonary.getTokens().add(card);
+				else
+					dictonary.add(card);
 			}
 			DeckEditor.println("Loaded " + dictonary.size() + " cards from XML", Level.INFO);
 		} catch (ParserConfigurationException | SAXException | IOException | XPathExpressionException e) {
@@ -108,9 +114,9 @@ public class XMLParse {
 		}
 		sortCards(setArrayList, dictonary.getDictonary());
 		dictonary.setCardSets(setArrayList);
+		dictonary.sort();
 		DeckEditor.println("Finished loading from XML", Level.INFO);
 	}
-
 
 	private void sortCards(ArrayList<CardSet> sets, ArrayList<Card> cards) {
 		DeckEditor.println("Sorting Cards into sets", Level.INFO);
@@ -120,8 +126,7 @@ public class XMLParse {
 			}
 			for (Card card : cards) {
 				if (card.getSubTypes() != null && card.getSuperTypes() != null)
-					if (!card.getSuperTypes().contains(SuperType.Basic) &&
-							!card.getSuperTypes().contains(SuperType.Land))
+					if (!card.getType().contains("Basic Land"))
 						if (card.getSet().getCode().equals(set.getCode()))
 							set.getCards().add(card);
 			}
@@ -197,7 +202,8 @@ public class XMLParse {
 		return dictonary.getDictonary();
 	}
 
-	public CardDictonary getDictonary(){
+	public CardDictonary getDictonary() {
 		return dictonary;
 	}
+
 }
