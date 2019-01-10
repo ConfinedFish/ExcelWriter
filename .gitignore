@@ -7,3 +7,4 @@ AllSets.json
 .idea/libraries/jre1_8.xml
 .idea/misc.xml
 .idea/workspace.xml
+*.class
