@@ -31,7 +31,7 @@ public class GUI extends JFrame{
 	public GUI(XMLParse xmlParse){
 		try{
 			for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()){
-				if ("Nimbus".equals(info.getName())){
+				if ("Metal".equals(info.getName())){
 					UIManager.setLookAndFeel(info.getClassName());
 					break;
 				}

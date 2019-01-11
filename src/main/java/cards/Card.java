@@ -9,6 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Card {
+
 	private Boolean legendary;
 	private String name;
 	private String ability;

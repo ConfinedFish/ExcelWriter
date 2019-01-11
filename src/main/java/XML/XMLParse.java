@@ -1,7 +1,7 @@
 package XML;
 
 import cards.Card;
-import cards.CardDictonary;
+import cards.CardDictionary;
 import cards.CardSet;
 import cards.type.Color;
 import cards.type.Rarity;
@@ -65,7 +65,7 @@ public class XMLParse {
 	//TODO add a progress counter to the loading
 	private String pathToFile;
 	private ArrayList<CardSet> setArrayList = new ArrayList<>();
-	private CardDictonary dictonary = new CardDictonary();
+	private CardDictionary dictonary = new CardDictionary();
 
 	public XMLParse(String pathtoFile) {
 		this.pathToFile = pathtoFile;
@@ -112,7 +112,7 @@ public class XMLParse {
 		} catch (ParserConfigurationException | SAXException | IOException | XPathExpressionException e) {
 			DeckEditor.printException(pathToFile, e);
 		}
-		sortCards(setArrayList, dictonary.getDictonary());
+		sortCards(setArrayList, dictonary.getDictionary());
 		dictonary.setCardSets(setArrayList);
 		dictonary.sort();
 		DeckEditor.println("Finished loading from XML", Level.INFO);
@@ -199,10 +199,10 @@ public class XMLParse {
 	}
 
 	public ArrayList<Card> getCardArrayList() {
-		return dictonary.getDictonary();
+		return dictonary.getDictionary();
 	}
 
-	public CardDictonary getDictonary() {
+	public CardDictionary getDictonary() {
 		return dictonary;
 	}
 

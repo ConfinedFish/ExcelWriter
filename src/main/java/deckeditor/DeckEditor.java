@@ -26,6 +26,8 @@ public class DeckEditor{
 	public static void main(String[] args){
 		new DeckEditor().run();
 	}
+	
+	
 	//TODO make the program download the file if it is missing from DropBox Shared folder or domain
 	private void run(){
 		XMLParse xmlParse = new XMLParse("Set.xml");
@@ -105,6 +107,9 @@ public class DeckEditor{
 	}
 	public static void print(Object obj){
 		System.out.print(obj);
+	}
+	public static void println(Object object) {
+		println(object, Level.DEBUG);
 	}
 	
 	/**

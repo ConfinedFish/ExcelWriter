@@ -1,7 +1,7 @@
 package json;
 
 import cards.Card;
-import cards.CardDictonary;
+import cards.CardDictionary;
 import cards.CardSet;
 import cards.ColNameComparator;
 import cards.type.Color;
@@ -23,7 +23,7 @@ import java.util.Map.Entry;
 
 public class Jason extends DeckEditor{
 	public static ArrayList<String> cardColumnNames, columnNames;
-	public static CardDictonary dictonary;
+	public static CardDictionary dictonary;
 	public static ArrayList<CardSet> sets;
 	public static HashMap<Format, ArrayList<Card>> formats;
 	
@@ -183,7 +183,7 @@ public class Jason extends DeckEditor{
 	
 	public static void readFileForSets(String jsonname){
 		ArrayList<CardSet> listOfSets = new ArrayList<>();
-		dictonary = new CardDictonary();
+		dictonary = new CardDictionary();
 		try{
 			println("Started loading from JSON", Level.INFO);
 			JsonParser parser = new JsonParser();
