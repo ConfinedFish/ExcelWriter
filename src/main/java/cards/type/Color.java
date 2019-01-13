@@ -1,73 +1,97 @@
 package cards.type;
 
+import deckeditor.DeckEditor;
+import org.apache.commons.lang3.StringUtils;
+
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public enum Color {
+	A("artifact"),
 	B("black"),
 	C("colorless"),
 	G("green"),
+	K("token"),
+	L("land"),
+	M("Emblem"),
+	P("phyrexian"),
 	R("red"),
 	U("blue"),
 	W("white"),
-	X("variable"),
-	L("land"),
-	A("artifact"),
-	K("Token"),
-	M("Emblem");
+	X("variable");
 	public static final ArrayList<String> errorColors = new ArrayList<>();
 	final String name;
-
+	
 	Color(String name) {
 		this.name = name;
 	}
-
-	//TODO combine parseString and findColorArray if possible
-	public static ArrayList<Color> parseString(String string) {
-		ArrayList<String> tokens = new ArrayList<>(Arrays.asList(string.trim().split("\\W+")));
-		ArrayList<Color> colors = new ArrayList<>();
-		for (String strings : tokens) {
-			if (strings != null && strings.length() > 0)
-				try {
-					colors.add(valueOf(strings.toUpperCase()));
-				} catch (Exception e) {
-					if (!errorColors.contains(strings))
-						errorColors.add(strings);
-				}
-		}
-		return colors;
-	}
-
+	
 	public static ArrayList<Color> findColorArray(String string) {
-		if (string == null) {
+		if (string == null || StringUtils.isBlank(string)) {
 			return null;
 		}
 		ArrayList<Color> colors = new ArrayList<>();
-		String[] strings = string.trim().split("\\W+");
-		for (String s : strings) {
-			if (s.length() > 0){
-				char c = s.charAt(0);
-				if (c == 'X' || c == 'R' || c == 'B' || c == 'C' || c == 'G' || c == 'U' || c == 'W' || c == 'L' || c == 'K' || c == 'M')
-					try {
-						colors.add(valueOf(Character.toString(c)));
-					} catch (Exception e) {
-						if (!errorColors.contains(Character.toString(c)))
-							errorColors.add(Character.toString(c));
+		if (string.contains("(")) {
+			Matcher matcher = Pattern.compile("\\(([^)]+)\\)").matcher(string);
+			while (matcher.find()) {
+				String s = matcher.group(1);
+				if (s.length() > 0) {
+					char c = s.charAt(0);
+					if (c == 'X' || c == 'R' || c == 'B' || c == 'C' || c == 'G' || c == 'U' || c == 'W' || c == 'L' || c == 'K' || c == 'M')
+						try {
+							colors.add(valueOf(Character.toString(c)));
+						} catch (Exception e) {
+							if (!errorColors.contains(Character.toString(c)))
+								errorColors.add(Character.toString(c));
+						}
+					if (Character.isDigit(c)) {
+						int num = Integer.parseInt(Character.toString(c));
+						if (num == 0)
+							colors.add(C);
+						else {
+							for (int i = 0; i < num; i++) {
+								colors.add(C);
+							}
+						}
 					}
-				if (Character.isDigit(c)){
-					int num = Integer.parseInt(Character.toString(c));
-					for (int i = 0; i < num; i++){
-						colors.add(C);
+				}
+				
+			}
+		} else {
+			String[] strings = string.trim().split("\\W+");
+			for (String s : strings) {
+				if (s.length() > 0) {
+					char c = s.charAt(0);
+					if (c == 'X' || c == 'R' || c == 'B' || c == 'C' || c == 'G' || c == 'U' || c == 'W' || c == 'L' || c == 'K' || c == 'M' || c == 'A' || c == 'P')
+						try {
+							colors.add(valueOf(Character.toString(c)));
+						} catch (Exception e) {
+							if (!errorColors.contains(Character.toString(c)))
+								errorColors.add(Character.toString(c));
+						}
+					if (Character.isDigit(c)) {
+						int num = Integer.parseInt(Character.toString(c));
+						if (num == 0)
+							colors.add(C);
+						else {
+							for (int i = 0; i < num; i++) {
+								colors.add(C);
+							}
+						}
 					}
 				}
 			}
-
 		}
+		if (colors.isEmpty())
+			DeckEditor.println("Empty");
 		return colors;
 	}
-
+	
 	public String getName() {
 		return name;
 	}
-
+	
 }

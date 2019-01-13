@@ -66,11 +66,11 @@ public class XMLParse {
 	private String pathToFile;
 	private ArrayList<CardSet> setArrayList = new ArrayList<>();
 	private CardDictionary dictonary = new CardDictionary();
-
+	
 	public XMLParse(String pathtoFile) {
 		this.pathToFile = pathtoFile;
 	}
-
+	
 	private static String getTagValue(String tag, Element element) {
 		String returnval = null;
 		try {
@@ -80,7 +80,7 @@ public class XMLParse {
 		}
 		return returnval;
 	}
-
+	
 	public void parse() {
 		DeckEditor.println("Started loading from XML: " + pathToFile, Level.INFO);
 		File xmlFile = new File(pathToFile);
@@ -92,7 +92,7 @@ public class XMLParse {
 			XPath xpath = xpf.newXPath();
 			NodeList setNodeList =
 					(NodeList) xpath.evaluate("mtg_carddatabase/sets/set", document, XPathConstants.NODESET);
-
+			
 			for (int i = 0; i < setNodeList.getLength(); i++) {
 				setArrayList.add(getSetData(setNodeList.item(i)));
 			}
@@ -117,7 +117,7 @@ public class XMLParse {
 		dictonary.sort();
 		DeckEditor.println("Finished loading from XML", Level.INFO);
 	}
-
+	
 	private void sortCards(ArrayList<CardSet> sets, ArrayList<Card> cards) {
 		DeckEditor.println("Sorting Cards into sets", Level.INFO);
 		for (CardSet set : sets) {
@@ -132,7 +132,7 @@ public class XMLParse {
 			}
 		}
 	}
-
+	
 	private Card getCardData(Node node) {
 		Card card = new Card();
 		if (node.getNodeType() == Node.ELEMENT_NODE) {
@@ -158,6 +158,8 @@ public class XMLParse {
 					} catch (Exception ignored) {
 					}
 				card.setConvertedManaCost(integer);
+				if (card.getName().equalsIgnoreCase("Gitaxian Probe"))
+					DeckEditor.println(card.getName());
 				card.setManaCost(getTagValue("manacost", element));
 				card.setColorIdentity(Color.findColorArray(getTagValue("color_identity", element)));
 				card.setColor(Color.findColorArray(getTagValue("color", element)));
@@ -165,7 +167,7 @@ public class XMLParse {
 				card.setNumber(getTagValue("number", element));
 				card.setAbility(getTagValue("ability", element));
 				card.setFlavorText(getTagValue("flavor", element));
-				card.setGeneratedMana(Color.findColorArray(getTagValue("manacost", element)));
+				card.setGeneratedMana(Color.findColorArray(getTagValue("generated_mana", element)));
 				card.setSymbols();
 			} catch (IllegalArgumentException | NullPointerException | ArrayIndexOutOfBoundsException e) {
 				DeckEditor.printException(card.getName(), e);
@@ -173,14 +175,14 @@ public class XMLParse {
 		}
 		return card;
 	}
-
+	
 	private CardSet findSet(String code) {
 		for (CardSet set : setArrayList)
 			if (set.getCode().equalsIgnoreCase(code))
 				return set;
 		return null;
 	}
-
+	
 	private CardSet getSetData(Node node) {
 		CardSet set = new CardSet();
 		if (node.getNodeType() == Node.ELEMENT_NODE) {
@@ -192,18 +194,18 @@ public class XMLParse {
 		}
 		return set;
 	}
-
-
+	
+	
 	public ArrayList<CardSet> getSetArrayList() {
 		return setArrayList;
 	}
-
+	
 	public ArrayList<Card> getCardArrayList() {
 		return dictonary.getDictionary();
 	}
-
+	
 	public CardDictionary getDictonary() {
 		return dictonary;
 	}
-
+	
 }

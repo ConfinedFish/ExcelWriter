@@ -5,6 +5,7 @@ import cards.CardSet;
 import deckeditor.DeckEditor;
 
 import javax.swing.table.DefaultTableModel;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
@@ -38,7 +39,11 @@ public class CardDataModel extends DefaultTableModel{
 						CardSet set = (CardSet) meth.invoke(card);
 						values.add(set.getCode());
 					} else{
-						values.add(meth.invoke(card));
+						try {
+							values.add(meth.invoke(card));
+						} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+							DeckEditor.printException(card.getName() + ", " + meth.getName(), e);
+						}
 					}
 				}
 				addRow(values.toArray());

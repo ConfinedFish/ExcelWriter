@@ -319,10 +319,13 @@ public class FilterCards extends JFrame {
 					filteredCards.addAll(dictionary.findCards(colors, matchExact, matchMultiColor, excludeColor));
 				}
 			}
-			CardTableGUI gui = new CardTableGUI("Results : " + filteredCards.size(), filteredCards, xmlParse);
-			gui.setVisible(true);
-			gui.setLocationRelativeTo(this);
-			dispose();
+			if (!filteredCards.isEmpty()){
+				CardTableGUI gui = new CardTableGUI("Results : " + filteredCards.size(), filteredCards, xmlParse);
+				gui.setVisible(true);
+				gui.setLocationRelativeTo(this);
+				dispose();
+			} else
+				JOptionPane.showMessageDialog(this, "Search had 0 results");
 		}
 	}
 	
