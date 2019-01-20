@@ -1,11 +1,10 @@
 package cards.type;
 
-import deckeditor.DeckEditor;
 import org.apache.commons.lang3.StringUtils;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -31,7 +30,7 @@ public enum Color {
 	
 	public static ArrayList<Color> findColorArray(String string) {
 		if (string == null || StringUtils.isBlank(string)) {
-			return null;
+			return new ArrayList<>();
 		}
 		ArrayList<Color> colors = new ArrayList<>();
 		if (string.contains("(")) {
@@ -85,8 +84,6 @@ public enum Color {
 				}
 			}
 		}
-		if (colors.isEmpty())
-			DeckEditor.println("Empty");
 		return colors;
 	}
 	

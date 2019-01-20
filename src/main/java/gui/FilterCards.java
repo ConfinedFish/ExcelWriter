@@ -10,7 +10,6 @@ import cards.type.Format;
 import cards.type.Rarity;
 import cards.type.SuperType;
 import deckeditor.DeckEditor;
-import deckeditor.Level;
 import gui.table.CardTableGUI;
 
 import javax.swing.*;
@@ -257,8 +256,22 @@ public class FilterCards extends JFrame {
 			if (chckbxMatchExactColors.isSelected()) {
 				chckbxMatchExactColors.setSelected(false);
 			}
+			if (chckbxMultiColorsOnly.isSelected()) {
+				chckbxMultiColorsOnly.setSelected(false);
+			}
 		});
 		chckbxMatchExactColors.addActionListener(e -> {
+			if (chckbxExcludeColors.isSelected()) {
+				chckbxExcludeColors.setSelected(false);
+			}
+			if (chckbxMultiColorsOnly.isSelected()) {
+				chckbxMultiColorsOnly.setSelected(false);
+			}
+		});
+		chckbxMultiColorsOnly.addActionListener(e -> {
+			if (chckbxMatchExactColors.isSelected()) {
+				chckbxMatchExactColors.setSelected(false);
+			}
 			if (chckbxExcludeColors.isSelected()) {
 				chckbxExcludeColors.setSelected(false);
 			}
@@ -269,14 +282,18 @@ public class FilterCards extends JFrame {
 	
 	private void search() {
 		if (isEmpty(instance, true)) {
-			CardTableGUI gui = new CardTableGUI("Results : " + dictionary.getDictionary().size(), dictionary.getDictionary(), xmlParse);
+			CardTableGUI gui = new CardTableGUI("Results : " + dictionary.getList().size(), dictionary.getList(), xmlParse);
 			gui.setVisible(true);
 			gui.setLocationRelativeTo(this);
 			dispose();
 		} else {
+			boolean searchedText = false;
+			boolean searchedColors = false;
 			boolean matchExact = false;
 			boolean matchMultiColor = false;
 			boolean excludeColor = false;
+			ArrayList<Color> colors = new ArrayList<>();
+			ArrayList<Card> cardsFromColor = new ArrayList<>();
 			HashMap<String, Component> components = getNonEmptyComponents();
 			for (Map.Entry<String, Component> entry : components.entrySet()) {
 				Component component = entry.getValue();
@@ -284,10 +301,9 @@ public class FilterCards extends JFrame {
 				if (component instanceof JTextField) {
 					DeckEditor.println(((JTextField) component).getText());
 					filteredCards.addAll(dictionary.findCards(((JTextField) component).getText()));
+					searchedText = true;
 				}
 				if (component instanceof JCheckBox) {
-					ArrayList<Color> colors = new ArrayList<>();
-					
 					switch (name) {
 						case "Exact Colors":
 							if (((JCheckBox) component).isSelected()) {
@@ -316,16 +332,41 @@ public class FilterCards extends JFrame {
 							break;
 						
 					}
-					filteredCards.addAll(dictionary.findCards(colors, matchExact, matchMultiColor, excludeColor));
+					searchedColors = true;
 				}
 			}
-			if (!filteredCards.isEmpty()){
-				CardTableGUI gui = new CardTableGUI("Results : " + filteredCards.size(), filteredCards, xmlParse);
-				gui.setVisible(true);
-				gui.setLocationRelativeTo(this);
-				dispose();
-			} else
-				JOptionPane.showMessageDialog(this, "Search had 0 results");
+			if (matchMultiColor && colors.size() == 1) {
+				JOptionPane.showMessageDialog(this, "Match Multi-Color selected with one color selected");
+				filteredCards.clear();
+				return;
+			}
+			
+			if (matchExact)
+				filteredCards.addAll(dictionary.findAll(card -> card.getColor().containsAll(colors)));
+			makeTable();
+//
+//			if (matchMultiColor || matchExact || excludeColor || searchedColors) {
+//				if (!searchedText) {
+//					makeTable();
+//				} else {
+//					filteredCards.retainAll(DeckEditor.combineLists(xmlParse, dictionary.findCards(colors, matchExact, matchMultiColor, excludeColor), filteredCards));
+//					makeTable();
+//				}
+//			}
+//			if (searchedText) {
+//
+//			}
+		}
+	}
+	
+	private void makeTable() {
+		if (filteredCards.isEmpty()) {
+			JOptionPane.showMessageDialog(this, "Search had 0 results");
+		} else {
+			CardTableGUI gui = new CardTableGUI("Results : " + filteredCards.size(), filteredCards, xmlParse);
+			gui.setVisible(true);
+			gui.setLocationRelativeTo(this);
+			dispose();
 		}
 	}
 	

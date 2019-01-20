@@ -2,7 +2,6 @@ package gui;
 
 import cards.Card;
 import deckeditor.DeckEditor;
-import org.apache.commons.lang3.StringUtils;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -25,121 +24,139 @@ public class CardView extends JFrame {
 	}
 	
 	private void drawUI() {
-		setBounds(100, 100, 559, 403);
+		setType(Type.POPUP);
+		setResizable(false);
+		Font fieldFont = new Font("Tahoma", Font.PLAIN, 11);
+		Font labelFont = new Font("Tahoma", Font.BOLD, 11);
+		setBounds(100, 100, 559, 345);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
-		JPanel infoPanel = new JPanel();
-		infoPanel.setBorder(new TitledBorder(null, "Info", TitledBorder.LEFT, TitledBorder.ABOVE_TOP, null, null));
-		infoPanel.setBounds(253, 0, 290, 306);
-		contentPanel.add(infoPanel);
-		infoPanel.setLayout(null);
-		JPanel names = new JPanel();
-		names.setBounds(10, 26, 64, 269);
-		infoPanel.add(names);
-		names.setLayout(null);
-		JLabel CardName = new JLabel("Name:");
-		CardName.setBounds(0, 0, 64, 14);
-		names.add(CardName);
-		JLabel ManaCost = new JLabel("Cost:");
-		ManaCost.setBounds(0, 25, 64, 14);
-		names.add(ManaCost);
-		JLabel Ability = new JLabel("Ability:");
-		Ability.setBounds(0, 50, 64, 14);
-		names.add(Ability);
-		JLabel Type = new JLabel("Type:");
-		Type.setBounds(0, 75, 64, 14);
-		names.add(Type);
-		JLabel Rarity = new JLabel("Rarity:");
-		Rarity.setBounds(0, 100, 64, 14);
-		names.add(Rarity);
-		JLabel FlavorText = new JLabel("Flavor:");
-		FlavorText.setBounds(0, 125, 64, 14);
-		names.add(FlavorText);
-		JLabel Artist = new JLabel("Artist:");
-		Artist.setBounds(0, 150, 64, 14);
-		names.add(Artist);
-		JLabel Set = new JLabel("Set:");
-		Set.setBounds(0, 175, 64, 14);
-		names.add(Set);
-		JPanel fields = new JPanel();
-		fields.setBounds(84, 25, 232, 270);
-		infoPanel.add(fields);
-		fields.setLayout(null);
-		JLabel NameField = new JLabel(card.getName());
-		NameField.setBounds(0, 0, 211, 14);
-		fields.add(NameField);
-		JLabel ManaCostField = new JLabel(card.getSymbols() + " (" + card.getConvertedManaCost() + ")");
-		ManaCostField.setBounds(0, 25, 211, 14);
-		fields.add(ManaCostField);
-		JLabel AbilityField = new JLabel(card.getAbility());
-		AbilityField.setBounds(0, 50, 211, 14);
-		fields.add(AbilityField);
-		JLabel TypeField = new JLabel(card.getType());
-		TypeField.setBounds(0, 75, 211, 14);
-		fields.add(TypeField);
-		JLabel RarityField = new JLabel(card.getRarity().toString());
-		RarityField.setBounds(0, 100, 211, 14);
-		fields.add(RarityField);
-		JLabel FlavorTextField = new JLabel(card.getFlavorText());
-		FlavorTextField.setBounds(0, 125, 211, 14);
-		fields.add(FlavorTextField);
-		JLabel ArtistField = new JLabel(card.getArtist());
-		ArtistField.setBounds(0, 150, 211, 14);
-		fields.add(ArtistField);
-		JLabel SetField = new JLabel(card.getSet().getName() + " (" + card.getSet().getCode() + ")");
-		SetField.setBounds(0, 175, 211, 15);
-		fields.add(SetField);
-		
-		boolean moveDown = false;
-		if (!StringUtils.isBlank(card.getToughness()) && !StringUtils.isBlank(card.getPower())) {
-			JLabel PT = new JLabel("P/T:");
-			PT.setBounds(0, 200, 64, 14);
-			names.add(PT);
-			
-			JLabel PTField = new JLabel(card.getPower() + " / " + card.getToughness());
-			PTField.setBounds(0, 200, 211, 14);
-			fields.add(PTField);
-			
-			moveDown = true;
-		}
-		if (!StringUtils.isBlank(card.getLoyalty())) {
-			JLabel Loyalty = new JLabel("Loyalty:");
-			Loyalty.setBounds(0, 200, 64, 15);
-			names.add(Loyalty);
-			
-			JLabel LoyaltyField = new JLabel(card.getLoyalty());
-			LoyaltyField.setBounds(0, 200, 211, 15);
-			fields.add(LoyaltyField);
-			
-			moveDown = true;
-		}
-		if (card.getGeneratedMana() != null){
-			int move = 0;
-			if (moveDown)
-				move += 25;
-			JLabel GeneratedMana = new JLabel("Gen. Mana:");
-			GeneratedMana.setBounds(0, 200 + move, 64, 15);
-			names.add(GeneratedMana);
-			
-			JLabel GeneratedManaField = new JLabel(card.getGeneratedMana().toString());
-			GeneratedManaField.setBounds(0, 200 + move, 211, 15);
-			fields.add(GeneratedManaField);
-		}
-		
 		JPanel cardPanel = new JPanel();
 		cardPanel.setBorder(new TitledBorder(null, "Card", TitledBorder.LEFT, TitledBorder.ABOVE_TOP, null, null));
-		cardPanel.setBounds(0, 0, 243, 350);
+		cardPanel.setBounds(0, 0, 210, 305);
 		contentPanel.add(cardPanel);
 		try {
-			String path = "C:\\Program Files (x86)\\Gatherer Extractor\\pics\\" + card.getSet().getCode()+ "\\" + card.getName() + ".full.jpg";
+			String path = "pics\\" + card.getSet().getCode() + "\\" + card.getName() + ".full.jpg";
 			BufferedImage image = ImageIO.read(new File(path));
-			DeckEditor.println(image.getWidth() + " x " + image.getHeight());
 			JLabel label = new JLabel(new ImageIcon(image.getScaledInstance(cardPanel.getWidth() - 30, cardPanel.getHeight() - 30, Image.SCALE_SMOOTH)));
 			cardPanel.add(label);
 		} catch (IOException e) {
 			DeckEditor.printException(card.getName(), e);
+		}
+		JLabel Ability = new JLabel("Ability:");
+		JLabel Artist = new JLabel("Artist:");
+		JLabel ArtistField = new JLabel(card.getArtist());
+		JLabel CardName = new JLabel("Card Name: ");
+		JLabel ManaCost = new JLabel("Mana Cost:");
+		JLabel ManaCostField = new JLabel(card.getSymbols());
+		JLabel NameField = new JLabel(card.getName());
+		JLabel Rarity = new JLabel("Rarity:");
+		JLabel RarityField = new JLabel(card.getRarity().toString());
+		JLabel Type = new JLabel("Type:");
+		JLabel TypeField = new JLabel(card.getType());
+		JPanel fields = new JPanel();
+		JPanel infoPanel = new JPanel();
+		JTextPane AbilityField = new JTextPane();
+		Ability.setBounds(0, 80, 64, 14);
+		Ability.setFont(labelFont);
+		AbilityField.setBounds(0, 95, 306, 120);
+		AbilityField.setEditable(false);
+		AbilityField.setContentType("text/html");
+		AbilityField.setOpaque(false);
+		String ability = "<p style = \"font-family:Tahoma;font-size:11pt\">" +
+				card.getAbility().replaceAll("; ", "\n").replaceAll("#_", "<i>").replaceAll("_#", "</i>") +
+				"</p>";
+		AbilityField.setText(ability);
+		Artist.setBounds(115, 40, 45, 14);
+		Artist.setFont(labelFont);
+		Artist.setLabelFor(ArtistField);
+		ArtistField.setBounds(160, 40, 146, 14);
+		ArtistField.setFont(fieldFont);
+		CardName.setBounds(0, 0, 75, 14);
+		CardName.setFont(labelFont);
+		CardName.setLabelFor(NameField);
+		contentPanel.add(infoPanel);
+		fields.setBounds(10, 15, 306, 280);
+		fields.setLayout(null);
+		
+		infoPanel.add(fields);
+		infoPanel.setBorder(new TitledBorder(null, "Info", TitledBorder.LEADING, TitledBorder.ABOVE_TOP, null, null));
+		infoPanel.setBounds(217, 0, 326, 306);
+		infoPanel.setLayout(null);
+		
+		
+		ManaCost.setBounds(0, 20, 64, 14);
+		ManaCost.setFont(labelFont);
+		ManaCost.setLabelFor(ManaCostField);
+		ManaCostField.setBounds(75, 20, 70, 14);
+		ManaCostField.setFont(fieldFont);
+		NameField.setBounds(75, 0, 221, 14);
+		NameField.setFont(fieldFont);
+		
+		Rarity.setBounds(0, 40, 45, 14);
+		Rarity.setFont(labelFont);
+		Rarity.setLabelFor(RarityField);
+		RarityField.setBounds(45, 40, 70, 14);
+		RarityField.setFont(fieldFont);
+		Type.setBounds(0, 60, 40, 14);
+		Type.setFont(labelFont);
+		Type.setLabelFor(TypeField);
+		TypeField.setBounds(40, 60, 266, 14);
+		TypeField.setFont(fieldFont);
+		fields.add(Ability);
+		fields.add(AbilityField);
+		fields.add(Artist);
+		fields.add(ArtistField);
+		fields.add(CardName);
+
+		fields.add(ManaCost);
+		fields.add(ManaCostField);
+		fields.add(NameField);
+		fields.add(Rarity);
+		fields.add(RarityField);
+		fields.add(Type);
+		fields.add(TypeField);
+		if (card.getPower() != null && card.getToughness() != null) {
+			JLabel PTField = new JLabel(card.getPower() == null && card.getToughness() == null ? null : card.getPower() + "/" + card.getToughness());
+			JLabel PT = new JLabel("P/T:");
+			PT.setBounds(145, 20, 40, 14);
+			PT.setFont(labelFont);
+			PT.setLabelFor(PTField);
+			PTField.setBounds(185, 20, 40, 14);
+			PTField.setFont(fieldFont);
+			fields.add(PT);
+			fields.add(PTField);
+		}
+		if (card.getLoyalty() != null) {
+			JLabel LoyaltyField = new JLabel(card.getLoyalty().toString());
+			JLabel Loyalty = new JLabel("Loyalty:");
+			LoyaltyField.setBounds(280, 20, 34, 15);
+			LoyaltyField.setFont(fieldFont);
+			LoyaltyField.setLabelFor(LoyaltyField);
+			Loyalty.setBounds(225, 20, 45, 14);
+			Loyalty.setFont(labelFont);
+			fields.add(LoyaltyField);
+			fields.add(Loyalty);
+		}
+		if (card.getFlavorText() != null){
+			JTextPane FlavorTextField = new JTextPane();
+			JLabel FlavorText = new JLabel("Flavor Text");
+			FlavorText.setBounds(0, 220, 64, 14);
+			FlavorText.setFont(labelFont);
+			FlavorTextField.setBackground(UIManager.getColor("Button.background"));
+			FlavorTextField.setBounds(0, 235, 306, 45);
+			FlavorTextField.setEditable(false);
+			FlavorTextField.setFont(fieldFont);
+			FlavorTextField.setOpaque(false);
+			FlavorTextField.setContentType("text/html");
+			String flavor = "<p style = \"font-family:Tahoma;font-size:11pt\">" +
+					card.getFlavorText().replaceAll("; ", "\n").replaceAll("#_", "<i>").replaceAll("_#", "</i>") +
+					"</p>";
+			FlavorTextField.setText(flavor);
+			fields.add(FlavorText);
+			fields.add(FlavorTextField);
 		}
 	}
 }

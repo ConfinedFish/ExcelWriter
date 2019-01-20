@@ -1,6 +1,7 @@
 package deckeditor;
 
 import XML.XMLParse;
+import cards.Card;
 import cards.type.Color;
 import cards.type.Format;
 import cards.type.SubType;
@@ -8,6 +9,7 @@ import cards.type.SuperType;
 import gui.GUI;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
+import java.awt.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -15,25 +17,21 @@ import java.util.Collections;
 
 
 /**
- * This class is the main class to run the program. The main priortiy of this class is to call
+ * This class is the main class to run the program. The main priority of this class is to call
  * external classes and ensure the program executes in the proper order. Another function is
  * this class contains utility methods such as the println and print functions which act as a
  * shortcut to the System.out.println() method with some added date format printing.
  */
 //TODO Create a method/fields that keep track of time it takes to run program and print it
-
-public class DeckEditor{
-	public static void main(String[] args){
-		new DeckEditor().run();
-	}
-	
-	
-	//TODO make the program download the file if it is missing from DropBox Shared folder or domain
-	private void run(){
-		XMLParse xmlParse = new XMLParse("Set.xml");
-		xmlParse.parse();
-		new GUI(xmlParse);
-		printErrorTypes();
+//TODO make the program download the file if it is missing from DropBox Shared folder or domain
+public class DeckEditor {
+	public static void main(String[] args) {
+		EventQueue.invokeLater(() -> {
+			XMLParse xmlParse = new XMLParse("Set.xml");
+			xmlParse.parse();
+			new GUI(xmlParse);
+			printErrorTypes();
+		});
 	}
 	
 	/**
@@ -54,11 +52,11 @@ public class DeckEditor{
 	 * @return a boolean containing the value if lists are the same
 	 */
 	//TODO make this method allow any number of arrayLists as parameters
-	public static boolean equalLists(ArrayList<Format> one, ArrayList<Format> two){
-		if (one == null && two == null){
+	public static boolean equalLists(ArrayList<Format> one, ArrayList<Format> two) {
+		if (one == null && two == null) {
 			return true;
 		}
-		if (one == null || two == null || one.size() != two.size()){
+		if (one == null || two == null || one.size() != two.size()) {
 			return false;
 		}
 		one = new ArrayList<>(one);
@@ -68,14 +66,23 @@ public class DeckEditor{
 		return one.equals(two);
 	}
 	
+	public static ArrayList<Card> combineLists(XMLParse xmlParse, ArrayList<Card> list1, ArrayList<Card> list2) {
+		ArrayList<Card> accumulator = new ArrayList<>();
+		for(Card card1 : list1)
+			for(Card card2 : list2)
+				if (card1.equals(card2))
+					accumulator.add(card1);
+		return accumulator;
+	}
+	
 	/**
 	 * This method gathers the error data from each of the Enums provided in the program and
 	 * calls the findErrorTypes for each. The data comes from the Enums. As the data is gathered,
 	 * some values of the Enum will not be present. This method is to print each one of the values.
 	 * On a completed build of the project, this method should print nothing.
 	 */
-	//TODO privitize the enums Erorr type Lists
-	private void printErrorTypes(){
+	//TODO privatize the enums Error type Lists
+	private static void printErrorTypes() {
 		findErrorTypes(Format.errorFormatTypes, "Format");
 		findErrorTypes(Color.errorColors, "Color");
 		findErrorTypes(SubType.errorSubTypes, "SubType");
@@ -90,8 +97,8 @@ public class DeckEditor{
 	 * @param name  the name of the enum
 	 */
 	//TODO find a way to make both this method and printErrorTypes() dynamic
-	private void findErrorTypes(ArrayList<String> error, String name){
-		if (error.size() != 0){
+	private static void findErrorTypes(ArrayList<String> error, String name) {
+		if (error.size() != 0) {
 			StringBuilder build = new StringBuilder();
 			build.append("Error parsing data: Unknown ").append(name).append(": ").append(
 					"\n");
@@ -99,30 +106,33 @@ public class DeckEditor{
 			println(build.toString(), Level.INFO);
 		}
 	}
-	public static void printException(String cause, Exception e){
+	
+	public static void printException(String cause, Exception e) {
 		DeckEditor.println(cause + " - Caused: " + ExceptionUtils.getRootCause(e) + " in ", Level.ERROR);
 		for (StackTraceElement stackTraceElement : e.getStackTrace()) {
 			DeckEditor.println("\t" + stackTraceElement.getClassName() + " (" + stackTraceElement.getLineNumber() + ")", Level.ERROR);
 		}
 	}
-	public static void print(Object obj){
+	
+	public static void print(Object obj) {
 		System.out.print(obj);
 	}
+	
 	public static void println(Object object) {
 		println(object, Level.DEBUG);
 	}
 	
 	/**
-	 * Provides a shortcut to the System.out.println() method as well as attatch the time and
-	 * date for acccurate execution analysis.
+	 * Provides a shortcut to the System.out.println() method as well as attach the time and
+	 * date for accurate execution analysis.
 	 *
-	 * @param obj the object to print. This argument is the same as the System.out.println() mehtod
-	 * @param level
+	 * @param obj   the object to print. This argument is the same as the System.out.println() mehtod
+	 * @param level the level of severity to print
 	 */
-	public static void println(Object obj, Level level){
+	public static void println(Object obj, Level level) {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 		LocalDateTime now = LocalDateTime.now();
 		System.out.println("[" + level + "]" + dtf.format(now) + " : " + obj);
 	}
-
+	
 }

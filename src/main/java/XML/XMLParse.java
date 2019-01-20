@@ -67,20 +67,38 @@ public class XMLParse {
 	private ArrayList<CardSet> setArrayList = new ArrayList<>();
 	private CardDictionary dictonary = new CardDictionary();
 	
-	public XMLParse(String pathtoFile) {
-		this.pathToFile = pathtoFile;
+	/**
+	 * Constructor for the XMLParse object.
+	 * @param pathToFile the path to the XML File containing the database of the cards.
+	 */
+	public XMLParse(String pathToFile) {
+		this.pathToFile = pathToFile;
 	}
 	
+	/**
+	 * This method finds an element based on a tag. It takes an element, and uses that to find it's children and looks
+	 * for the tag.
+	 *
+	 * Typically this is called when the element is "card". From there it grabs the children (the data for each card)
+	 * and returns the string contained in that element
+	 *
+	 * @param tag A string containing the string to look for
+	 * @param element the element containing the children.
+	 * @return a string that contains whatever text was found or null if it was not found.
+	 */
 	private static String getTagValue(String tag, Element element) {
-		String returnval = null;
+		String val = null;
 		try {
-			returnval = element.hasChildNodes() ?
-					element.getElementsByTagName(tag).item(0).getFirstChild().getTextContent() : null;
+			val = element.hasChildNodes() ? element.getElementsByTagName(tag).item(0).getFirstChild().getTextContent() : null;
 		} catch (NullPointerException ignored) {
 		}
-		return returnval;
+		return val;
 	}
 	
+	/**
+	 * This where the file is read. It handles the opening and reading the file. XML is the file of choice here because
+	 * Java contains built in tools to read XML files. No external libraries were needed to read from it.
+	 */
 	public void parse() {
 		DeckEditor.println("Started loading from XML: " + pathToFile, Level.INFO);
 		File xmlFile = new File(pathToFile);
@@ -109,15 +127,23 @@ public class XMLParse {
 					dictonary.add(card);
 			}
 			DeckEditor.println("Loaded " + dictonary.size() + " cards from XML", Level.INFO);
+			DeckEditor.println("Loaded " + dictonary.getTokens().size() + " tokens from XML", Level.INFO);
+			DeckEditor.println("Loaded " + dictonary.getLands().size() + " lands from XML", Level.INFO);
 		} catch (ParserConfigurationException | SAXException | IOException | XPathExpressionException e) {
 			DeckEditor.printException(pathToFile, e);
 		}
-		sortCards(setArrayList, dictonary.getDictionary());
+		sortCards(setArrayList, dictonary.getList());
 		dictonary.setCardSets(setArrayList);
 		dictonary.sort();
+
 		DeckEditor.println("Finished loading from XML", Level.INFO);
 	}
 	
+	/**
+	 * This method is called when the cards are all loaded. In order to view cards by sets, they are organized
+	 * @param sets the list of sets the cards will be organized into
+	 * @param cards the list of total cards loaded.
+	 */
 	private void sortCards(ArrayList<CardSet> sets, ArrayList<Card> cards) {
 		DeckEditor.println("Sorting Cards into sets", Level.INFO);
 		for (CardSet set : sets) {
@@ -126,9 +152,14 @@ public class XMLParse {
 			}
 			for (Card card : cards) {
 				if (card.getSubTypes() != null && card.getSuperTypes() != null)
-					if (!card.getType().contains("Basic Land"))
-						if (card.getSet().getCode().equals(set.getCode()))
-							set.getCards().add(card);
+					if (!card.getType().contains("Basic Land")) {
+						try {
+							if (card.getSet().getCode().equals(set.getCode()))
+								set.getCards().add(card);
+						} catch (Exception e) {
+							DeckEditor.printException(set.getName(), e);
+						}
+					}
 			}
 		}
 	}
@@ -141,30 +172,53 @@ public class XMLParse {
 				Element element = (Element) node;
 				card.setName(getTagValue("name", element));
 				card.setSet(findSet(getTagValue("set", element)));
+				if (card.getSet() == null)
+					DeckEditor.println("Unknown Set: " + getTagValue("set", element));
 				card.setRarity(Rarity.findRarity(getTagValue("rarity", element)));
 				String[] types = getTagValue("type", element) == null ? new String[0] :
 						getTagValue("type", element).split(" — ");
 				card.setType(getTagValue("type", element));
 				card.setSuperTypes(SuperType.parseString(types[0]));
 				card.setSubTypes(types.length == 1 ? new ArrayList<>() : SubType.parseString(types[1]));
-				card.setPower(getTagValue("power", element));
-				card.setToughness(getTagValue("toughness", element));
-				card.setLoyalty(getTagValue("loyalty", element));
-				String cmc = getTagValue("converted_manacost", element);
-				Integer integer = null;
-				if (NumberUtils.isCreatable(cmc))
+				String power = getTagValue("power", element);
+				Integer pwr = null;
+				if (NumberUtils.isCreatable(power))
 					try {
-						integer = Integer.parseInt(cmc);
+						pwr = Integer.parseInt(power);
 					} catch (Exception ignored) {
 					}
-				card.setConvertedManaCost(integer);
-				if (card.getName().equalsIgnoreCase("Gitaxian Probe"))
-					DeckEditor.println(card.getName());
+				card.setPower(pwr);
+				String toughness = getTagValue("toughness", element);
+				Integer tough = null;
+				if (NumberUtils.isCreatable(toughness))
+					try {
+						tough = Integer.parseInt(toughness);
+					} catch (Exception ignored) {
+					}
+				card.setToughness(tough);
+				String loyalty = getTagValue("loyalty", element);
+				Integer loyal = null;
+				if (NumberUtils.isCreatable(loyalty))
+					try {
+						loyal = Integer.parseInt(loyalty);
+					} catch (Exception ignored) {
+					}
+				card.setLoyalty(loyal);
+				String cmc = getTagValue("converted_manacost", element);
+				Integer convertedManaCost = null;
+				if (NumberUtils.isCreatable(cmc))
+					try {
+						convertedManaCost = Integer.parseInt(cmc);
+					} catch (Exception ignored) {
+					}
+				card.setConvertedManaCost(convertedManaCost);
 				card.setManaCost(getTagValue("manacost", element));
-				card.setColorIdentity(Color.findColorArray(getTagValue("color_identity", element)));
-				card.setColor(Color.findColorArray(getTagValue("color", element)));
+				String color = getTagValue("color_identity", element);
+				if (color == null){
+					color = Color.C.toString();
+				}
+				card.setColor(Color.findColorArray(color));
 				card.setArtist(getTagValue("artist", element));
-				card.setNumber(getTagValue("number", element));
 				card.setAbility(getTagValue("ability", element));
 				card.setFlavorText(getTagValue("flavor", element));
 				card.setGeneratedMana(Color.findColorArray(getTagValue("generated_mana", element)));
@@ -201,7 +255,7 @@ public class XMLParse {
 	}
 	
 	public ArrayList<Card> getCardArrayList() {
-		return dictonary.getDictionary();
+		return dictonary.getList();
 	}
 	
 	public CardDictionary getDictonary() {

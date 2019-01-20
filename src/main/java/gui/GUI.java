@@ -4,7 +4,6 @@ package gui;
 import XML.XMLParse;
 import cards.Card;
 import cards.Deck;
-import cards.type.Format;
 import deckeditor.DeckEditor;
 import deckeditor.Level;
 import gui.table.CardTableGUI;
@@ -12,50 +11,54 @@ import gui.table.SetTableGUI;
 
 import javax.swing.*;
 import javax.swing.UIManager.LookAndFeelInfo;
-import javax.swing.border.TitledBorder;
+import javax.swing.border.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.plaf.basic.BasicSplitPaneDivider;
+import javax.swing.plaf.basic.BasicSplitPaneUI;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 
-public class GUI extends JFrame{
+public class GUI extends JFrame {
 	private static final long serialVersionUID = -1066050764201645094L;
 	private JLabel cardNumberField;
 	private Deck deck;
 	private JTable deckTable;
 	private XMLParse xmlParse;
 	private ArrayList<Card> c;
-
-	public GUI(XMLParse xmlParse){
-		try{
-			for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()){
-				if ("Metal".equals(info.getName())){
+	
+	public GUI(XMLParse xmlParse) {
+		try {
+			for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+				if ("Metal".equals(info.getName())) {
 					UIManager.setLookAndFeel(info.getClassName());
 					break;
 				}
 			}
-		} catch (Exception e1){
-			e1.printStackTrace();
+		} catch (Exception e) {
+			DeckEditor.printException("GUI", e);
 		}
 		this.xmlParse = xmlParse;
 		c = xmlParse.getCardArrayList();
 		DeckEditor.println("Loading GUI...", Level.INFO);
-		initComponents();
+		drawUI();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 	}
-
-	private JTable drawTable(JTable table){
+	
+	private JTable drawTable(JTable table) {
 		ArrayList<String> colnames = new ArrayList<>();
 		colnames.add("name");
 		colnames.add("number");
 		DefaultTableModel model = new DefaultTableModel();
 		model.setColumnIdentifiers(colnames.toArray());
-		if (deck != null){
-			try{
-				for (ArrayList<Card> listofCards : deck){
+		if (deck != null) {
+			try {
+				for (ArrayList<Card> listofCards : deck) {
 					ArrayList<Object> values = new ArrayList<>();
 					values.add(listofCards.get(0).getName());
 					values.add(listofCards.size());
@@ -65,310 +68,307 @@ public class GUI extends JFrame{
 				table.setModel(model);
 				model.fireTableDataChanged();
 				int size = 0;
-				for (int i = 0; i < model.getRowCount(); i++){
+				for (int i = 0; i < model.getRowCount(); i++) {
 					size += Integer.parseInt(table.getValueAt(i, 2) + "");
 				}
 				cardNumberField.setText(String.valueOf(size));
-			} catch (Exception e){
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 		return table;
 	}
 	
-	private void initComponents(){
-		JMenuBar menuBar1 = new JMenuBar();
-		JMenu file = new JMenu();
-		JMenuItem open = new JMenuItem();
-		JMenuItem close = new JMenuItem();
-		JMenuItem save = new JMenuItem();
-		JMenuItem saveas = new JMenuItem();
-		JMenuItem importDeck = new JMenuItem();
-		JMenuItem export = new JMenuItem();
-		JMenuItem quit = new JMenuItem();
-		JMenu cardDatabase = new JMenu();
-		JMenuItem cards = new JMenuItem();
-		JMenuItem sets = new JMenuItem();
-		JPanel deckInfo = new JPanel();
-		JLabel label1 = new JLabel();
-		JTextField deckNameField = new JTextField();
-		JLabel deckFormat = new JLabel();
-		JComboBox<Format> deckFormatField = new JComboBox<>(Format.class.getEnumConstants());
-		// Format format = (Format) deckFormatField.getSelectedItem();
-		deckFormatField.setSelectedIndex(-1);
-		JLabel deckDescription = new JLabel();
-		JScrollPane scrollPane1 = new JScrollPane();
-		JTextArea deckDescriptionField = new JTextArea();
-		JPanel contents = new JPanel();
-		JScrollPane scrollPane2 = new JScrollPane();
-		deckTable = new JTable();
-		JButton showCards = new JButton();
-		JButton removeCards = new JButton();
-		JButton addLands = new JButton();
-		JButton showStats = new JButton();
-		JPanel stats = new JPanel();
-		JLabel cardnum = new JLabel();
-		cardNumberField = new JLabel();
-		JButton showSets = new JButton();
-		// ======== this ========
-		setTitle("Deck Editor");
-		Container contentPane = getContentPane();
-		// ======== menuBar1 ========
-		{
-			// ======== file ========
-			{
-				file.setText("File");
-				// ---- open ----
-				open.setText("open");
-				open.setToolTipText("open a deck file");
-				JFileChooser chooser = new JFileChooser();
-				FileNameExtensionFilter filter = new FileNameExtensionFilter("*.dec", "dec");
-				chooser.setFileFilter(filter);
-				open.addActionListener(e -> {
-					int returnVal = chooser.showOpenDialog(null);
-					if (returnVal == JFileChooser.APPROVE_OPTION) {
-						try {
-							deck = Deck.loadDeckFromFile(chooser.getSelectedFile());
-							AbstractTableModel model = (AbstractTableModel) deckTable.getModel();
-							model.fireTableDataChanged();
-							deckTable = drawTable(deckTable);
-							cardNumberField.setText(String.valueOf(deck.getDeckSize()));
-							// TODO find out why there are doups
-						} catch (Exception e1) {
-							JOptionPane.showMessageDialog(new JFrame(), e1);
-							e1.printStackTrace();
-						}
+	private void drawUI() {
+		JPanel contentPane = new JPanel();
+		setForeground(SystemColor.controlShadow);
+		Font fieldFont = new Font("Dialog", Font.PLAIN, 12);
+		Color borderColor = new Color(153, 180, 209);
+		Font buttonFont = new Font("Lucida Sans", Font.BOLD, 12);
+		setTitle("DeckEditor");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 789, 429);
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu File = new JMenu("File");
+		menuBar.add(File);
+		
+		
+		JMenuItem open = new JMenuItem("Open");
+		JFileChooser chooser = new JFileChooser();
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("*.dec", "dec");
+		chooser.setFileFilter(filter);
+		open.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int returnVal = chooser.showOpenDialog(null);
+				if (returnVal == JFileChooser.APPROVE_OPTION) {
+					try {
+						//deck = Deck.loadDeckFromFile(chooser.getSelectedFile());
+						AbstractTableModel model = (AbstractTableModel) deckTable.getModel();
+						model.fireTableDataChanged();
+						//deckTable = drawTable(deckTable);
+						//cardNumberField.setText(String.valueOf(deck.getDeckSize()));
+						// TODO find out why there are doups
+					} catch (Exception e1) {
+						JOptionPane.showMessageDialog(new JFrame(), e1);
+						e1.printStackTrace();
 					}
-				});
-				file.add(open);
-				// ---- close ----
-				close.setText("close");
-				file.add(close);
-				// ---- save ----
-				save.setText("save");
-				file.add(save);
-				saveas.setText("save as");
-				saveas.addActionListener(e -> {
-				});
-				file.add(saveas);
-				file.addSeparator();
-				// ---- importDeck ----
-				importDeck.setText("import");
-				file.add(importDeck);
-				// ---- export ----
-				export.setText("export");
-				file.add(export);
-				file.addSeparator();
-				// ---- quit ----
-				quit.setText("quit");
-				quit.addActionListener(e -> System.exit(0));
-				file.add(quit);
+				}
 			}
-			menuBar1.add(file);
-			// ======== cardDatabase ========
-			{
-				cardDatabase.setText("Card Database");
-				// ---- cards ----
-				cards.setText("show all cards");
-				cards.addActionListener(e -> {
-					DeckEditor.println("Loading Card Database", Level.INFO);
-					CardTableGUI cardGUI = new CardTableGUI("All Cards : " + c.size(), c, xmlParse);
-					cardGUI.setVisible(true);
-					cardGUI.setLocationRelativeTo(cards);
-				});
-				cardDatabase.add(cards);
-				// ---- sets ----
-				sets.setText("show all sets");
-				sets.addActionListener(e -> {
-					SetTableGUI setGUI = new SetTableGUI("All Sets", xmlParse);
-					setGUI.setVisible(true);
-					setGUI.setLocationRelativeTo(sets);
-				});
-				cardDatabase.add(sets);
+		});
+		File.add(open);
+		
+		JMenuItem close = new JMenuItem("Close");
+		File.add(close);
+		
+		JMenuItem save = new JMenuItem("Save");
+		File.add(save);
+		
+		JMenuItem saveas = new JMenuItem("Save As...");
+		File.add(saveas);
+		
+		JSeparator separator_1 = new JSeparator();
+		File.add(separator_1);
+		
+		JMenuItem imprt = new JMenuItem("Import");
+		File.add(imprt);
+		
+		JMenuItem export = new JMenuItem("Export");
+		File.add(export);
+		
+		JSeparator separator_2 = new JSeparator();
+		File.add(separator_2);
+		
+		JMenuItem quit = new JMenuItem("Quit");
+		File.add(quit);
+		
+		JMenu Database = new JMenu("Database");
+		menuBar.add(Database);
+		
+		JMenuItem showAllCards = new JMenuItem("show all cards");
+		showAllCards.addActionListener(e -> {
+			CardTableGUI cardGUI = new CardTableGUI("All Cards : " + c.size(), c, xmlParse);
+			cardGUI.setVisible(true);
+			cardGUI.setLocationRelativeTo(this);
+		});
+		Database.add(showAllCards);
+		
+		JMenuItem showAllSets = new JMenuItem("show all sets");
+		showAllSets.addActionListener(e -> {
+			SetTableGUI setGUI = new SetTableGUI("All Sets", xmlParse);
+			setGUI.setVisible(true);
+			setGUI.setLocationRelativeTo(this);
+		});
+		Database.add(showAllSets);
+		
+		JSeparator separator = new JSeparator();
+		Database.add(separator);
+		contentPane.setBackground(new Color(74, 74, 74));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JSplitPane splitPane = new JSplitPane();
+		splitPane.setBackground(SystemColor.controlDkShadow);
+		splitPane.setBounds(5, 95, 757, 258);
+		
+		splitPane.setUI(new BasicSplitPaneUI() {
+			public BasicSplitPaneDivider createDefaultDivider() {
+				return new BasicSplitPaneDivider(this) {
+					public void setBorder(Border b) {
+					}
+					
+					@Override
+					public void paint(Graphics g) {
+						g.setColor(borderColor);
+						g.fillRect(0, 0, getSize().width, getSize().height);
+						super.paint(g);
+					}
+				};
 			}
-			menuBar1.add(cardDatabase);
-		}
-		setJMenuBar(menuBar1);
-		// ======== deckInfo ========
-		{
-			deckInfo.setBorder(new TitledBorder("Deck"));
-			label1.setText("Name:");
-			// ---- deckFormat ----
-			deckFormat.setText("Format:");
-			// ---- deckDescription ----
-			deckDescription.setText("Description(optional): ");
-			// ======== scrollPane1 ========
-			{
-				scrollPane1.setViewportView(deckDescriptionField);
+		});
+		splitPane.setBorder(null);
+		
+		contentPane.add(splitPane);
+		splitPane.setDividerLocation(.5);
+		
+		deckTable = new JTable();
+		deckTable.setModel(new DefaultTableModel(
+				new Object[][]{
+						{"Plains", "4"},
+						{"Island", "5"},
+						{"Forest", "2"},
+						{"Swamp", "2"},
+						{"Wastes", null},
+				},
+				new String[]{
+						"Name", "Number"
+				}
+		) {
+			boolean[] columnEditables = new boolean[]{
+					true, false
+			};
+			
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
 			}
-			GroupLayout deckInfoLayout = new GroupLayout(deckInfo);
-			deckInfo.setLayout(deckInfoLayout);
-			deckInfoLayout.setHorizontalGroup(deckInfoLayout.createParallelGroup().addGroup(deckInfoLayout
-					.createSequentialGroup().addContainerGap()
-					.addGroup(deckInfoLayout.createParallelGroup().addComponent(label1).addComponent(deckFormat))
-					.addGap(22, 22, 22)
-					.addGroup(deckInfoLayout.createParallelGroup()
-							.addComponent(deckFormatField, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
-							.addGroup(deckInfoLayout.createSequentialGroup()
-									.addComponent(deckNameField, GroupLayout.PREFERRED_SIZE, 323,
-											GroupLayout.PREFERRED_SIZE)
-									.addGap(40, 40, 40).addComponent(deckDescription)))
-					.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-					.addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 500, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(56, Short.MAX_VALUE)));
-			deckInfoLayout.setVerticalGroup(deckInfoLayout.createParallelGroup().addGroup(deckInfoLayout
-					.createSequentialGroup()
-					.addGroup(deckInfoLayout.createParallelGroup()
-							.addGroup(deckInfoLayout.createSequentialGroup()
-									.addGroup(deckInfoLayout.createParallelGroup()
-											.addGroup(deckInfoLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-													.addComponent(deckNameField, GroupLayout.PREFERRED_SIZE,
-															GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-													.addComponent(deckDescription))
-											.addComponent(label1))
-									.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-									.addGroup(deckInfoLayout.createParallelGroup()
-											.addComponent(deckFormatField, GroupLayout.PREFERRED_SIZE,
-													GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-											.addComponent(deckFormat)))
-							.addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-		}
-		// ======== contents ========
-		{
-			// ======== scrollPane2 ========
-			{
-				// ---- deckTable ----
-				scrollPane2.setViewportView(deckTable);
-			}
-			// ---- showCards ----
-			showCards.setText("Add Card(s)");
-			showCards.addActionListener(e -> {
-				FilterCards filterCards = new FilterCards(xmlParse);
-				filterCards.setVisible(true);
-				filterCards.setLocationRelativeTo(this);
-			});
-			// ---- showSets ----
-			removeCards.setText("Remove Card(s)");
-			// ---- addLands ----
-			addLands.setText("Add Land");
-			addLands.addActionListener(e -> {
-				DeckEditor.println("Loading Card Database", Level.INFO);
-				CardTableGUI landGUI = new CardTableGUI("Land Cards : " + xmlParse.getDictonary().getLands().size(), xmlParse.getDictonary().getLands(), xmlParse);
-				landGUI.setVisible(true);
-				landGUI.setLocationRelativeTo(cards);
-			});
-			// ---- showStats ----
-			showStats.setText("View Stats");
-			GroupLayout contentsLayout = new GroupLayout(contents);
-			contents.setLayout(contentsLayout);
-			contentsLayout.setHorizontalGroup(contentsLayout.createParallelGroup().addGroup(contentsLayout
-					.createSequentialGroup().addContainerGap()
-					.addGroup(contentsLayout.createParallelGroup().addGroup(contentsLayout
-							.createParallelGroup(GroupLayout.Alignment.TRAILING)
-							.addGroup(contentsLayout.createParallelGroup()
-									.addComponent(showCards, GroupLayout.PREFERRED_SIZE, 200,
-											GroupLayout.PREFERRED_SIZE)
-									.addComponent(showSets, GroupLayout.PREFERRED_SIZE, 200,
-											GroupLayout.PREFERRED_SIZE))
-							.addComponent(addLands, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE))
-							.addComponent(showStats, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE))
-					.addGap(18, 18, 18).addComponent(scrollPane2, GroupLayout.DEFAULT_SIZE, 1085, Short.MAX_VALUE)
-					.addContainerGap()));
-			contentsLayout.setVerticalGroup(contentsLayout.createParallelGroup().addGroup(contentsLayout
-					.createSequentialGroup().addContainerGap()
-					.addGroup(contentsLayout.createParallelGroup()
-							.addComponent(scrollPane2, GroupLayout.PREFERRED_SIZE, 334, GroupLayout.PREFERRED_SIZE)
-							.addGroup(contentsLayout.createSequentialGroup().addComponent(showCards)
-									.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(showSets)
-									.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(addLands)
-									.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(showStats)))
-					.addContainerGap(211, Short.MAX_VALUE)));
-		}
-		// ======== contents ========
-		{
-			// ======== scrollPane2 ========
-			{
-				// ---- deckTable ----
-				deckTable.setAutoResizeMode(JTable.AUTO_RESIZE_NEXT_COLUMN);
-				scrollPane2.setViewportView(deckTable);
-//				deckTable = drawTable(deckTable);
-			}
-			// ---- showCards ----
-			showCards.setText("Add Card(s)");
-			// ---- showSets ----
-			removeCards.setText("Remove Card(s)");
-			// ---- addLands ----
-			addLands.setText("Add Land");
-			// ---- showStats ----
-			showStats.setText("View Stats");
-			GroupLayout contentsLayout = new GroupLayout(contents);
-			contents.setLayout(contentsLayout);
-			contentsLayout.setHorizontalGroup(contentsLayout.createParallelGroup().addGroup(contentsLayout
-					.createSequentialGroup().addContainerGap()
-					.addGroup(contentsLayout.createParallelGroup().addGroup(contentsLayout
-							.createParallelGroup(GroupLayout.Alignment.TRAILING)
-							.addGroup(contentsLayout.createParallelGroup()
-									.addComponent(showCards, GroupLayout.PREFERRED_SIZE, 200,
-											GroupLayout.PREFERRED_SIZE)
-									.addComponent(removeCards, GroupLayout.PREFERRED_SIZE, 200,
-											GroupLayout.PREFERRED_SIZE))
-							.addComponent(addLands, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE))
-							.addComponent(showStats, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE))
-					.addGap(18, 18, 18).addComponent(scrollPane2, GroupLayout.DEFAULT_SIZE, 1029, Short.MAX_VALUE)
-					.addContainerGap()));
-			contentsLayout.setVerticalGroup(contentsLayout.createParallelGroup().addGroup(contentsLayout
-					.createSequentialGroup().addContainerGap()
-					.addGroup(contentsLayout.createParallelGroup().addComponent(scrollPane2)
-							.addGroup(contentsLayout.createSequentialGroup().addComponent(showCards)
-									.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(removeCards)
-									.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(addLands)
-									.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(showStats)
-									.addGap(0, 0, Short.MAX_VALUE)))
-					.addContainerGap()));
-		}
-		// ======== stats ========
-		{
-			stats.setBorder(new TitledBorder("Stats"));
-			// ---- cardnum ----
-			cardnum.setText("Cards:");
-			// ---- cardNumberField ----
-			cardNumberField.setText("0");
-			GroupLayout statsLayout = new GroupLayout(stats);
-			stats.setLayout(statsLayout);
-			statsLayout.setHorizontalGroup(statsLayout.createParallelGroup()
-					.addGroup(statsLayout.createSequentialGroup().addContainerGap().addComponent(cardnum)
-							.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(cardNumberField)
-							.addContainerGap(1060, Short.MAX_VALUE)));
-			statsLayout.setVerticalGroup(statsLayout.createParallelGroup()
-					.addGroup(statsLayout.createSequentialGroup()
-							.addGroup(statsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-									.addComponent(cardnum).addComponent(cardNumberField))
-							.addGap(0, 60, Short.MAX_VALUE)));
-		}
-		GroupLayout contentPaneLayout = new GroupLayout(contentPane);
-		contentPane.setLayout(contentPaneLayout);
-		contentPaneLayout.setHorizontalGroup(contentPaneLayout.createParallelGroup().addGroup(contentPaneLayout
-				.createSequentialGroup().addContainerGap()
-				.addGroup(contentPaneLayout.createParallelGroup()
-						.addComponent(contents, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addGroup(contentPaneLayout.createSequentialGroup()
-								.addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-										.addComponent(deckInfo, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-												Short.MAX_VALUE)
-										.addComponent(stats, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-												Short.MAX_VALUE))
-								.addGap(0, 45, Short.MAX_VALUE)))
-				.addContainerGap()));
-		contentPaneLayout.setVerticalGroup(contentPaneLayout.createParallelGroup().addGroup(contentPaneLayout
-				.createSequentialGroup()
-				.addComponent(deckInfo, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE)
-				.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-				.addComponent(stats, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-				.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(contents,
-						GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-				.addContainerGap()));
-		pack();
-		setLocationRelativeTo(getOwner());
+		});
+		deckTable.getColumnModel().getColumn(1).setResizable(false);
+		deckTable.setForeground(Color.WHITE);
+		deckTable.setBackground(SystemColor.controlDkShadow);
+		deckTable.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		splitPane.setLeftComponent(deckTable);
+		
+		deckTable.setSurrendersFocusOnKeystroke(true);
+		
+		JTable table = new JTable();
+		table.setBackground(SystemColor.controlDkShadow);
+		table.setBounds(0, 0, 0, 0);
+		table.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		table.setSurrendersFocusOnKeystroke(true);
+		table.setShowGrid(false);
+		splitPane.setRightComponent(table);
+		
+		JPanel infoPanel = new JPanel();
+		infoPanel.setBackground(new Color(90, 90, 90));
+		infoPanel.setBorder(new TitledBorder(new LineBorder(new Color(153, 180, 209), 2, true), "Add From", TitledBorder.LEADING, TitledBorder.ABOVE_TOP, null, Color.WHITE));
+		infoPanel.setBounds(5, 5, 262, 78);
+		contentPane.add(infoPanel);
+		infoPanel.setLayout(null);
+		
+		JButton searchButton = new JButton("Search");
+		searchButton.setFont(buttonFont);
+		searchButton.setForeground(Color.WHITE);
+		searchButton.setBackground(SystemColor.textInactiveText);
+		searchButton.setBounds(170, 25, 80, 39);
+		infoPanel.add(searchButton);
+		
+		JButton colorButton = new JButton("Color");
+		colorButton.setBounds(12, 25, 80, 20);
+		colorButton.setFont(buttonFont);
+		colorButton.setForeground(Color.WHITE);
+		colorButton.setBackground(SystemColor.textInactiveText);
+		infoPanel.add(colorButton);
+		
+		JButton typeButton = new JButton("Type");
+		typeButton.setBounds(91, 25, 80, 20);
+		typeButton.setFont(buttonFont);
+		typeButton.setForeground(Color.WHITE);
+		typeButton.setBackground(SystemColor.textInactiveText);
+		infoPanel.add(typeButton);
+		
+		JButton setButton = new JButton("Set");
+		setButton.setBounds(12, 44, 80, 20);
+		setButton.setFont(buttonFont);
+		setButton.setForeground(Color.WHITE);
+		setButton.setBackground(SystemColor.textInactiveText);
+		infoPanel.add(setButton);
+		
+		JButton formatButton = new JButton("Format");
+		formatButton.setBounds(91, 44, 80, 20);
+		formatButton.setFont(buttonFont);
+		formatButton.setForeground(Color.WHITE);
+		formatButton.setBackground(SystemColor.textInactiveText);
+		infoPanel.add(formatButton);
+		
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBackground(new Color(90, 90, 90));
+		panel.setBorder(new TitledBorder(new LineBorder(new Color(153, 180, 209), 2, true), "Statistics", TitledBorder.LEADING, TitledBorder.ABOVE_TOP, null, new Color(255, 255, 255)));
+		panel.setBounds(279, 5, 483, 78);
+		contentPane.add(panel);
+		
+		JLabel creatutres = new JLabel("Creatures:");
+		creatutres.setForeground(Color.WHITE);
+		creatutres.setBounds(117, 25, 75, 16);
+		panel.add(creatutres);
+		
+		JLabel creaturesField = new JLabel("0");
+		creatutres.setLabelFor(creaturesField);
+		creaturesField.setForeground(Color.WHITE);
+		creaturesField.setFont(new Font("Dialog", Font.PLAIN, 12));
+		creaturesField.setHorizontalAlignment(SwingConstants.LEFT);
+		creaturesField.setBounds(192, 25, 30, 16);
+		panel.add(creaturesField);
+		
+		JLabel main = new JLabel("Mainboard:");
+		main.setForeground(Color.WHITE);
+		main.setBounds(12, 25, 75, 16);
+		panel.add(main);
+		
+		JLabel mainField = new JLabel("0");
+		main.setLabelFor(mainField);
+		mainField.setForeground(Color.WHITE);
+		mainField.setFont(new Font("Dialog", Font.PLAIN, 12));
+		mainField.setHorizontalAlignment(SwingConstants.LEFT);
+		mainField.setBounds(87, 25, 30, 16);
+		panel.add(mainField);
+		
+		JLabel sideboard = new JLabel("Sideboard:");
+		sideboard.setForeground(Color.WHITE);
+		sideboard.setBounds(12, 45, 75, 16);
+		panel.add(sideboard);
+		
+		JLabel sideField = new JLabel("0");
+		sideboard.setLabelFor(sideField);
+		sideField.setForeground(Color.WHITE);
+		sideField.setFont(new Font("Dialog", Font.PLAIN, 12));
+		sideField.setHorizontalAlignment(SwingConstants.LEFT);
+		sideField.setBounds(87, 45, 30, 16);
+		panel.add(sideField);
+		
+		JLabel lands = new JLabel("Lands:");
+		lands.setForeground(Color.WHITE);
+		lands.setBounds(117, 45, 50, 16);
+		panel.add(lands);
+		
+		JLabel landsField = new JLabel("0");
+		lands.setLabelFor(landsField);
+		landsField.setForeground(Color.WHITE);
+		landsField.setFont(fieldFont);
+		landsField.setHorizontalAlignment(SwingConstants.LEFT);
+		landsField.setBounds(192, 45, 30, 16);
+		panel.add(landsField);
+		
+		JButton tokens = new JButton("View Tokens");
+		tokens.setBounds(371, 44, 100, 20);
+		tokens.setFont(buttonFont);
+		tokens.setForeground(Color.WHITE);
+		tokens.setBackground(SystemColor.textInactiveText);
+		tokens.setMargin(new Insets(0, 0, 0, 0));
+		panel.add(tokens);
+		
+		JButton preview = new JButton("Image Preview");
+		preview.setMargin(new Insets(0, 0, 0, 0));
+		preview.setFont(buttonFont);
+		preview.setForeground(Color.WHITE);
+		preview.setBackground(SystemColor.textInactiveText);
+		preview.setBounds(371, 25, 100, 20);
+		panel.add(preview);
+		
+		JSeparator separator_3 = new JSeparator();
+		separator_3.setForeground(SystemColor.activeCaption);
+		separator_3.setOrientation(SwingConstants.VERTICAL);
+		separator_3.setBounds(112, 23, 5, 43);
+		panel.add(separator_3);
+		
+		JSeparator separator_4 = new JSeparator();
+		separator_4.setForeground(SystemColor.activeCaption);
+		separator_4.setOrientation(SwingConstants.VERTICAL);
+		separator_4.setBounds(217, 23, 5, 43);
+		panel.add(separator_4);
+		
+		JSeparator separator_5 = new JSeparator();
+		separator_5.setForeground(SystemColor.activeCaption);
+		separator_5.setOrientation(SwingConstants.VERTICAL);
+		separator_5.setBounds(350, 23, 5, 43);
+		panel.add(separator_5);
+		searchButton.addActionListener(e -> {
+			FilterCards filterCards = new FilterCards(xmlParse);
+			filterCards.setVisible(true);
+			filterCards.setLocationRelativeTo(this);
+		});
 	}
 }

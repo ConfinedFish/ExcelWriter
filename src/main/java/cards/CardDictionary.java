@@ -2,13 +2,12 @@ package cards;
 
 
 import cards.type.Color;
-import deckeditor.DeckEditor;
-import org.apache.commons.compress.utils.Lists;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.function.Predicate;
 
 public class CardDictionary implements Iterable<Card> {
 	private ArrayList<Card> dictionary;
@@ -32,37 +31,138 @@ public class CardDictionary implements Iterable<Card> {
 	}
 	
 	public ArrayList<Card> findCards(String string) {
-		ArrayList<Card> cards = getDictionary();
+		ArrayList<Card> cards = getList();
 		cards.removeIf(card -> !card.getName().toLowerCase().contains(string.toLowerCase()));
 		cards.sort(new CardComparator());
 		return new ArrayList<>(cards);
 	}
 	
-	public ArrayList<Card> findCards(ArrayList<Color> colors, boolean matchExact, boolean matchMultiColor, boolean excludeColor) {
-		ArrayList<Card> cards = getDictionary();
-		if (matchExact) {
-			for (Color color : colors) {
-				cards.removeIf(card -> !card.getColor().contains(color));
-			}
-		}
-		return new ArrayList<>(cards);
-	}
-	
 	public int findCard(Card card) {
-		return Collections.binarySearch(getDictionary(), card, new CardComparator());
+		return Collections.binarySearch(getList(), card, new CardComparator());
 	}
 	
 	public void sort() {
-		getDictionary().sort(new CardComparator());
+		getList().sort(new CardComparator());
+	}
+	public ArrayList<Card> findCards(ArrayList<Color> colors, boolean matchExact, boolean matchMultiColor, boolean excludeColor) {
+		Collection<Card> copyOfDictionary = getList();
+		ArrayList<Card> remove = new ArrayList<>();
+		Iterator<Card> iterator = copyOfDictionary.iterator();
+		//match exact case
+		if (matchExact) {
+			while (iterator.hasNext()) {
+				Card c = iterator.next();
+				ArrayList<ArrayList<Color>> symbols = c.getSymbolList();
+				//remove cards that dont have the symbols in them
+				if (symbols != null && !symbols.isEmpty() && c.getColor() != null && !c.getColor().contains(Color.C)) {
+					for (ArrayList<Color> colorList : symbols) {
+						for (Color color : colorList) {
+							if (!colors.contains(color)) {
+								if (!color.equals(Color.C)) {
+									if (!remove.contains(c)) {
+										remove.add(c);
+									}
+								}
+							}
+						}
+					}
+					//remove cards that are not of color identity
+					for (Color color : c.getColor())
+						if (!colors.contains(color))
+							if (!remove.contains(c))
+								remove.add(c);
+				} else {
+					remove.add(c);
+				}
+				
+			}
+			//multicolor case
+		} else if (matchMultiColor) {
+			while (iterator.hasNext()) {
+				Card c = iterator.next();
+				ArrayList<ArrayList<Color>> symbols = c.getSymbolList();
+				if (symbols != null && !symbols.isEmpty() && c.getColor() != null && !c.getColor().contains(Color.C)) {
+					for (ArrayList<Color> colorList : symbols) {
+						for (Color color : colorList) {
+							if (!colors.contains(color)) {
+								if (!color.equals(Color.C)) {
+									if (!remove.contains(c)) {
+										remove.add(c);
+									}
+								}
+							}
+						}
+					}
+					for (Color color : c.getColor())
+						if (!colors.contains(color))
+							if (!remove.contains(c))
+								remove.add(c);
+				} else {
+					remove.add(c);
+				}
+				
+			}
+			//handle no check boxes checked
+		} else if (excludeColor) {
+			while (iterator.hasNext()) {
+				Card c = iterator.next();
+				ArrayList<ArrayList<Color>> symbols = c.getSymbolList();
+				if (symbols != null && !symbols.isEmpty() && c.getColor() != null && !c.getColor().contains(Color.C)) {
+					for (ArrayList<Color> colorList : symbols) {
+						for (Color color : colorList) {
+							if (!colors.contains(color)) {
+								if (!color.equals(Color.C)) {
+									if (!remove.contains(c)) {
+										remove.add(c);
+									}
+								}
+							}
+						}
+					}
+					for (Color color : c.getColor())
+						if(!colors.contains(color))
+							if(!remove.contains(c))
+								remove.add(c);
+				} else {
+					remove.add(c);
+				}
+				
+			}
+		} else {
+			while (iterator.hasNext()) {
+				Card c = iterator.next();
+				ArrayList<ArrayList<Color>> symbols = c.getSymbolList();
+				if (symbols != null && !symbols.isEmpty() && c.getColor() != null && !c.getColor().contains(Color.C)) {
+					for (ArrayList<Color> colorList : symbols) {
+						for (Color color : colorList) {
+							if (!colors.contains(color)) {
+								if (!color.equals(Color.C)) {
+									if (!remove.contains(c)) {
+										remove.add(c);
+									}
+								}
+							}
+						}
+					}
+					for (Color color : c.getColor())
+						if (!colors.contains(color))
+							if (!remove.contains(c))
+								remove.add(c);
+				} else {
+					remove.add(c);
+				}
+				
+			}
+		}
+		copyOfDictionary.removeAll(remove);
+		return new ArrayList<>(copyOfDictionary);
 	}
 	
-	@SafeVarargs
-	public final ArrayList<Card> combineLists(ArrayList<Card>... arrayLists) {
-		ArrayList<Card> accumulator = new ArrayList<>(dictionary);
-		
-		for (ArrayList<Card> varList : arrayLists) {
-			if (varList != null && !varList.isEmpty()) {
-				accumulator.retainAll(varList);
+	public ArrayList<Card> findAll(Predicate<Card> predicate){
+		ArrayList<Card> accumulator = new ArrayList<>();
+		for (Card card : dictionary){
+			if(predicate.test(card)) {
+				accumulator.add(card);
 			}
 		}
 		return accumulator;
@@ -79,7 +179,7 @@ public class CardDictionary implements Iterable<Card> {
 		return dictionary.get(k);
 	}
 	
-	public ArrayList<Card> getDictionary() {
+	public ArrayList<Card> getList() {
 		return new ArrayList<>(dictionary);
 	}
 	

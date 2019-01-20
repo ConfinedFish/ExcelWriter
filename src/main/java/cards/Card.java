@@ -5,6 +5,7 @@ import cards.type.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,10 +17,9 @@ public class Card {
 	private String manaCost;
 	private String artist;
 	private String flavorText;
-	private String power;
-	private String toughness;
-	private String number;
-	private String loyalty;
+	private Integer power;
+	private Integer toughness;
+	private Integer loyalty;
 	private Integer convertedManaCost;
 	private String typeString;
 	private Rarity rarity;
@@ -27,8 +27,8 @@ public class Card {
 	private ArrayList<SubType> subTypes;
 	private ArrayList<SuperType> superTypes;
 	private ArrayList<Format> legalities;
-	private ArrayList<Color> colorIdentity;
 	private ArrayList<Color> color;
+	private EnumMap<Color, String> colorEnumMap;
 	private ArrayList<ArrayList<Color>> symbols;
 	private CardSet set;
 	
@@ -36,21 +36,34 @@ public class Card {
 	}
 	
 	public String getSymbols() {
-		StringBuilder stringWithSymbols = new StringBuilder();
+		StringBuilder stringWithSymbols;
+		stringWithSymbols = new StringBuilder();
+		boolean addedColorLess = false;
 		for (ArrayList<Color> list : symbols)
-			if (list.contains(Color.C)) {
+			if (list.contains(Color.C) && !addedColorLess) {
+				//Zero cost cards
 				if (convertedManaCost == null || convertedManaCost == 0) {
 					stringWithSymbols.append("[").append(0).append("]");
-				} else
+					addedColorLess = true;
+				} else {
+					//Every other colorless cost
 					stringWithSymbols.append("[").append(list.size()).append("]");
+					addedColorLess = true;
+				}
+				//any other color
 			} else if (!list.isEmpty())
 				stringWithSymbols.append("[").append(list.get(0)).append("]");
+		
 		return stringWithSymbols.toString();
+	}
+	
+	public ArrayList<ArrayList<Color>> getSymbolList() {
+		return new ArrayList<>(symbols);
 	}
 	
 	public void setSymbols() {
 		symbols = new ArrayList<>();
-		String tempManaCost = null;
+		String tempManaCost;
 		if (!getSuperTypes().contains(SuperType.Land)) {
 			tempManaCost = manaCost;
 			Matcher matcher = Pattern.compile("\\(([^)]+)\\)").matcher(tempManaCost);
@@ -119,35 +132,27 @@ public class Card {
 		this.flavorText = flavorText;
 	}
 	
-	public String getPower() {
+	public Integer getPower() {
 		return power;
 	}
 	
-	public void setPower(String power) {
+	public void setPower(Integer power) {
 		this.power = power;
 	}
 	
-	public String getToughness() {
+	public Integer getToughness() {
 		return toughness;
 	}
 	
-	public void setToughness(String toughness) {
+	public void setToughness(Integer toughness) {
 		this.toughness = toughness;
 	}
 	
-	public String getNumber() {
-		return number;
-	}
-	
-	public void setNumber(String number) {
-		this.number = number;
-	}
-	
-	public String getLoyalty() {
+	public Integer getLoyalty() {
 		return loyalty;
 	}
 	
-	public void setLoyalty(String loyalty) {
+	public void setLoyalty(Integer loyalty) {
 		this.loyalty = loyalty;
 	}
 	
@@ -199,14 +204,6 @@ public class Card {
 		this.legalities = legalities;
 	}
 	
-	public ArrayList<Color> getColorIdentity() {
-		return colorIdentity;
-	}
-	
-	public void setColorIdentity(ArrayList<Color> colorIdentity) {
-		this.colorIdentity = colorIdentity;
-	}
-	
 	public ArrayList<Color> getColor() {
 		return color;
 	}
@@ -251,6 +248,18 @@ public class Card {
 		}
 		return builder.toString();
 	}
-	
+	public boolean equals(Object object){
+		if (object == null){
+			return false;
+		}
+		if(Card.class.isAssignableFrom(object.getClass())){
+			return false;
+		}
+		final Card otherCard = (Card)object;
+		if((getName() == null) ? (otherCard.getName() != null) : !getName().equalsIgnoreCase(otherCard.getName())){
+			return false;
+		}
+		return getSet().getCode().equalsIgnoreCase(otherCard.getSet().getCode());
+	}
 	
 }

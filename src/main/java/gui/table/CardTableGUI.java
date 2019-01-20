@@ -7,6 +7,7 @@ import deckeditor.Level;
 import gui.table.datamodel.CardDataModel;
 
 import javax.swing.*;
+import javax.swing.border.EtchedBorder;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
@@ -26,10 +27,12 @@ public class CardTableGUI extends TableGUI{
 	}
 	
 	private void drawTable(ArrayList<Card> cards){
+		setBackground(SystemColor.controlDkShadow);
 		ArrayList<String> colnames =
 				new ArrayList<>(Arrays.asList("Name", "Type", "Set", "Symbols"));
 		CardDataModel model = new CardDataModel(colnames.toArray(), 0, cards);
 		JTable table = new JTable(model);
+		table.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		TableRowSorter<TableModel> rowSorter = new TableRowSorter<>(model);
 		table.setRowSorter(rowSorter);
 		configTable(table, rowSorter, this);
