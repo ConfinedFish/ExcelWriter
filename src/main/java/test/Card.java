@@ -1,5 +1,6 @@
 package test;
 
+import cards.CardSet;
 import cards.type.Rarity;
 
 public interface Card {
@@ -10,5 +11,7 @@ public interface Card {
 	CardType getCardType();
 	Rarity getRarity();
 	Legalities getLegalities();
-	
+	CardSet getSet();
+	Symbols getSymbols();
+	String toString();
 }
