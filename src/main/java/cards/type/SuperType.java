@@ -3,7 +3,7 @@ package cards.type;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public enum SuperType{
+public enum SuperType {
 	Artifact,
 	Basic,
 	Card,
@@ -31,8 +31,7 @@ public enum SuperType{
 	Tribal,
 	World;
 	public static final ArrayList<String> errorTypes = new ArrayList<>();
-	
-	public static ArrayList<SuperType> parseString(String string){
+	public ArrayList<SuperType> parseString(String string){
 		ArrayList<String> tokens = new ArrayList<>(Arrays.asList(string.trim().split("\\W+")));
 		ArrayList<SuperType> superTypes = new ArrayList<>();
 		for (String strings : tokens){
