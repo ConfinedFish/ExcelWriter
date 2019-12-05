@@ -33,12 +33,7 @@ public class GUI extends JFrame {
 	
 	public GUI(XMLParse xmlParse) {
 		try {
-			for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-				if ("Metal".equals(info.getName())) {
-					UIManager.setLookAndFeel(info.getClassName());
-					break;
-				}
-			}
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
 			DeckEditor.printException("GUI", e);
 		}

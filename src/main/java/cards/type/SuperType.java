@@ -31,7 +31,7 @@ public enum SuperType {
 	Tribal,
 	World;
 	public static final ArrayList<String> errorTypes = new ArrayList<>();
-	public ArrayList<SuperType> parseString(String string){
+	public static ArrayList<SuperType> parseString(String string){
 		ArrayList<String> tokens = new ArrayList<>(Arrays.asList(string.trim().split("\\W+")));
 		ArrayList<SuperType> superTypes = new ArrayList<>();
 		for (String strings : tokens){
